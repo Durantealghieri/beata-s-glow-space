@@ -6,48 +6,46 @@ import facialTreatment from '@/assets/facial-treatment.jpg';
 
 const BlogPreview: React.FC = () => {
   const featuredArticle = {
-    title: "Jak prawidłowo pielęgnować skórę twarzy w okresie jesienno-zimowym?",
-    excerpt: "Wraz z nadejściem chłodniejszych miesięcy, nasza skóra wymaga szczególnej uwagi i zmiany rutyny pielęgnacyjnej. Niskie temperatury, wiatr i suche powietrze w ogrzewanych pomieszczeniach mogą prowadzić do odwodnienia, podrażnień i przedwczesnego starzenia się skóry. W tym artykule przedstawię profesjonalne wskazówki dotyczące jesienno-zimowej pielęgnacji, które pomogą Ci zachować zdrowy i promienny wygląd przez cały sezon.",
+    title: "Znaczenie diagnostyki pH skóry w praktyce kosmetologicznej",
+    excerpt: "Współczesna kosmetologia stawia na indywidualne podejście do każdego klienta, co obejmuje również analizę stanu skóry i jej potrzeb. Jednym z kluczowych elementów skutecznej diagnostyki skóry jest pomiar jej pH. To pozornie prosta, ale niezwykle istotna miara, która pozwala specjalistom w dziedzinie kosmetologii dostosować zabiegi i produkty do indywidualnych wymagań skóry.",
     content: `
-      Prawidłowa pielęgnacja skóry w okresie jesienno-zimowym to sztuka wymagająca wiedzy i doświadczenia. Jako kosmetolog z wieloletnim stażem, codziennie obserwuję wpływ zmieniających się warunków atmosferycznych na kondycję skóry moich klientek.
+      Współczesna kosmetologia stawia na indywidualne podejście do każdego klienta, co obejmuje również analizę stanu skóry i jej potrzeb. Jednym z kluczowych elementów skutecznej diagnostyki skóry jest pomiar jej pH. To pozornie prosta, ale niezwykle istotna miara, która pozwala specjalistom w dziedzinie kosmetologii dostosować zabiegi i produkty do indywidualnych wymagań skóry.
 
-      **Dlaczego skóra potrzebuje specjalnej opieki zimą?**
+      **Czym jest pH skóry?**
 
-      Podczas chłodniejszych miesięcy skóra boryka się z wieloma wyzwaniami. Niska temperatura powietrza zewnętrznego w połączeniu z suchym, ogrzanym powietrzem w pomieszczeniach tworzy ekstremalne warunki, które mogą prowadzić do:
-      - Utraty naturalnej bariery lipidowej skóry
-      - Zwiększonej transepidermalnej utraty wody (TEWL)
-      - Podrażnień i stanów zapalnych
-      - Przyspieszonego procesu starzenia
+      pH skóry to wskaźnik kwasowości lub zasadowości jej powierzchni. Skala pH mierzy kwasowość lub zasadowość substancji w skali od 0 do 14, gdzie wartość 7 oznacza substancję neutralną. Skóra ludzka posiada naturalne pH w granicach 4,5–5,5, co czyni ją lekko kwaśną. Taki stan jest ważny, ponieważ kwaśne pH skóry pomaga w utrzymaniu jej naturalnej bariery ochronnej, zwanej płaszczem hydrolipidowym, który chroni przed szkodliwymi mikroorganizmami, zanieczyszczeniami i utratą wilgoci.
 
-      **Krok po kroku - idealna rutyna zimowa:**
+      **Dlaczego diagnostyka pH jest istotna w kosmetologii?**
 
-      1. **Delikatne oczyszczanie** - Wybierz łagodny żel lub krem myjący bez SLS, który nie naruszy bariery ochronnej skóry. Unikaj zbyt gorącej wody, która może dodatkowo wysuszać.
+      Skóra każdego człowieka ma swoje unikalne potrzeby, a jej pH może się zmieniać w zależności od wielu czynników, takich jak dieta, środowisko, nawyki pielęgnacyjne czy choroby skórne. Zaburzenia w równowadze pH mogą prowadzić do różnych problemów skórnych, takich jak:
 
-      2. **Tonizowanie** - Zastosuj alkoholowy toner nawilżający z kwasem hialuronowym lub wodą termalną, aby przygotować skórę na kolejne etapy pielęgnacji.
+      • Suchość i łuszczenie się skóry – jeśli pH skóry staje się zbyt zasadowe, może prowadzić to do osłabienia naturalnej bariery ochronnej skóry, co skutkuje jej odwodnieniem.
+      • Zwiększona podatność na infekcje – skóra o pH zbyt zasadowym staje się bardziej podatna na ataki bakterii, wirusów i grzybów, ponieważ traci swoją naturalną barierę ochronną.
+      • Zaburzenia sebum – zmiany pH mogą wpływać na wydzielanie łoju, co prowadzi do pojawienia się trądziku, zaskórników czy innych problemów związanych z nadmiernym wydzielaniem sebum.
 
-      3. **Serum koncentrujące się na nawilżeniu** - Skorzystaj z serów zawierających ceramidy, kwas hialuronowy lub niacynamid, które wzmocnią barierę skórną.
+      Właśnie dlatego diagnostyka pH skóry jest tak ważna w pracy kosmetologa – pozwala nie tylko na precyzyjne określenie potrzeb skóry, ale również na zapobieganie i leczenie problemów skórnych wynikających z zaburzeń równowagi pH.
 
-      4. **Krem nawilżający** - Wybierz bardziej odżywczy krem niż letni, zawierający składniki okluzyjne jak skwalan czy masło shea.
+      **Jak przeprowadza się diagnostykę pH skóry?**
 
-      5. **Ochrona przeciwsłoneczna** - Tak, również zimą! Śnieg odbija promieniowanie UV, zwiększając ryzyko fotostarzenia.
+      Diagnostyka pH skóry jest szybka, bezbolesna i skuteczna. Kosmetolodzy wykorzystują do tego specjalne paski diagnostyczne lub urządzenia pomiarowe, które pozwalają na dokładne określenie pH skóry. Pomiar pH powinien być wykonywany na czystej, suchej skórze, najlepiej rano, przed zastosowaniem jakichkolwiek preparatów kosmetycznych.
 
-      **Profesjonalne zabiegi na zimę:**
+      Paski diagnostyczne są proste w użyciu – wystarczy delikatnie przyłożyć je do skóry i odczytać wynik na skali. Urządzenia pomiarowe są bardziej zaawansowane, często oferują dokładniejsze odczyty i są wyposażone w funkcje analizy wyników, które pomagają kosmetologom w doborze odpowiednich zabiegów.
 
-      W moim gabinecie szczególnie polecam w tym okresie zabiegi głęboko nawilżające z użyciem kwasu hialuronowego, mezoterapię igłową oraz peelingi delikatne, które nie osłabią bariery skórnej. Regularne wizyty co 3-4 tygodnie pozwolą utrzymać optymalny stan nawilżenia i elastyczności skóry.
+      **Jakie zabiegi kosmetyczne dostosowuje się do wyników pH?**
 
-      **Błędy, których należy unikać:**
+      Wynik pomiaru pH skóry ma kluczowe znaczenie przy doborze odpowiednich zabiegów kosmetycznych. Skóra o zbyt niskim pH (kwaśnym) może wymagać zastosowania produktów neutralizujących, aby przywrócić jej równowagę. Natomiast skóra z pH zasadowym będzie wymagała zastosowania preparatów nawilżających i odbudowujących, które pomogą przywrócić naturalną barierę ochronną.
 
-      - Używanie zbyt agresywnych peelingów mechanicznych
-      - Pomijanie kremu z filtrem UV
-      - Stosowanie produktów na bazie alkoholu
-      - Zbyt częste mycie twarzy
-      - Ignorowanie potrzeb skóry szyi i dekoltu
+      • Skóra o niskim pH – może wskazywać na uszkodzenie płaszcza hydrolipidowego. W takim przypadku, kosmetolog może zaproponować zabiegi łagodzące, regenerujące oraz nawilżające, a także dostosować kosmetyki do delikatnej pielęgnacji.
+      • Skóra o pH zbyt wysokim – wymaga zastosowania produktów przywracających skórze kwaśne pH, np. preparatów nawilżających i równoważących. Warto także unikać agresywnych peelingów i stosować kosmetyki, które odbudowują barierę ochronną skóry.
+      • Skóra w normie pH (4,5–5,5) – to skóra zdrowa, której nie trzeba szczególnie pielęgnować w kontekście pH, ale nadal warto stosować preparaty dopasowane do jej typu i potrzeb.
 
-      Pamiętaj, że każda skóra jest inna i wymaga indywidualnego podejścia. Jeśli masz wątpliwości co do wyboru odpowiednich produktów lub zabiegi, zachęcam do konsultacji w moim gabinecie, gdzie wspólnie opracujemy plan pielęgnacji idealnie dopasowany do Twoich potrzeb.
+      **Podsumowanie**
+
+      Diagnostyka pH skóry to niezwykle istotny element w pracy kosmetologa, który pozwala na precyzyjne dopasowanie zabiegów i kosmetyków do indywidualnych potrzeb skóry. Regularne monitorowanie pH skóry może pomóc w wykryciu problemów skórnych na wczesnym etapie oraz pozwala na skuteczne utrzymanie zdrowej i pięknej skóry. Pamiętajmy, że równowaga pH jest fundamentem zdrowej skóry, a odpowiednia pielęgnacja pozwala zachować ją w optymalnej kondycji.
     `,
-    date: "15 października 2024",
+    date: "20 grudnia 2024",
     author: "Beata Andraszewska Chlebna",
-    readTime: "5 min czytania"
+    readTime: "7 min czytania"
   };
 
   return (
