@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Calendar, User } from 'lucide-react';
@@ -96,17 +97,21 @@ const BlogPreview: React.FC = () => {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <Button className="group">
-                Czytaj więcej
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              <Button asChild className="group">
+                <Link to="/blog">
+                  Czytaj więcej
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Link>
               </Button>
             </CardContent>
           </Card>
         </div>
 
         <div className="text-center mt-12">
-          <Button variant="outline" size="lg">
-            Zobacz wszystkie artykuły
+          <Button variant="outline" size="lg" asChild>
+            <Link to="/blog">
+              Zobacz wszystkie artykuły
+            </Link>
           </Button>
         </div>
       </div>

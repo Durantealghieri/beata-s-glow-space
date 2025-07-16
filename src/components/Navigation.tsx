@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { ChevronDown, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -44,9 +45,9 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection = 'home' }) => {
         <div className="flex justify-between items-center h-16">
           {/* Logo/Brand */}
           <div className="flex-shrink-0">
-            <h1 className="text-2xl font-bold text-foreground">
+            <Link to="/" className="text-2xl font-bold text-foreground hover:text-muted-foreground transition-colors">
               Beata Andraszewska Chlebna
-            </h1>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
@@ -71,13 +72,13 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection = 'home' }) => {
                     <div className="absolute left-0 mt-2 w-56 rounded-md shadow-card bg-card border border-border overflow-hidden z-10">
                       <div className="py-1">
                         {item.subItems.map((subItem, index) => (
-                          <a
+                          <Link
                             key={index}
-                            href="#"
+                            to={item.id === 'blog' ? '/blog' : '#'}
                             className="block px-4 py-2 text-sm text-foreground hover:bg-muted transition-colors"
                           >
-                            {subItem} (WIP)
-                          </a>
+                            {subItem} {item.id !== 'blog' && '(WIP)'}
+                          </Link>
                         ))}
                       </div>
                     </div>
@@ -120,13 +121,13 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection = 'home' }) => {
                   {openDropdown === item.id && (
                     <div className="pl-4 space-y-1">
                       {item.subItems.map((subItem, index) => (
-                        <a
+                        <Link
                           key={index}
-                          href="#"
+                          to={item.id === 'blog' ? '/blog' : '#'}
                           className="block px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
                         >
-                          {subItem} (WIP)
-                        </a>
+                          {subItem} {item.id !== 'blog' && '(WIP)'}
+                        </Link>
                       ))}
                     </div>
                   )}
