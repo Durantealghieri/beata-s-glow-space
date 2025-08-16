@@ -1,12 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Award, BookOpen, Users, Heart } from 'lucide-react';
+import { ArrowLeft, Award, BookOpen, Users, Heart, ChevronDown, ChevronUp } from 'lucide-react';
 import Navigation from '@/components/Navigation';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 
 const About = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  
+  const menuItems = [
+    { id: 'historia', label: 'Moja historia' },
+    { id: 'kwalifikacje', label: 'Kwalifikacje' },
+    { id: 'osiagniecia', label: 'Moje osiągnięcia' },
+    { id: 'filozofia', label: 'Filozofia pracy' },
+    { id: 'specjalizacje', label: 'Specjalizacje' }
+  ];
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setIsMenuOpen(false);
+    }
+  };
+
   const achievements = [
     { icon: Award, label: "15+ lat doświadczenia", color: "bg-salon-rose" },
     { icon: BookOpen, label: "50+ szkoleń specjalistycznych", color: "bg-salon-cream" },
@@ -15,11 +33,22 @@ const About = () => {
   ];
 
   const qualifications = [
-    "Kosmetolog z licencją zawodową",
-    "Specjalista mezoterapii igłowej", 
-    "Certyfikowany aplikator kwasów",
-    "Trener marki Dermaheal",
-    "Członek Polskiego Towarzystwa Kosmetycznego"
+    "Kosmetolog, Trycholog, Fitoterapeuta - właścicielka Gabinetu Fuli w Warszawie",
+    "Dyplomowany kosmetolog, z wieloletnim doświadczeniem - absolwentka Wyższej Szkoły Inżynierii i Zdrowia w Warszawie na kierunku kosmetologia",
+    "Absolwentka Instytutu Medycyny Klasztornej – Towaroznastwo Zielarskie",
+    "Absolwentka The International Academy of Reflexology & Meridian Therapy - Dietetyka w Tradycyjnej Medycynie Chińskiej oraz Auriculotherapy. Refleksologia",
+    "Edukator marki Sinesia",
+    "Wolontariuszka w Fundacji Piękniejsze Życie",
+    "Ekspert w dziedzinie pielęgnacji pacjentów onkologicznych w gabinecie kosmetologicznym"
+  ];
+
+  const workshops = [
+    "Akupunktura Kosmetologiczna w Medycynie Estetycznej",
+    "Rozpoznanie po twarzy",
+    "Technika likwidacji zmarszczek w zapobieganiu starzenia się twarzy",
+    "Kosmetyki koszerne",
+    "Kosmetyki dla zwierząt",
+    "Specyfikacja i recepturowanie"
   ];
 
   return (
@@ -38,18 +67,43 @@ const About = () => {
           </Link>
         </div>
 
-        {/* Header */}
+        {/* Header with Navigation Menu */}
         <header className="text-center mb-12">
           <h1 className="text-4xl font-bold text-foreground mb-4">
             O mnie
           </h1>
-          <p className="text-xl text-muted-foreground">
+          <p className="text-xl text-muted-foreground mb-8">
             Poznaj moją historię i filozofię pracy
           </p>
+
+          {/* Foldable Navigation Menu */}
+          <div className="max-w-md mx-auto">
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-salon-rose text-white rounded-lg hover:bg-salon-rose/90 transition-colors"
+            >
+              <span>Nawigacja po sekcjach</span>
+              {isMenuOpen ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
+            </button>
+            
+            {isMenuOpen && (
+              <div className="mt-4 bg-white rounded-lg shadow-lg border border-border overflow-hidden">
+                {menuItems.map((item) => (
+                  <button
+                    key={item.id}
+                    onClick={() => scrollToSection(item.id)}
+                    className="w-full text-left px-4 py-3 hover:bg-salon-cream/20 transition-colors border-b border-border last:border-b-0"
+                  >
+                    {item.label}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
         </header>
 
         {/* Moja historia Section */}
-        <section className="mb-16">
+        <section id="historia" className="mb-16 scroll-mt-8">
           <Card className="p-8 shadow-card">
             <h2 className="text-3xl font-bold text-foreground mb-6">
               Moja historia
@@ -75,48 +129,62 @@ const About = () => {
           </Card>
         </section>
 
-        {/* Kwalifikacje i osiągnięcia */}
-        <section className="mb-16">
-          <div className="grid lg:grid-cols-2 gap-12">
-            <div>
-              <h2 className="text-3xl font-bold text-foreground mb-6">
-                Moje osiągnięcia
-              </h2>
-              
-              <div className="grid grid-cols-1 gap-4 mb-8">
-                {achievements.map((achievement, index) => (
-                  <div key={index} className="flex items-center space-x-3 p-4 rounded-lg bg-white/50">
-                    <div className={`p-2 rounded-full ${achievement.color}`}>
-                      <achievement.icon className="h-5 w-5 text-foreground" />
-                    </div>
-                    <span className="text-sm font-medium text-foreground">
-                      {achievement.label}
-                    </span>
+        {/* Kwalifikacje Section */}
+        <section id="kwalifikacje" className="mb-16 scroll-mt-8">
+          <Card className="p-8 shadow-card">
+            <h2 className="text-3xl font-bold text-foreground mb-6">
+              Kwalifikacje
+            </h2>
+            
+            <div className="space-y-6">
+              <div className="space-y-4">
+                {qualifications.map((qualification, index) => (
+                  <div key={index} className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-salon-rose rounded-full flex-shrink-0 mt-2" />
+                    <p className="text-muted-foreground leading-relaxed">{qualification}</p>
                   </div>
                 ))}
               </div>
-            </div>
-
-            <div>
-              <Card className="p-6 shadow-card">
+              
+              <div className="pt-4 border-t border-border">
                 <h3 className="font-semibold text-lg mb-4 text-foreground">
-                  Kwalifikacje i Certyfikaty
+                  Ukończone warsztaty:
                 </h3>
-                <div className="space-y-3">
-                  {qualifications.map((qualification, index) => (
-                    <div key={index} className="flex items-center space-x-3">
-                      <div className="w-2 h-2 bg-salon-rose rounded-full flex-shrink-0" />
-                      <span className="text-sm text-muted-foreground">{qualification}</span>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  {workshops.map((workshop, index) => (
+                    <div key={index} className="flex items-start space-x-3">
+                      <div className="w-1.5 h-1.5 bg-salon-cream rounded-full flex-shrink-0 mt-2" />
+                      <span className="text-sm text-muted-foreground">{workshop}</span>
                     </div>
                   ))}
                 </div>
-              </Card>
+              </div>
             </div>
+          </Card>
+        </section>
+
+        {/* Moje osiągnięcia Section */}
+        <section id="osiagniecia" className="mb-16 scroll-mt-8">
+          <h2 className="text-3xl font-bold text-foreground mb-6">
+            Moje osiągnięcia
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {achievements.map((achievement, index) => (
+              <div key={index} className="flex items-center space-x-3 p-4 rounded-lg bg-white/50">
+                <div className={`p-2 rounded-full ${achievement.color}`}>
+                  <achievement.icon className="h-5 w-5 text-foreground" />
+                </div>
+                <span className="text-sm font-medium text-foreground">
+                  {achievement.label}
+                </span>
+              </div>
+            ))}
           </div>
         </section>
 
         {/* Filozofia pracy */}
-        <section className="mb-16">
+        <section id="filozofia" className="mb-16 scroll-mt-8">
           <Card className="p-8 bg-gradient-to-br from-salon-rose/10 to-salon-cream/20 border-salon-rose/20">
             <h2 className="text-3xl font-bold text-foreground mb-6 text-center">
               Moja filozofia pracy
@@ -132,7 +200,7 @@ const About = () => {
         </section>
 
         {/* Specjalizacje */}
-        <section>
+        <section id="specjalizacje" className="scroll-mt-8">
           <h2 className="text-3xl font-bold text-foreground mb-6 text-center">
             Moje specjalizacje
           </h2>
