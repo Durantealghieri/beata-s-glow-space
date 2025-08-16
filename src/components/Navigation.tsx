@@ -72,13 +72,13 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection = 'home' }) => {
                     <div className="absolute left-0 mt-2 w-56 rounded-md shadow-card bg-card border border-border overflow-hidden z-10">
                       <div className="py-1">
                         {item.subItems.map((subItem, index) => (
-                          <Link
-                            key={index}
-                            to={item.id === 'blog' ? '/blog' : '#'}
-                            className="block px-4 py-2 text-sm text-foreground hover:bg-muted transition-colors"
-                          >
-                            {subItem} {item.id !== 'blog' && '(WIP)'}
-                          </Link>
+                        <Link
+                          key={index}
+                          to={item.id === 'blog' ? '/blog' : item.id === 'o-mnie' ? '/o-mnie' : '#'}
+                          className="block px-4 py-2 text-sm text-foreground hover:bg-muted transition-colors"
+                        >
+                          {subItem} {(item.id !== 'blog' && item.id !== 'o-mnie') && '(WIP)'}
+                        </Link>
                         ))}
                       </div>
                     </div>
@@ -123,10 +123,10 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection = 'home' }) => {
                       {item.subItems.map((subItem, index) => (
                         <Link
                           key={index}
-                          to={item.id === 'blog' ? '/blog' : '#'}
+                          to={item.id === 'blog' ? '/blog' : item.id === 'o-mnie' ? '/o-mnie' : '#'}
                           className="block px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
                         >
-                          {subItem} {item.id !== 'blog' && '(WIP)'}
+                          {subItem} {(item.id !== 'blog' && item.id !== 'o-mnie') && '(WIP)'}
                         </Link>
                       ))}
                     </div>
