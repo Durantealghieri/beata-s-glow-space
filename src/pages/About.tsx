@@ -33,7 +33,7 @@ const About = () => {
   ];
 
   const qualifications = [
-    "Kosmetolog, Trycholog, Fitoterapeuta - właścicielka Gabinetu Fuli w Warszawie",
+    "Kosmetolog, Trycholog, Fitoterapeuta",
     "Dyplomowany kosmetolog, z wieloletnim doświadczeniem - absolwentka Wyższej Szkoły Inżynierii i Zdrowia w Warszawie na kierunku kosmetologia",
     "Absolwentka Instytutu Medycyny Klasztornej – Towaroznastwo Zielarskie",
     "Absolwentka The International Academy of Reflexology & Meridian Therapy - Dietetyka w Tradycyjnej Medycynie Chińskiej oraz Auriculotherapy. Refleksologia",
