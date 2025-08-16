@@ -61,19 +61,15 @@ const About = () => {
               </p>
               
               <p>
-                Moim marzeniem z dzieciństwa było zostać kardiologiem. Życie napisało inny scenariusz w którym pomagam ludziom z ich problemami takimi jak trądzik, blizny, łysienie, anti-aging oraz nie tylko tymi związanymi z urodą.
+                Od dziecka marzyłam, by zostać kardiologiem. Życie jednak napisało dla mnie inny scenariusz – taki, w którym pomagam ludziom mierzyć się z ich problemami skórnymi: trądzikiem, bliznami, łysieniem, procesami starzenia się, a także wieloma innymi wyzwaniami, nie zawsze związanymi wyłącznie z urodą.
               </p>
               
               <p>
-                Moje zainteresowanie skórą w leczeniu onkologicznym powstało podczas choroby mojej mamy. Jako 17 letnia dziewczyna starałam się pielęgnować poparzoną skórę po radioterapii. W tamtych latach (lata 80-te) skóry naświetlane były po prostu spalone. Martwica, owrzodzenia to była norma. O preparatach dla tych skór nikt nie słyszał. Intuicyjnie próbowałam różnych metod pielęgnacji, z czasem pochłonęło mnie to całkowicie.
+                Moja droga do tego zawodu zaczęła się w dramatycznych okolicznościach. Miałam 17 lat, gdy moja mama zachorowała na nowotwór. Podczas radioterapii jej skóra uległa ciężkim poparzeniom – w tamtych latach (lata 80.) naświetlenia pozostawiały po sobie głębokie uszkodzenia: martwicę, owrzodzenia, trwałe blizny. O specjalistycznych preparatach czy metodach pielęgnacji nikt wtedy nie słyszał, więc zaczęłam poszukiwać sposobów, które mogłyby złagodzić jej cierpienie. To doświadczenie poruszyło we mnie coś, co z czasem stało się moją życiową pasją.
               </p>
               
               <p>
-                Po śmierci mojej mamy zaczęłam zgłębiać temat bardziej świadomie i w naturalny sposób zaczęłam zajmować się skórą i bliznami zawodowo. I tak jest do dziś, z tą samą motywacją, co wtedy.
-              </p>
-              
-              <p>
-                Lata doświadczenia w pracy z trudnymi skórami zmotywowały mnie by otworzyć gabinet przyjazny pacjentom onkologicznym… i tak powstała Fuli.
+                Po śmierci mamy zaczęłam zgłębiać temat już w pełni świadomie. Wiedza i praktyka stopniowo przerodziły się w zawód, który wykonuję do dziś – z tą samą motywacją i sercem, jakie towarzyszyły mi wtedy, gdy po raz pierwszy próbowałam pomóc.
               </p>
             </div>
           </Card>
