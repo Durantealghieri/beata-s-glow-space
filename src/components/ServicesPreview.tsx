@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -106,8 +107,10 @@ const ServicesPreview: React.FC = () => {
             ))}
 
             <div className="pt-6">
-              <Button size="lg" className="w-full sm:w-auto">
-                Zobacz wszystkie zabiegi
+              <Button size="lg" className="w-full sm:w-auto" asChild>
+                <Link to="/cennik">
+                  Zobacz wszystkie zabiegi
+                </Link>
               </Button>
             </div>
           </div>

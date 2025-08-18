@@ -19,6 +19,11 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection = 'home' }) => {
       subItems: ['Zabiegi na twarz', 'Pielęgnacja ciała', 'Makijaż permanentny']
     },
     {
+      name: 'Cennik',
+      id: 'cennik',
+      subItems: ['Zabiegi na twarz', 'Pielęgnacja ciała', 'Konsultacje']
+    },
+    {
       name: 'Blog',
       id: 'blog',
       subItems: ['Najnowsze artykuły', 'Porady pielęgnacyjne', 'Trendy w kosmetologii']
@@ -31,7 +36,7 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection = 'home' }) => {
     {
       name: 'Zapisy',
       id: 'zapisy',
-      subItems: ['Umów wizytę', 'Cennik', 'Kontakt']
+      subItems: ['Umów wizytę', 'Kontakt', 'Lokalizacja']
     }
   ];
 
@@ -72,13 +77,13 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection = 'home' }) => {
                     <div className="absolute left-0 mt-2 w-56 rounded-md shadow-card bg-card border border-border overflow-hidden z-10">
                       <div className="py-1">
                         {item.subItems.map((subItem, index) => (
-                        <Link
-                          key={index}
-                          to={item.id === 'blog' ? '/blog' : item.id === 'o-mnie' ? '/o-mnie' : '#'}
-                          className="block px-4 py-2 text-sm text-foreground hover:bg-muted transition-colors"
-                        >
-                          {subItem} {(item.id !== 'blog' && item.id !== 'o-mnie') && '(WIP)'}
-                        </Link>
+                         <Link
+                           key={index}
+                           to={item.id === 'blog' ? '/blog' : item.id === 'o-mnie' ? '/o-mnie' : item.id === 'cennik' ? '/cennik' : '#'}
+                           className="block px-4 py-2 text-sm text-foreground hover:bg-muted transition-colors"
+                         >
+                           {subItem} {(item.id !== 'blog' && item.id !== 'o-mnie' && item.id !== 'cennik') && '(WIP)'}
+                         </Link>
                         ))}
                       </div>
                     </div>
@@ -121,13 +126,13 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection = 'home' }) => {
                   {openDropdown === item.id && (
                     <div className="pl-4 space-y-1">
                       {item.subItems.map((subItem, index) => (
-                        <Link
-                          key={index}
-                          to={item.id === 'blog' ? '/blog' : item.id === 'o-mnie' ? '/o-mnie' : '#'}
-                          className="block px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-                        >
-                          {subItem} {(item.id !== 'blog' && item.id !== 'o-mnie') && '(WIP)'}
-                        </Link>
+                         <Link
+                           key={index}
+                           to={item.id === 'blog' ? '/blog' : item.id === 'o-mnie' ? '/o-mnie' : item.id === 'cennik' ? '/cennik' : '#'}
+                           className="block px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                         >
+                           {subItem} {(item.id !== 'blog' && item.id !== 'o-mnie' && item.id !== 'cennik') && '(WIP)'}
+                         </Link>
                       ))}
                     </div>
                   )}
