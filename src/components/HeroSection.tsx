@@ -44,9 +44,7 @@ const HeroSection: React.FC = () => {
                 </span>
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed max-w-lg">
-                Profesjonalne zabiegi kosmetologiczne w sercu Warszawy. 
-                Indywidualne podejście, najwyższa jakość i 15 lat doświadczenia 
-                w służbie Twojego piękna.
+                Profesjonalny gabinet na warszawskim Ursynowie, który stworzyłam z pasji do naturalnego piękna oraz z chęci niesienia pomocy w uzyskaniu zdrowej skóry – zarówno twarzy, jak i skóry głowy – w pełnej harmonii z naturą. Specjalizujemy się w terapiach skóry trudnej i problematycznej, zabiegach przeciwzmarszczkowych, terapiach na ciało oraz pielęgnacji skóry w trakcie leczenia onkologicznego.
               </p>
             </div>
 
