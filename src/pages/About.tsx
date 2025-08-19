@@ -146,19 +146,6 @@ const About = () => {
                 ))}
               </div>
               
-              <div className="pt-4 border-t border-border">
-                <h3 className="font-semibold text-lg mb-4 text-foreground">
-                  Ukończone warsztaty:
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                  {workshops.map((workshop, index) => (
-                    <div key={index} className="flex items-start space-x-3">
-                      <div className="w-1.5 h-1.5 bg-salon-cream rounded-full flex-shrink-0 mt-2" />
-                      <span className="text-sm text-muted-foreground">{workshop}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
             </div>
           </Card>
         </section>
