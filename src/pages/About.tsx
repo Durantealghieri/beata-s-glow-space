@@ -1,29 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Award, BookOpen, Users, Heart, ChevronDown, ChevronUp } from 'lucide-react';
+import { ArrowLeft, Award, BookOpen, Users, Heart } from 'lucide-react';
 import Navigation from '@/components/Navigation';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 
 const About = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  
-  const menuItems = [
-    { id: 'historia', label: 'Moja historia' },
-    { id: 'kwalifikacje', label: 'Kwalifikacje' },
-    { id: 'osiagniecia', label: 'Moje osiągnięcia' },
-    { id: 'filozofia', label: 'Filozofia pracy' },
-    { id: 'specjalizacje', label: 'Specjalizacje' }
-  ];
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      setIsMenuOpen(false);
-    }
-  };
 
   const achievements = [
     { icon: Award, label: "15+ lat doświadczenia", color: "bg-salon-rose" },
@@ -76,30 +59,6 @@ const About = () => {
             Poznaj moją historię i filozofię pracy
           </p>
 
-          {/* Foldable Navigation Menu */}
-          <div className="max-w-md mx-auto">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-salon-rose text-white rounded-lg hover:bg-salon-rose/90 transition-colors"
-            >
-              <span>Nawigacja po sekcjach</span>
-              {isMenuOpen ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
-            </button>
-            
-            {isMenuOpen && (
-              <div className="mt-4 bg-white rounded-lg shadow-lg border border-border overflow-hidden">
-                {menuItems.map((item) => (
-                  <button
-                    key={item.id}
-                    onClick={() => scrollToSection(item.id)}
-                    className="w-full text-left px-4 py-3 hover:bg-salon-cream/20 transition-colors border-b border-border last:border-b-0"
-                  >
-                    {item.label}
-                  </button>
-                ))}
-              </div>
-            )}
-          </div>
         </header>
 
         {/* Moja historia Section */}
