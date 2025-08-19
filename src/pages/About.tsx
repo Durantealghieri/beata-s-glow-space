@@ -9,7 +9,7 @@ import { Badge } from '@/components/ui/badge';
 const About = () => {
 
   const achievements = [
-    { icon: Award, label: "15+ lat doświadczenia", color: "bg-salon-rose" },
+    { icon: Award, label: "20+ lat doświadczenia", color: "bg-salon-rose" },
     { icon: BookOpen, label: "50+ szkoleń specjalistycznych", color: "bg-salon-cream" },
     { icon: Users, label: "2000+ zadowolonych klientek", color: "bg-muted" },
     { icon: Heart, label: "Indywidualne podejście", color: "bg-accent" }
