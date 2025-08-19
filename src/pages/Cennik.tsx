@@ -268,136 +268,136 @@ const Cennik = () => {
       category: "ZABIEGI PIELĘGNACYJNE - TWARZ",
       services: [
         {
-          title: "Interactive System (wyrównujący)",
-          description: "Zabieg wyrównujący koloryt i teksturę skóry",
-          duration: "60-90 min",
+          title: "Interactive System",
+          description: "zabieg wyrównujący, bio stymulujący, antyoksydacyjny",
+          duration: "60 min",
           price: "350-400 zł",
           popular: true,
-          benefits: ["Wyrównanie kolorytu", "Poprawa tekstury", "Rozjaśnienie"]
+          benefits: ["Wyrównanie", "Bio stymulacja", "Antyoksydacja"]
         },
         {
-          title: "Interactive System (odbudowujący)",
-          description: "Zabieg odbudowujący strukturę skóry",
-          duration: "60-90 min",
+          title: "Interactive System",
+          description: "zabieg odbudowujący",
+          duration: "60 min",
           price: "350-400 zł",
           popular: false,
           benefits: ["Odbudowa", "Regeneracja", "Wzmocnienie"]
         },
         {
-          title: "Interactive System (regenerujący)",
-          description: "Zabieg regenerujący i odmładzający",
-          duration: "60-90 min",
-          price: "350-400 zł",
-          popular: false,
-          benefits: ["Regeneracja", "Odmłodzenie", "Rewitalizacja"]
-        },
-        {
-          title: "Revinol (retinol + vit C)",
-          description: "Zabieg z retinolem i witaminą C",
+          title: "Interactive System",
+          description: "zabieg regenerujący, ujędrniający, antyoksydacyjny",
           duration: "60 min",
           price: "350-400 zł",
           popular: false,
-          benefits: ["Antyaging", "Witamina C", "Retinol"]
+          benefits: ["Regeneracja", "Ujędrnienie", "Antyoksydacja"]
         },
         {
-          title: "Firmin liftingujący",
-          description: "Zabieg liftingujący z natychmiastowym efektem",
+          title: "Revinol",
+          description: "zabieg rewitalizujący, wygładzający z retinolem i wit. C",
           duration: "60 min",
           price: "350-400 zł",
           popular: false,
-          benefits: ["Lifting", "Ujędrnienie", "Natychmiastowy efekt"]
+          benefits: ["Rewitalizacja", "Wygładzenie", "Witamina C"]
         },
         {
-          title: "Boto Fill odmłodzenie wokół oczu",
-          description: "Specjalistyczny zabieg na okolice oczu",
+          title: "Firmin",
+          description: "zabieg liftingujący z efektem napięcia",
+          duration: "60 min",
+          price: "350-400 zł",
+          popular: false,
+          benefits: ["Lifting", "Napięcie", "Ujędrnienie"]
+        },
+        {
+          title: "Boto Fill",
+          description: "bioaktywne odmłodzenie wokół oczu",
           duration: "45 min",
           price: "350-400 zł",
           popular: true,
-          benefits: ["Odmłodzenie oczu", "Redukcja zmarszczek", "Ujędrnienie"]
+          benefits: ["Odmłodzenie oczu", "Bioaktywność", "Regeneracja"]
         },
         {
-          title: "Hydra wyrównujący",
-          description: "Intensywnie nawilżający zabieg wyrównujący",
+          title: "Hydra",
+          description: "zabieg wyrównujący eksfoliację, nawilżający, wzmacniający barierę ochronną",
           duration: "60 min",
           price: "350-400 zł",
           popular: false,
-          benefits: ["Intensywne nawilżenie", "Wyrównanie", "Komfort"]
+          benefits: ["Eksfoliacja", "Nawilżenie", "Ochrona"]
         },
         {
-          title: "Homeo anti couperose",
-          description: "Zabieg na naczynka i rumień",
+          title: "Homeo",
+          description: "zabieg anti couperose, przeciw zaczerwienieniom chronicznym",
           duration: "60 min",
           price: "350-400 zł",
           popular: false,
-          benefits: ["Przeciw naczynkom", "Łagodzenie", "Wzmocnienie"]
+          benefits: ["Anti couperose", "Przeciw zaczerwienieniom", "Łagodzenie"]
         },
         {
           title: "Acne",
-          description: "Specjalistyczny zabieg na skórę trądzikową",
+          description: "zabieg dla skóry trądzikowej, tłustej",
           duration: "60 min",
           price: "350-400 zł",
           popular: false,
-          benefits: ["Przeciwtrądzikowy", "Oczyszczenie", "Normalizacja"]
+          benefits: ["Skóra trądzikowa", "Skóra tłusta", "Oczyszczenie"]
         },
         {
           title: "Age-Spot",
-          description: "Zabieg na przebarwienia i plamy starcze",
+          description: "zabieg na przebarwienia",
           duration: "60 min",
           price: "350-400 zł",
           popular: false,
-          benefits: ["Przeciw przebarwieniom", "Rozjaśnienie", "Wyrównanie"]
+          benefits: ["Przebarwienia", "Rozjaśnienie", "Wyrównanie"]
         },
         {
           title: "Hydra Diamond Facial",
-          description: "Wieloetapowy zabieg hydrabrazji",
+          description: "zabieg wieloetapowy (hydroabrazja, mezoterapia bezigłowa, infuzja tlenowa, masaż próżniowy, rf)",
           duration: "90 min",
           price: "450 zł",
           popular: true,
-          benefits: ["Hydrabrazja", "Wieloetapowość", "Kompleksowość"]
+          benefits: ["Wieloetapowość", "Kompleksowość", "Nowoczesność"]
         },
         {
-          title: "Peeling Kwasowy twarz",
-          description: "Delikatny peeling kwasowy twarzy",
+          title: "Peeling Kawitacyjny",
+          description: "twarz",
           duration: "45 min",
           price: "230 zł",
           popular: false,
-          benefits: ["Eksfoliacja", "Odnowa", "Wygładzenie"]
+          benefits: ["Kawitacja", "Oczyszczenie", "Odnowa"]
         },
         {
-          title: "Peeling Kwasowy twarz, szyja, dekolt",
-          description: "Kompleksowy peeling kwasowy",
+          title: "Peeling Kawitacyjny",
+          description: "twarz, szyja, dekolt",
           duration: "60 min",
           price: "280 zł",
           popular: false,
-          benefits: ["Kompleksowa eksfoliacja", "Odnowa", "Rozszerzony obszar"]
+          benefits: ["Kompleksowy", "Kawitacja", "Rozszerzony obszar"]
         },
         {
-          title: "Oczyszczanie Kompleksowe twarz",
-          description: "Profesjonalne głębokie oczyszczenie",
+          title: "Oczyszczanie Kompleksowe",
+          description: "twarz",
           duration: "60 min",
-          price: "300 zł",
+          price: "280 zł",
           popular: false,
-          benefits: ["Głębokie oczyszczenie", "Profesjonalizm", "Kompleksowość"]
+          benefits: ["Kompleksowość", "Oczyszczenie", "Profesjonalizm"]
         },
         {
-          title: "Oczyszczanie Kompleksowe twarz, szyja, dekolt",
-          description: "Rozszerzone oczyszczanie kompleksowe",
+          title: "Oczyszczanie Kompleksowe",
+          description: "twarz, szyja, dekolt",
           duration: "90 min",
           price: "380 zł",
           popular: false,
-          benefits: ["Rozszerzone oczyszczenie", "Kompleksowość", "Dokładność"]
+          benefits: ["Rozszerzone", "Kompleksowość", "Dokładność"]
         },
         {
-          title: "Oczyszczanie manualne twarz",
-          description: "Tradycyjne ręczne oczyszczenie",
+          title: "Oczyszczanie manualne",
+          description: "twarz",
           duration: "60 min",
           price: "280 zł",
           popular: false,
-          benefits: ["Ręczna precyzja", "Tradycyjna metoda", "Indywidualne podejście"]
+          benefits: ["Manualne", "Precyzja", "Tradycja"]
         },
         {
           title: "Infuzja tlenowa",
-          description: "Tlenowanie skóry dla świeżego wyglądu",
+          description: "",
           duration: "30 min",
           price: "150 zł",
           popular: false,
@@ -405,27 +405,19 @@ const Cennik = () => {
         },
         {
           title: "Mikrodermabrazja wodna",
-          description: "Delikatne złuszczanie wodne",
+          description: "",
           duration: "60 min",
           price: "450 zł",
           popular: false,
-          benefits: ["Delikatne złuszczanie", "Odnowa", "Wygładzenie"]
+          benefits: ["Mikrodermabrazja", "Odnowa", "Wygładzenie"]
         },
         {
-          title: "Akupunktura twarzy",
-          description: "Naturalne odmłodzenie akupunkturą",
+          title: "Akupunktura twarzy kosmetyczna",
+          description: "",
           duration: "60 min",
           price: "300-400 zł",
           popular: false,
-          benefits: ["Naturalne odmłodzenie", "Tradycyjna medycyna", "Lifting naturalny"]
-        },
-        {
-          title: "Pinezowanie twarzy",
-          description: "Alternatywna metoda liftingu",
-          duration: "45 min",
-          price: "300 zł",
-          popular: false,
-          benefits: ["Alternatywny lifting", "Stymulacja", "Odmłodzenie"]
+          benefits: ["Akupunktura", "Naturalne", "Tradycyjna medycyna"]
         }
       ]
     },
