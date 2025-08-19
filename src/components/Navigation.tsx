@@ -21,7 +21,7 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection = 'home' }) => {
     {
       name: 'Cennik',
       id: 'cennik',
-      subItems: ['Zabiegi na twarz', 'Pielęgnacja ciała', 'Konsultacje']
+      subItems: []
     },
     {
       name: 'Blog',
@@ -60,33 +60,47 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection = 'home' }) => {
             <div className="ml-10 flex items-baseline space-x-4">
               {navigationItems.map((item) => (
                 <div key={item.id} className="relative group">
-                  <Button
-                    variant="ghost"
-                    onClick={() => toggleDropdown(item.id)}
-                    className={cn(
-                      "flex items-center space-x-1 transition-colors",
-                      currentSection === item.id && "bg-salon-rose"
-                    )}
-                  >
-                    <span>{item.name}</span>
-                    <ChevronDown className="h-4 w-4" />
-                  </Button>
-                  
-                  {/* Dropdown Menu */}
-                  {openDropdown === item.id && (
-                    <div className="absolute left-0 mt-2 w-56 rounded-md shadow-card bg-card border border-border overflow-hidden z-10">
-                      <div className="py-1">
-                        {item.subItems.map((subItem, index) => (
-                         <Link
-                           key={index}
-                           to={item.id === 'blog' ? '/blog' : item.id === 'o-mnie' ? '/o-mnie' : item.id === 'cennik' ? '/cennik' : '#'}
-                           className="block px-4 py-2 text-sm text-foreground hover:bg-muted transition-colors"
-                         >
-                           {subItem} {(item.id !== 'blog' && item.id !== 'o-mnie' && item.id !== 'cennik') && '(WIP)'}
-                         </Link>
-                        ))}
-                      </div>
-                    </div>
+                  {item.subItems.length > 0 ? (
+                    <>
+                      <Button
+                        variant="ghost"
+                        onClick={() => toggleDropdown(item.id)}
+                        className={cn(
+                          "flex items-center space-x-1 transition-colors",
+                          currentSection === item.id && "bg-salon-rose"
+                        )}
+                      >
+                        <span>{item.name}</span>
+                        <ChevronDown className="h-4 w-4" />
+                      </Button>
+                      
+                      {/* Dropdown Menu */}
+                      {openDropdown === item.id && (
+                        <div className="absolute left-0 mt-2 w-56 rounded-md shadow-card bg-card border border-border overflow-hidden z-10">
+                          <div className="py-1">
+                            {item.subItems.map((subItem, index) => (
+                             <Link
+                               key={index}
+                               to={item.id === 'blog' ? '/blog' : item.id === 'o-mnie' ? '/o-mnie' : item.id === 'cennik' ? '/cennik' : '#'}
+                               className="block px-4 py-2 text-sm text-foreground hover:bg-muted transition-colors"
+                             >
+                               {subItem} {(item.id !== 'blog' && item.id !== 'o-mnie' && item.id !== 'cennik') && '(WIP)'}
+                             </Link>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </>
+                  ) : (
+                    <Link
+                      to={item.id === 'blog' ? '/blog' : item.id === 'o-mnie' ? '/o-mnie' : item.id === 'cennik' ? '/cennik' : '#'}
+                      className={cn(
+                        "px-3 py-2 rounded-md text-sm font-medium transition-colors hover:bg-muted",
+                        currentSection === item.id && "bg-salon-rose"
+                      )}
+                    >
+                      {item.name}
+                    </Link>
                   )}
                 </div>
               ))}
@@ -111,30 +125,44 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection = 'home' }) => {
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-card border-t border-border">
               {navigationItems.map((item) => (
                 <div key={item.id} className="space-y-1">
-                  <Button
-                    variant="ghost"
-                    onClick={() => toggleDropdown(item.id)}
-                    className={cn(
-                      "w-full justify-between",
-                      currentSection === item.id && "bg-salon-rose"
-                    )}
-                  >
-                    <span>{item.name}</span>
-                    <ChevronDown className="h-4 w-4" />
-                  </Button>
-                  
-                  {openDropdown === item.id && (
-                    <div className="pl-4 space-y-1">
-                      {item.subItems.map((subItem, index) => (
-                         <Link
-                           key={index}
-                           to={item.id === 'blog' ? '/blog' : item.id === 'o-mnie' ? '/o-mnie' : item.id === 'cennik' ? '/cennik' : '#'}
-                           className="block px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-                         >
-                           {subItem} {(item.id !== 'blog' && item.id !== 'o-mnie' && item.id !== 'cennik') && '(WIP)'}
-                         </Link>
-                      ))}
-                    </div>
+                  {item.subItems.length > 0 ? (
+                    <>
+                      <Button
+                        variant="ghost"
+                        onClick={() => toggleDropdown(item.id)}
+                        className={cn(
+                          "w-full justify-between",
+                          currentSection === item.id && "bg-salon-rose"
+                        )}
+                      >
+                        <span>{item.name}</span>
+                        <ChevronDown className="h-4 w-4" />
+                      </Button>
+                      
+                      {openDropdown === item.id && (
+                        <div className="pl-4 space-y-1">
+                          {item.subItems.map((subItem, index) => (
+                             <Link
+                               key={index}
+                               to={item.id === 'blog' ? '/blog' : item.id === 'o-mnie' ? '/o-mnie' : item.id === 'cennik' ? '/cennik' : '#'}
+                               className="block px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                             >
+                               {subItem} {(item.id !== 'blog' && item.id !== 'o-mnie' && item.id !== 'cennik') && '(WIP)'}
+                             </Link>
+                          ))}
+                        </div>
+                      )}
+                    </>
+                  ) : (
+                    <Link
+                      to={item.id === 'blog' ? '/blog' : item.id === 'o-mnie' ? '/o-mnie' : item.id === 'cennik' ? '/cennik' : '#'}
+                      className={cn(
+                        "block w-full px-3 py-2 text-sm font-medium transition-colors hover:bg-muted rounded-md",
+                        currentSection === item.id && "bg-salon-rose"
+                      )}
+                    >
+                      {item.name}
+                    </Link>
                   )}
                 </div>
               ))}
