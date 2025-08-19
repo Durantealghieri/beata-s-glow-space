@@ -95,12 +95,12 @@ const About = () => {
               Kwalifikacje
             </h2>
             
-            <div className="space-y-6">
+            <div className="space-y-6 text-center">
               <div className="space-y-4">
                 {qualifications.map((qualification, index) => (
-                  <div key={index} className="flex items-start space-x-3">
+                  <div key={index} className="flex items-start justify-center space-x-3">
                     <div className="w-2 h-2 bg-salon-rose rounded-full flex-shrink-0 mt-2" />
-                    <p className="text-muted-foreground leading-relaxed">{qualification}</p>
+                    <p className="text-muted-foreground leading-relaxed text-left max-w-3xl">{qualification}</p>
                   </div>
                 ))}
               </div>
