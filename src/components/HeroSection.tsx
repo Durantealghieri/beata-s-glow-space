@@ -53,7 +53,7 @@ const HeroSection: React.FC = () => {
             {/* Key Benefits */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div className="text-center p-4 rounded-lg bg-white/80 backdrop-blur-sm">
-                <div className="text-2xl font-bold text-salon-rose">15+</div>
+                <div className="text-2xl font-bold text-salon-rose">20+</div>
                 <div className="text-sm text-muted-foreground">lat doświadczenia</div>
               </div>
               <div className="text-center p-4 rounded-lg bg-white/80 backdrop-blur-sm">
