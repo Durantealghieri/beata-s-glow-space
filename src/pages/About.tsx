@@ -64,11 +64,11 @@ const About = () => {
         {/* Moja historia Section */}
         <section id="historia" className="mb-16 scroll-mt-8">
           <Card className="p-8 shadow-card">
-            <h2 className="text-3xl font-bold text-foreground mb-6">
+            <h2 className="text-3xl font-bold text-foreground mb-6 text-center">
               Moja historia
             </h2>
             
-            <div className="prose prose-lg max-w-none text-muted-foreground leading-relaxed space-y-6">
+            <div className="prose prose-lg max-w-none text-muted-foreground leading-relaxed space-y-6 text-center">
               <p>
                 Nazywam się Beata Andraszewska-Chlebna.
               </p>
@@ -91,7 +91,7 @@ const About = () => {
         {/* Kwalifikacje Section */}
         <section id="kwalifikacje" className="mb-16 scroll-mt-8">
           <Card className="p-8 shadow-card">
-            <h2 className="text-3xl font-bold text-foreground mb-6">
+            <h2 className="text-3xl font-bold text-foreground mb-6 text-center">
               Kwalifikacje
             </h2>
             
@@ -111,7 +111,7 @@ const About = () => {
 
         {/* Moje osiągnięcia Section */}
         <section id="osiagniecia" className="mb-16 scroll-mt-8">
-          <h2 className="text-3xl font-bold text-foreground mb-6">
+          <h2 className="text-3xl font-bold text-foreground mb-6 text-center">
             Moje osiągnięcia
           </h2>
           
