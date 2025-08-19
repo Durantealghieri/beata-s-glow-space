@@ -138,7 +138,7 @@ const Cennik = () => {
       ]
     },
     {
-      category: "TERAPIA WODOREM + MASKA Z FUNKCJĄ ROZPYLANIA",
+      category: "TERAPIA WODOREM MOLEKULARNYM + MASKA Z FUNKCJĄ ROZPYLANIA",
       services: [
         {
           title: "Inhalacja wodorem 30min",
