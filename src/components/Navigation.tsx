@@ -11,6 +11,7 @@ interface NavigationProps {
 const Navigation: React.FC<NavigationProps> = ({ currentSection = 'home' }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [closeTimeout, setCloseTimeout] = useState<NodeJS.Timeout | null>(null);
 
   const navigationItems = [
     {
@@ -41,12 +42,34 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection = 'home' }) => {
   ];
 
   const toggleDropdown = (itemId: string) => {
+    if (closeTimeout) {
+      clearTimeout(closeTimeout);
+      setCloseTimeout(null);
+    }
     setOpenDropdown(openDropdown === itemId ? null : itemId);
   };
 
   const closeDropdown = () => {
+    if (closeTimeout) {
+      clearTimeout(closeTimeout);
+      setCloseTimeout(null);
+    }
     setOpenDropdown(null);
     setIsOpen(false);
+  };
+
+  const handleMouseEnter = () => {
+    if (closeTimeout) {
+      clearTimeout(closeTimeout);
+      setCloseTimeout(null);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    const timeout = setTimeout(() => {
+      setOpenDropdown(null);
+    }, 1000);
+    setCloseTimeout(timeout);
   };
 
   return (
@@ -66,7 +89,10 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection = 'home' }) => {
               {navigationItems.map((item) => (
                 <div key={item.id} className="relative group">
                   {item.subItems.length > 0 ? (
-                    <>
+                    <div 
+                      onMouseEnter={handleMouseEnter}
+                      onMouseLeave={handleMouseLeave}
+                    >
                       <Button
                         variant="ghost"
                         onClick={() => toggleDropdown(item.id)}
@@ -119,7 +145,7 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection = 'home' }) => {
                           </div>
                         </div>
                       )}
-                    </>
+                    </div>
                   ) : (
                     <Link
                       to={item.id === 'blog' ? '/blog' : item.id === 'o-mnie' ? '/o-mnie' : item.id === 'cennik' ? '/cennik' : item.id === 'zabiegi' ? '/zabiegi' : '#'}
