@@ -16,7 +16,7 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection = 'home' }) => {
     {
       name: 'Zabiegi',
       id: 'zabiegi',
-      subItems: ['Zabiegi na twarz', 'Pielęgnacja ciała', 'Makijaż permanentny']
+      subItems: ['Trychologia Kosmetologiczna', 'Masaże', 'Zabiegi na Twarz']
     },
     {
       name: 'Cennik',
@@ -78,22 +78,39 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection = 'home' }) => {
                       {openDropdown === item.id && (
                         <div className="absolute left-0 mt-2 w-56 rounded-md shadow-card bg-card border border-border overflow-hidden z-10">
                           <div className="py-1">
-                            {item.subItems.map((subItem, index) => (
-                             <Link
-                               key={index}
-                               to={item.id === 'blog' ? '/blog' : item.id === 'o-mnie' ? '/o-mnie' : item.id === 'cennik' ? '/cennik' : '#'}
-                               className="block px-4 py-2 text-sm text-foreground hover:bg-muted transition-colors"
-                             >
-                               {subItem} {(item.id !== 'blog' && item.id !== 'o-mnie' && item.id !== 'cennik') && '(WIP)'}
-                             </Link>
-                            ))}
+                             {item.subItems.map((subItem, index) => {
+                               const getSubItemLink = () => {
+                                 if (item.id === 'blog') return '/blog';
+                                 if (item.id === 'o-mnie') return '/o-mnie';
+                                 if (item.id === 'cennik') return '/cennik';
+                                 if (item.id === 'zabiegi') {
+                                   switch (subItem) {
+                                     case 'Trychologia Kosmetologiczna': return '/zabiegi#trychologia';
+                                     case 'Masaże': return '/zabiegi#masaze';
+                                     case 'Zabiegi na Twarz': return '/zabiegi#zabiegi-twarz';
+                                     default: return '/zabiegi';
+                                   }
+                                 }
+                                 return '#';
+                               };
+                               
+                               return (
+                                 <Link
+                                   key={index}
+                                   to={getSubItemLink()}
+                                   className="block px-4 py-2 text-sm text-foreground hover:bg-muted transition-colors"
+                                 >
+                                   {subItem}
+                                 </Link>
+                               );
+                             })}
                           </div>
                         </div>
                       )}
                     </>
                   ) : (
                     <Link
-                      to={item.id === 'blog' ? '/blog' : item.id === 'o-mnie' ? '/o-mnie' : item.id === 'cennik' ? '/cennik' : '#'}
+                      to={item.id === 'blog' ? '/blog' : item.id === 'o-mnie' ? '/o-mnie' : item.id === 'cennik' ? '/cennik' : item.id === 'zabiegi' ? '/zabiegi' : '#'}
                       className={cn(
                         "px-3 py-2 rounded-md text-sm font-medium transition-colors hover:bg-muted",
                         currentSection === item.id && "bg-salon-rose"
@@ -141,21 +158,38 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection = 'home' }) => {
                       
                       {openDropdown === item.id && (
                         <div className="pl-4 space-y-1">
-                          {item.subItems.map((subItem, index) => (
-                             <Link
-                               key={index}
-                               to={item.id === 'blog' ? '/blog' : item.id === 'o-mnie' ? '/o-mnie' : item.id === 'cennik' ? '/cennik' : '#'}
-                               className="block px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-                             >
-                               {subItem} {(item.id !== 'blog' && item.id !== 'o-mnie' && item.id !== 'cennik') && '(WIP)'}
-                             </Link>
-                          ))}
+                          {item.subItems.map((subItem, index) => {
+                             const getSubItemLink = () => {
+                               if (item.id === 'blog') return '/blog';
+                               if (item.id === 'o-mnie') return '/o-mnie';
+                               if (item.id === 'cennik') return '/cennik';
+                               if (item.id === 'zabiegi') {
+                                 switch (subItem) {
+                                   case 'Trychologia Kosmetologiczna': return '/zabiegi#trychologia';
+                                   case 'Masaże': return '/zabiegi#masaze';
+                                   case 'Zabiegi na Twarz': return '/zabiegi#zabiegi-twarz';
+                                   default: return '/zabiegi';
+                                 }
+                               }
+                               return '#';
+                             };
+                             
+                             return (
+                               <Link
+                                 key={index}
+                                 to={getSubItemLink()}
+                                 className="block px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                               >
+                                 {subItem}
+                               </Link>
+                             );
+                           })}
                         </div>
                       )}
                     </>
                   ) : (
                     <Link
-                      to={item.id === 'blog' ? '/blog' : item.id === 'o-mnie' ? '/o-mnie' : item.id === 'cennik' ? '/cennik' : '#'}
+                      to={item.id === 'blog' ? '/blog' : item.id === 'o-mnie' ? '/o-mnie' : item.id === 'cennik' ? '/cennik' : item.id === 'zabiegi' ? '/zabiegi' : '#'}
                       className={cn(
                         "block w-full px-3 py-2 text-sm font-medium transition-colors hover:bg-muted rounded-md",
                         currentSection === item.id && "bg-salon-rose"
