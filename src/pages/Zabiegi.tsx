@@ -19,6 +19,7 @@ const Zabiegi: React.FC = () => {
       }
     }
   }, [location.hash]);
+
   const serviceCategories = [
     {
       id: 'trychologia',
@@ -26,20 +27,28 @@ const Zabiegi: React.FC = () => {
       description: 'Specjalistyczne zabiegi dla zdrowia włosów i skóry głowy',
       services: [
         {
-          title: "Mezoterapia Skóry Głowy",
-          description: "Wstrzykiwanie koktajlu witamin bezpośrednio w skórę głowy dla pobudzenia wzrostu włosów.",
-          duration: "60 min",
-          price: "350 zł",
-          popular: true,
-          benefits: ["Pobudzenie wzrostu", "Wzmocnienie cebulek", "Redukcja wypadania"]
+          title: "Konsultacja Trychologiczna",
+          description: "Profesjonalna konsultacja dotycząca problemów skóry głowy i włosów",
+          duration: "45 min",
+          price: "200 zł",
+          popular: false,
+          benefits: ["Analiza problemów", "Plan terapii", "Profesjonalne doradztwo"]
         },
         {
-          title: "Peeling Skóry Głowy",
-          description: "Głębokie oczyszczenie i złuszczanie martwych komórek skóry głowy.",
+          title: "Mezoterapia skóry głowy",
+          description: "Zaawansowana terapia regeneracyjna",
+          duration: "60 min",
+          price: "300-900 zł",
+          popular: true,
+          benefits: ["Regeneracja", "Stymulacja wzrostu", "Odżywienie"]
+        },
+        {
+          title: "Terapia profilaktyczna",
+          description: "Zapobieganie problemom skóry głowy",
           duration: "45 min",
-          price: "150 zł",
+          price: "300 zł",
           popular: false,
-          benefits: ["Oczyszczenie", "Detoks", "Lepsze ukrwienie"]
+          benefits: ["Profilaktyka", "Wzmocnienie", "Ochrona"]
         }
       ]
     },
@@ -49,51 +58,174 @@ const Zabiegi: React.FC = () => {
       description: 'Relaksacyjne i terapeutyczne masaże ciała i twarzy',
       services: [
         {
-          title: "Masaż Kobido",
-          description: "Tradycyjny japoński masaż twarzy dla naturalnego liftingu i relaksu.",
-          duration: "75 min",
-          price: "280 zł",
+          title: "Kobido",
+          description: "Tradycyjny japoński masaż twarzy",
+          duration: "60 min",
+          price: "250 zł",
           popular: true,
-          benefits: ["Lifting naturalny", "Relaksacja", "Poprawa krążenia"]
+          benefits: ["Lifting naturalny", "Relaksacja", "Tradycyjna technika"]
         },
         {
-          title: "Masaż Całego Ciała",
-          description: "Głęboko relaksujący masaż całego ciała z wykorzystaniem naturalnych olejów.",
-          duration: "90 min",
-          price: "320 zł",
+          title: "Kobido + ampułka + maska",
+          description: "Rozszerzony masaż kobido z dodatkowymi zabiegami",
+          duration: "75 min",
+          price: "350 zł",
+          popular: true,
+          benefits: ["Kompleksowa pielęgnacja", "Intensywne nawilżenie", "Maksymalny efekt"]
+        },
+        {
+          title: "Drenaż limfatyczny",
+          description: "Masaż wspomagający system limfatyczny",
+          duration: "60 min",
+          price: "200-300 zł",
           popular: false,
-          benefits: ["Głęboka relaksacja", "Detoks", "Poprawa samopoczucia"]
+          benefits: ["Detoks", "Odwodnienie", "Poprawa krążenia"]
         }
       ]
     },
     {
-      id: 'zabiegi-twarz',
-      title: 'Zabiegi na Twarz',
-      description: 'Profesjonalne zabiegi kosmetologiczne dla skóry twarzy',
+      id: 'terapia-wodorem',
+      title: 'Terapia Wodorem Molekularnym',
+      description: 'Innowacyjne zabiegi z wykorzystaniem wodoru molekularnego',
       services: [
         {
-          title: "Oczyszczanie Głębokie Wodorem",
-          description: "Innowacyjny zabieg oczyszczający z wykorzystaniem technologii wodorowej.",
-          duration: "90 min",
-          price: "250 zł",
+          title: "Inhalacja wodorem 60min",
+          description: "Standardowa sesja terapii wodorowej",
+          duration: "60 min",
+          price: "110 zł",
           popular: true,
-          benefits: ["Głębokie oczyszczenie", "Redukcja porów", "Nawilżenie"]
+          benefits: ["Pełna regeneracja", "Antyoksydacja", "Energia"]
         },
         {
-          title: "Mezoterapia Igłowa",
-          description: "Profesjonalny zabieg anti-aging z wykorzystaniem koktajlu witamin.",
-          duration: "60 min", 
-          price: "320 zł",
+          title: "Inhalacja + piezo Mist + terapia światłem",
+          description: "Kompleksowa terapia wodorowa z dodatkami",
+          duration: "60 min",
+          price: "300 zł",
+          popular: true,
+          benefits: ["Kompleksowa terapia", "Nawilżenie", "Regeneracja światłem"]
+        }
+      ]
+    },
+    {
+      id: 'kosmetologia-onkologiczna',
+      title: 'Kosmetologia Onkologiczna',
+      description: 'Specjalistyczne zabiegi dla pacjentów onkologicznych',
+      services: [
+        {
+          title: "Zabieg twarz",
+          description: "Specjalistyczny zabieg dla pacjentów onkologicznych - twarz",
+          duration: "60 min",
+          price: "300 zł",
           popular: false,
-          benefits: ["Wygładzenie zmarszczek", "Odmłodzenie", "Ujędrnienie"]
+          benefits: ["Specjalistyczny", "Delikatny", "Bezpieczny"]
         },
         {
-          title: "Peeling Kwasowy PRX-T33",
-          description: "Włoski peeling bez złuszczania - rewolucyjna formuła dla natychmiastowego efektu liftingu.",
-          duration: "45 min",
-          price: "180 zł", 
+          title: "Zabieg ciało",
+          description: "Specjalistyczny zabieg dla pacjentów onkologicznych - ciało",
+          duration: "90 min",
+          price: "500-600 zł",
+          popular: false,
+          benefits: ["Kompleksowa pielęgnacja", "Bezpieczeństwo", "Komfort"]
+        }
+      ]
+    },
+    {
+      id: 'mezoterapia',
+      title: 'Mezoterapia Mikroigłowa Dermapen',
+      description: 'Zaawansowane zabiegi mezoterapii mikroigłowej',
+      services: [
+        {
+          title: "Twarz",
+          description: "Mezoterapia mikroigłowa twarzy",
+          duration: "60 min",
+          price: "600-1000 zł",
           popular: true,
-          benefits: ["Lifting bez skalpela", "Rozświetlenie", "Wygładzenie"]
+          benefits: ["Regeneracja", "Stymulacja kolagenu", "Odmłodzenie"]
+        },
+        {
+          title: "Twarz, szyja, dekolt Egzosomy Bio Pulsacyjne",
+          description: "Kompleksowa mezoterapia z egzosomami",
+          duration: "90 min",
+          price: "1000 zł",
+          popular: true,
+          benefits: ["Kompleksowa pielęgnacja", "Obszerne działanie", "Maksymalny efekt"]
+        }
+      ]
+    },
+    {
+      id: 'zabiegi-pielegnacyjne',
+      title: 'Zabiegi Pielęgnacyjne - Twarz',
+      description: 'Profesjonalne zabiegi pielęgnacyjne dla skóry twarzy',
+      services: [
+        {
+          title: "Interactive System",
+          description: "zabieg wyrównujący, bio stymulujący, antyoksydacyjny",
+          duration: "60 min",
+          price: "350-400 zł",
+          popular: true,
+          benefits: ["Wyrównanie", "Bio stymulacja", "Antyoksydacja"]
+        },
+        {
+          title: "Hydra Diamond Facial",
+          description: "zabieg wieloetapowy (hydroabrazja, mezoterapia bezigłowa, infuzja tlenowa, masaż próżniowy, rf)",
+          duration: "90 min",
+          price: "450 zł",
+          popular: true,
+          benefits: ["Wieloetapowość", "Kompleksowość", "Nowoczesność"]
+        },
+        {
+          title: "Boto Fill",
+          description: "bioaktywne odmłodzenie wokół oczu",
+          duration: "45 min",
+          price: "350-400 zł",
+          popular: true,
+          benefits: ["Odmłodzenie oczu", "Bioaktywność", "Regeneracja"]
+        }
+      ]
+    },
+    {
+      id: 'peeling-kwasowy',
+      title: 'Peeling Kwasowy',
+      description: 'Zaawansowane peelingi kwasowe dla odnowy skóry',
+      services: [
+        {
+          title: "Zabieg AHA-BHA-AKA twarz",
+          description: "Peeling z kwasami AHA, BHA i AKA",
+          duration: "60 min",
+          price: "350 zł",
+          popular: true,
+          benefits: ["Wielokwasowy", "Kompleksowy", "Skuteczny"]
+        },
+        {
+          title: "Intensywnie eksfoliujący twarz",
+          description: "Głęboki peeling eksfoliujący twarzy",
+          duration: "60 min",
+          price: "350 zł",
+          popular: false,
+          benefits: ["Głęboka eksfoliacja", "Odnowa", "Wygładzenie"]
+        }
+      ]
+    },
+    {
+      id: 'radiofrekwencja',
+      title: 'Radiofrekwencja - RF Lifting',
+      description: 'Bezinwazyjne zabiegi liftingujące z wykorzystaniem fal radiowych',
+      services: [
+        {
+          title: "Twarz",
+          description: "RF lifting twarzy",
+          duration: "45 min",
+          price: "200 zł",
+          popular: false,
+          benefits: ["Lifting bezinwazyjny", "Ujędrnienie", "Stymulacja kolagenu"]
+        },
+        {
+          title: "Ciało (brzuch, pośladki, uda)",
+          description: "RF lifting wybranych partii ciała",
+          duration: "60 min",
+          price: "400 zł",
+          popular: true,
+          benefits: ["Modelowanie sylwetki", "Ujędrnienie", "Redukcja cellulitu"]
         }
       ]
     }
