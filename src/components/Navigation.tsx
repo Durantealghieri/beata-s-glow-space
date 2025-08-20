@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { ChevronDown, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -12,6 +12,7 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection = 'home' }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [closeTimeout, setCloseTimeout] = useState<NodeJS.Timeout | null>(null);
+  const navigate = useNavigate();
 
   const navigationItems = [
     {
@@ -98,9 +99,9 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection = 'home' }) => {
                         variant="ghost"
                         onClick={() => {
                           if (item.id === 'zabiegi') {
-                            window.location.href = '/zabiegi';
+                            navigate('/zabiegi');
                           } else if (item.id === 'blog') {
-                            window.location.href = '/blog';
+                            navigate('/blog');
                           } else {
                             toggleDropdown(item.id);
                           }
