@@ -96,6 +96,7 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection = 'home' }) => {
                       <Button
                         variant="ghost"
                         onClick={() => toggleDropdown(item.id)}
+                        onMouseEnter={() => setOpenDropdown(item.id)}
                         className={cn(
                           "flex items-center space-x-1 transition-colors",
                           currentSection === item.id && "bg-salon-rose"
