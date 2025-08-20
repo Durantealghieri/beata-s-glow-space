@@ -277,9 +277,9 @@ const Zabiegi: React.FC = () => {
                 >
                   <div className="flex justify-center mb-6">
                     <CollapsibleTrigger asChild>
-                      <Button variant="outline" className="flex items-center gap-2">
+                      <Button size="lg" className="flex items-center gap-2 px-8 py-3 text-lg bg-salon-rose hover:bg-salon-rose/90 text-foreground">
                         {openCategories.has(category.id) ? 'Ukryj zabiegi' : 'Pokaż zabiegi'}
-                        <ChevronDown className={`h-4 w-4 transition-transform ${openCategories.has(category.id) ? 'rotate-180' : ''}`} />
+                        <ChevronDown className={`h-5 w-5 transition-transform ${openCategories.has(category.id) ? 'rotate-180' : ''}`} />
                       </Button>
                     </CollapsibleTrigger>
                   </div>
