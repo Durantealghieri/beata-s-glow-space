@@ -44,6 +44,11 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection = 'home' }) => {
     setOpenDropdown(openDropdown === itemId ? null : itemId);
   };
 
+  const closeDropdown = () => {
+    setOpenDropdown(null);
+    setIsOpen(false);
+  };
+
   return (
     <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -98,6 +103,7 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection = 'home' }) => {
                                  <Link
                                    key={index}
                                    to={getSubItemLink()}
+                                   onClick={closeDropdown}
                                    className="block px-4 py-2 text-sm text-foreground hover:bg-muted transition-colors"
                                  >
                                    {subItem}
@@ -178,6 +184,7 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection = 'home' }) => {
                                <Link
                                  key={index}
                                  to={getSubItemLink()}
+                                 onClick={closeDropdown}
                                  className="block px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
                                >
                                  {subItem}

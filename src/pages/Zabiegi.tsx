@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -6,6 +7,18 @@ import { Button } from '@/components/ui/button';
 import { Sparkles, Clock, Star, ArrowRight } from 'lucide-react';
 
 const Zabiegi: React.FC = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.getElementById(location.hash.substring(1));
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+      }
+    }
+  }, [location.hash]);
   const serviceCategories = [
     {
       id: 'trychologia',
