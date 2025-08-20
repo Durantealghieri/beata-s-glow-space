@@ -58,7 +58,7 @@ const AboutPreview: React.FC = () => {
             </div>
 
             <Button size="lg" asChild>
-              <Link to="/about">Dowiedz się więcej o mnie</Link>
+              <Link to="/o-mnie">Dowiedz się więcej o mnie</Link>
             </Button>
           </div>
 
