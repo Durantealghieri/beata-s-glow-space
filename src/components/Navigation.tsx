@@ -58,11 +58,12 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection = 'home' }) => {
     setIsOpen(false);
   };
 
-  const handleMouseEnter = () => {
+  const handleMouseEnter = (itemId: string) => {
     if (closeTimeout) {
       clearTimeout(closeTimeout);
       setCloseTimeout(null);
     }
+    setOpenDropdown(itemId);
   };
 
   const handleMouseLeave = () => {
@@ -90,13 +91,12 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection = 'home' }) => {
                 <div key={item.id} className="relative group">
                   {item.subItems.length > 0 ? (
                     <div 
-                      onMouseEnter={handleMouseEnter}
+                      onMouseEnter={() => handleMouseEnter(item.id)}
                       onMouseLeave={handleMouseLeave}
                     >
                       <Button
                         variant="ghost"
                         onClick={() => toggleDropdown(item.id)}
-                        onMouseEnter={() => setOpenDropdown(item.id)}
                         className={cn(
                           "flex items-center space-x-1 transition-colors",
                           currentSection === item.id && "bg-salon-rose"
