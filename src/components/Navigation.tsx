@@ -37,7 +37,7 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection = 'home' }) => {
     {
       name: 'Zapisy',
       id: 'zapisy',
-      subItems: ['Umów wizytę', 'Kontakt', 'Lokalizacja']
+      subItems: []
     }
   ];
 
@@ -148,7 +148,7 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection = 'home' }) => {
                     </div>
                   ) : (
                     <Link
-                      to={item.id === 'blog' ? '/blog' : item.id === 'o-mnie' ? '/o-mnie' : item.id === 'cennik' ? '/cennik' : item.id === 'zabiegi' ? '/zabiegi' : '#'}
+                      to={item.id === 'blog' ? '/blog' : item.id === 'o-mnie' ? '/o-mnie' : item.id === 'cennik' ? '/cennik' : item.id === 'zabiegi' ? '/zabiegi' : item.id === 'zapisy' ? '/kontakt' : '#'}
                       className={cn(
                         "px-3 py-2 rounded-md text-sm font-medium transition-colors hover:bg-muted",
                         currentSection === item.id && "bg-salon-rose"
@@ -234,7 +234,7 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection = 'home' }) => {
                     </>
                   ) : (
                     <Link
-                      to={item.id === 'blog' ? '/blog' : item.id === 'o-mnie' ? '/o-mnie' : item.id === 'cennik' ? '/cennik' : item.id === 'zabiegi' ? '/zabiegi' : '#'}
+                      to={item.id === 'blog' ? '/blog' : item.id === 'o-mnie' ? '/o-mnie' : item.id === 'cennik' ? '/cennik' : item.id === 'zabiegi' ? '/zabiegi' : item.id === 'zapisy' ? '/kontakt' : '#'}
                       className={cn(
                         "block w-full px-3 py-2 text-sm font-medium transition-colors hover:bg-muted rounded-md",
                         currentSection === item.id && "bg-salon-rose"
