@@ -29,7 +29,7 @@ const Index = () => {
             <div className="flex justify-center space-x-6 text-sm text-muted-foreground">
               <span>Tel: +48 695 452 442</span>
               <span>•</span>
-              <span>kontakt@beata-kosmetolog.pl</span>
+              <span>beatachlebna@wp.pl</span>
               <span>•</span>
               <span>ul. Piękna 15, Warszawa</span>
             </div>

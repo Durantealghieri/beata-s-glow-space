@@ -7,7 +7,7 @@ import { Calendar, Clock, MapPin, Phone, Mail, Star } from 'lucide-react';
 const BookingPreview: React.FC = () => {
   const contactInfo = [
     { icon: Phone, label: "Telefon", value: "+48 695 452 442", link: "tel:+48695452442" },
-    { icon: Mail, label: "Email", value: "kontakt@beata-kosmetolog.pl", link: "mailto:kontakt@beata-kosmetolog.pl" },
+    { icon: Mail, label: "Email", value: "beatachlebna@wp.pl", link: "mailto:beatachlebna@wp.pl" },
     { icon: MapPin, label: "Adres", value: "ul. Piękna 15, 00-123 Warszawa", link: "https://maps.google.com" }
   ];
 
