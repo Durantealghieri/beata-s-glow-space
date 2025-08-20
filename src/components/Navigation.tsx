@@ -16,7 +16,7 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection = 'home' }) => {
     {
       name: 'Zabiegi',
       id: 'zabiegi',
-      subItems: ['Trychologia Kosmetologiczna', 'Masaże', 'Terapia Wodorem', 'Kosmetologia Onkologiczna', 'Mezoterapia Mikroigłowa', 'Zabiegi Pielęgnacyjne', 'Peeling Kwasowy', 'Radiofrekwencja']
+      subItems: ['Wszystkie', 'Trychologia Kosmetologiczna', 'Masaże', 'Terapia Wodorem', 'Kosmetologia Onkologiczna', 'Mezoterapia Mikroigłowa', 'Zabiegi Pielęgnacyjne', 'Peeling Kwasowy', 'Radiofrekwencja']
     },
     {
       name: 'Cennik',
@@ -88,19 +88,20 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection = 'home' }) => {
                                  if (item.id === 'blog') return '/blog';
                                  if (item.id === 'o-mnie') return '/o-mnie';
                                  if (item.id === 'cennik') return '/cennik';
-                                 if (item.id === 'zabiegi') {
-                                   switch (subItem) {
+                                  if (item.id === 'zabiegi') {
+                                    switch (subItem) {
+                                      case 'Wszystkie': return '/zabiegi';
                                       case 'Trychologia Kosmetologiczna': return '/zabiegi#trychologia';
-                                     case 'Masaże': return '/zabiegi#masaze';
-                                     case 'Terapia Wodorem': return '/zabiegi#terapia-wodorem';
-                                     case 'Kosmetologia Onkologiczna': return '/zabiegi#kosmetologia-onkologiczna';
-                                     case 'Mezoterapia Mikroigłowa': return '/zabiegi#mezoterapia';
-                                     case 'Zabiegi Pielęgnacyjne': return '/zabiegi#zabiegi-pielegnacyjne';
-                                     case 'Peeling Kwasowy': return '/zabiegi#peeling-kwasowy';
-                                     case 'Radiofrekwencja': return '/zabiegi#radiofrekwencja';
-                                     default: return '/zabiegi';
-                                   }
-                                 }
+                                      case 'Masaże': return '/zabiegi#masaze';
+                                      case 'Terapia Wodorem': return '/zabiegi#terapia-wodorem';
+                                      case 'Kosmetologia Onkologiczna': return '/zabiegi#kosmetologia-onkologiczna';
+                                      case 'Mezoterapia Mikroigłowa': return '/zabiegi#mezoterapia';
+                                      case 'Zabiegi Pielęgnacyjne': return '/zabiegi#zabiegi-pielegnacyjne';
+                                      case 'Peeling Kwasowy': return '/zabiegi#peeling-kwasowy';
+                                      case 'Radiofrekwencja': return '/zabiegi#radiofrekwencja';
+                                      default: return '/zabiegi';
+                                    }
+                                  }
                                  return '#';
                                };
                                
@@ -174,19 +175,20 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection = 'home' }) => {
                                if (item.id === 'blog') return '/blog';
                                if (item.id === 'o-mnie') return '/o-mnie';
                                if (item.id === 'cennik') return '/cennik';
-                               if (item.id === 'zabiegi') {
-                                 switch (subItem) {
-                                   case 'Trychologia Kosmetologiczna': return '/zabiegi#trychologia';
-                                   case 'Masaże': return '/zabiegi#masaze';
-                                   case 'Terapia Wodorem': return '/zabiegi#terapia-wodorem';
-                                   case 'Kosmetologia Onkologiczna': return '/zabiegi#kosmetologia-onkologiczna';
-                                   case 'Mezoterapia Mikroigłowa': return '/zabiegi#mezoterapia';
-                                   case 'Zabiegi Pielęgnacyjne': return '/zabiegi#zabiegi-pielegnacyjne';
-                                   case 'Peeling Kwasowy': return '/zabiegi#peeling-kwasowy';
-                                   case 'Radiofrekwencja': return '/zabiegi#radiofrekwencja';
-                                   default: return '/zabiegi';
-                                 }
-                               }
+                                if (item.id === 'zabiegi') {
+                                  switch (subItem) {
+                                    case 'Wszystkie': return '/zabiegi';
+                                    case 'Trychologia Kosmetologiczna': return '/zabiegi#trychologia';
+                                    case 'Masaże': return '/zabiegi#masaze';
+                                    case 'Terapia Wodorem': return '/zabiegi#terapia-wodorem';
+                                    case 'Kosmetologia Onkologiczna': return '/zabiegi#kosmetologia-onkologiczna';
+                                    case 'Mezoterapia Mikroigłowa': return '/zabiegi#mezoterapia';
+                                    case 'Zabiegi Pielęgnacyjne': return '/zabiegi#zabiegi-pielegnacyjne';
+                                    case 'Peeling Kwasowy': return '/zabiegi#peeling-kwasowy';
+                                    case 'Radiofrekwencja': return '/zabiegi#radiofrekwencja';
+                                    default: return '/zabiegi';
+                                  }
+                                }
                                return '#';
                              };
                              
