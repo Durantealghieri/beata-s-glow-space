@@ -4,25 +4,26 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Award, BookOpen, Users, Heart } from 'lucide-react';
-
 const AboutPreview: React.FC = () => {
-  const achievements = [
-    { icon: Award, label: "15+ lat doświadczenia", color: "bg-salon-rose" },
-    { icon: BookOpen, label: "50+ szkoleń specjalistycznych", color: "bg-salon-cream" },
-    { icon: Users, label: "2000+ zadowolonych klientek", color: "bg-muted" },
-    { icon: Heart, label: "Indywidualne podejście", color: "bg-accent" }
-  ];
-
-  const qualifications = [
-    "Kosmetolog z licencją zawodową",
-    "Specjalista mezoterapii igłowej", 
-    "Certyfikowany aplikator kwasów",
-    "Trener marki Dermaheal",
-    "Członek Polskiego Towarzystwa Kosmetycznego"
-  ];
-
-  return (
-    <section className="py-16 bg-gradient-to-br from-salon-cream to-background">
+  const achievements = [{
+    icon: Award,
+    label: "15+ lat doświadczenia",
+    color: "bg-salon-rose"
+  }, {
+    icon: BookOpen,
+    label: "50+ szkoleń specjalistycznych",
+    color: "bg-salon-cream"
+  }, {
+    icon: Users,
+    label: "2000+ zadowolonych klientek",
+    color: "bg-muted"
+  }, {
+    icon: Heart,
+    label: "Indywidualne podejście",
+    color: "bg-accent"
+  }];
+  const qualifications = ["Kosmetolog z licencją zawodową", "Specjalista mezoterapii igłowej", "Certyfikowany aplikator kwasów", "Trener marki Dermaheal", "Członek Polskiego Towarzystwa Kosmetycznego"];
+  return <section className="py-16 bg-gradient-to-br from-salon-cream to-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
@@ -46,16 +47,14 @@ const AboutPreview: React.FC = () => {
             </div>
 
             <div className="grid grid-cols-2 gap-4 mb-8">
-              {achievements.map((achievement, index) => (
-                <div key={index} className="flex items-center space-x-3 p-4 rounded-lg bg-white/50">
+              {achievements.map((achievement, index) => <div key={index} className="flex items-center space-x-3 p-4 rounded-lg bg-white/50">
                   <div className={`p-2 rounded-full ${achievement.color}`}>
                     <achievement.icon className="h-5 w-5 text-foreground" />
                   </div>
                   <span className="text-sm font-medium text-foreground">
                     {achievement.label}
                   </span>
-                </div>
-              ))}
+                </div>)}
             </div>
 
             <Button size="lg" asChild>
@@ -69,12 +68,10 @@ const AboutPreview: React.FC = () => {
                 Kwalifikacje i Certyfikaty
               </h3>
               <div className="space-y-3">
-                {qualifications.map((qualification, index) => (
-                  <div key={index} className="flex items-center space-x-3">
+                {qualifications.map((qualification, index) => <div key={index} className="flex items-center space-x-3">
                     <div className="w-2 h-2 bg-salon-rose rounded-full flex-shrink-0" />
                     <span className="text-sm text-muted-foreground">{qualification}</span>
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </Card>
 
@@ -99,8 +96,6 @@ const AboutPreview: React.FC = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default AboutPreview;
