@@ -69,7 +69,7 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection = 'home' }) => {
   const handleMouseLeave = () => {
     const timeout = setTimeout(() => {
       setOpenDropdown(null);
-    }, 1000);
+    }, 100);
     setCloseTimeout(timeout);
   };
 
