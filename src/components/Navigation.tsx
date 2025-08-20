@@ -96,7 +96,15 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection = 'home' }) => {
                     >
                       <Button
                         variant="ghost"
-                        onClick={() => toggleDropdown(item.id)}
+                        onClick={() => {
+                          if (item.id === 'zabiegi') {
+                            window.location.href = '/zabiegi';
+                          } else if (item.id === 'blog') {
+                            window.location.href = '/blog';
+                          } else {
+                            toggleDropdown(item.id);
+                          }
+                        }}
                         className={cn(
                           "flex items-center space-x-1 transition-colors",
                           currentSection === item.id && "bg-salon-rose"
