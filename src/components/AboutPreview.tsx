@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -57,8 +58,8 @@ const AboutPreview: React.FC = () => {
               ))}
             </div>
 
-            <Button size="lg">
-              Dowiedz się więcej o mnie
+            <Button size="lg" asChild>
+              <Link to="/about">Dowiedz się więcej o mnie</Link>
             </Button>
           </div>
 
