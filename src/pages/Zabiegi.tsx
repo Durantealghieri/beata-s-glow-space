@@ -1,13 +1,15 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Sparkles, Clock, Star, ArrowRight } from 'lucide-react';
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
+import { Sparkles, Clock, Star, ArrowRight, ChevronDown } from 'lucide-react';
 
 const Zabiegi: React.FC = () => {
   const location = useLocation();
+  const [openCategories, setOpenCategories] = useState<Set<string>>(new Set());
 
   useEffect(() => {
     if (location.hash) {
@@ -19,6 +21,16 @@ const Zabiegi: React.FC = () => {
       }
     }
   }, [location.hash]);
+
+  const toggleCategory = (categoryId: string) => {
+    const newOpenCategories = new Set(openCategories);
+    if (newOpenCategories.has(categoryId)) {
+      newOpenCategories.delete(categoryId);
+    } else {
+      newOpenCategories.add(categoryId);
+    }
+    setOpenCategories(newOpenCategories);
+  };
 
   const serviceCategories = [
     {
@@ -253,55 +265,72 @@ const Zabiegi: React.FC = () => {
                   <h2 className="text-3xl font-bold text-foreground mb-4">
                     {category.title}
                   </h2>
-                  <p className="text-lg text-muted-foreground max-w-xl mx-auto">
+                  <p className="text-lg text-muted-foreground max-w-xl mx-auto mb-6">
                     {category.description}
                   </p>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {category.services.map((service, index) => (
-                    <Card key={index} className="relative group hover:shadow-hover transition-all duration-300">
-                      {service.popular && (
-                        <div className="absolute -top-2 -right-2 z-10">
-                          <Badge className="bg-salon-rose text-foreground">
-                            <Star className="h-3 w-3 mr-1" />
-                            Popularne
-                          </Badge>
-                        </div>
-                      )}
-                      <CardHeader>
-                        <CardTitle className="text-lg group-hover:text-salon-rose transition-colors">
-                          {service.title}
-                        </CardTitle>
-                        <CardDescription className="text-sm leading-relaxed">
-                          {service.description}
-                        </CardDescription>
-                      </CardHeader>
-                      <CardContent>
-                        <div className="flex justify-between items-center mb-4">
-                          <div className="font-semibold text-lg text-salon-rose">
-                            {service.price}
-                          </div>
-                          <div className="flex items-center text-sm text-muted-foreground">
-                            <Clock className="h-3 w-3 mr-1" />
-                            {service.duration}
-                          </div>
-                        </div>
-                        <div className="flex flex-wrap gap-2 mb-4">
-                          {service.benefits.map((benefit, idx) => (
-                            <Badge key={idx} variant="secondary" className="text-xs">
-                              {benefit}
-                            </Badge>
-                          ))}
-                        </div>
-                        <Button className="w-full" size="sm">
-                          Umów wizytę
-                          <ArrowRight className="ml-2 h-4 w-4" />
-                        </Button>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
+                <Collapsible 
+                  open={openCategories.has(category.id)} 
+                  onOpenChange={() => toggleCategory(category.id)}
+                  className="w-full"
+                >
+                  <div className="flex justify-center mb-6">
+                    <CollapsibleTrigger asChild>
+                      <Button variant="outline" className="flex items-center gap-2">
+                        {openCategories.has(category.id) ? 'Ukryj zabiegi' : 'Pokaż zabiegi'}
+                        <ChevronDown className={`h-4 w-4 transition-transform ${openCategories.has(category.id) ? 'rotate-180' : ''}`} />
+                      </Button>
+                    </CollapsibleTrigger>
+                  </div>
+                  
+                  <CollapsibleContent className="space-y-4">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                      {category.services.map((service, index) => (
+                        <Card key={index} className="relative group hover:shadow-hover transition-all duration-300">
+                          {service.popular && (
+                            <div className="absolute -top-2 -right-2 z-10">
+                              <Badge className="bg-salon-rose text-foreground">
+                                <Star className="h-3 w-3 mr-1" />
+                                Popularne
+                              </Badge>
+                            </div>
+                          )}
+                          <CardHeader>
+                            <CardTitle className="text-lg group-hover:text-salon-rose transition-colors">
+                              {service.title}
+                            </CardTitle>
+                            <CardDescription className="text-sm leading-relaxed">
+                              {service.description}
+                            </CardDescription>
+                          </CardHeader>
+                          <CardContent>
+                            <div className="flex justify-between items-center mb-4">
+                              <div className="font-semibold text-lg text-salon-rose">
+                                {service.price}
+                              </div>
+                              <div className="flex items-center text-sm text-muted-foreground">
+                                <Clock className="h-3 w-3 mr-1" />
+                                {service.duration}
+                              </div>
+                            </div>
+                            <div className="flex flex-wrap gap-2 mb-4">
+                              {service.benefits.map((benefit, idx) => (
+                                <Badge key={idx} variant="secondary" className="text-xs">
+                                  {benefit}
+                                </Badge>
+                              ))}
+                            </div>
+                            <Button className="w-full" size="sm">
+                              Umów wizytę
+                              <ArrowRight className="ml-2 h-4 w-4" />
+                            </Button>
+                          </CardContent>
+                        </Card>
+                      ))}
+                    </div>
+                  </CollapsibleContent>
+                </Collapsible>
               </section>
             ))}
           </div>
