@@ -7,19 +7,19 @@ import { Award, BookOpen, Users, Heart } from 'lucide-react';
 const AboutPreview: React.FC = () => {
   const achievements = [{
     icon: Award,
-    label: "15+ lat doświadczenia",
+    label: "20+ lat dowiadczenia",
     color: "bg-salon-rose"
   }, {
     icon: BookOpen,
-    label: "50+ szkoleń specjalistycznych",
+    label: "Dziesiątki szkoleń specjalistycznych",
     color: "bg-salon-cream"
   }, {
     icon: Users,
-    label: "2000+ zadowolonych klientek",
+    label: "Setki zadowolonych klientek",
     color: "bg-muted"
   }, {
     icon: Heart,
-    label: "Indywidualne podejście",
+    label: "Indywidualne podejście pełne pasji",
     color: "bg-accent"
   }];
   const qualifications = ["Kosmetolog z licencją zawodową", "Specjalista mezoterapii igłowej", "Certyfikowany aplikator kwasów", "Trener marki Dermaheal", "Członek Polskiego Towarzystwa Kosmetycznego"];
@@ -34,7 +34,7 @@ const AboutPreview: React.FC = () => {
             <div className="prose prose-lg max-w-none text-muted-foreground mb-8">
               <p className="leading-relaxed">
                 Jestem dyplomowanym kosmetologiem z pasją do odkrywania sekretów piękna i zdrowia skóry. 
-                Przez ponad 15 lat pomagam kobietom odkrywać swoją naturalną urodę, łącząc tradycyjne 
+                Przez ponad 20 lat pomagam kobietom odkrywać swoją naturalną urodę, łącząc tradycyjne 
                 metody z najnowocześniejszymi technologiami w dziedzinie kosmetologii.
               </p>
               
