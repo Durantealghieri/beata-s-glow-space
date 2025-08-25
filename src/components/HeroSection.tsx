@@ -55,7 +55,7 @@ const HeroSection: React.FC = () => {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div className="text-center p-4 rounded-lg bg-white/80 backdrop-blur-sm">
                 <div className="text-2xl font-bold text-salon-rose">20+</div>
-                <div className="text-sm text-muted-foreground">lat doświadczenia</div>
+                <div className="text-sm text-muted-foreground">lat dowiadczenia</div>
               </div>
               <div className="text-center p-4 rounded-lg bg-white/80 backdrop-blur-sm">
                 <div className="text-2xl font-bold text-salon-rose">Setki</div>
@@ -102,7 +102,7 @@ const HeroSection: React.FC = () => {
               <div className="space-y-3">
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-salon-rose rounded-full" />
-                  <span className="text-muted-foreground">Indywidualne podejście do każdej skóry</span>
+                  <span className="text-muted-foreground">Indywidualne podejście pełne pasji</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-salon-rose rounded-full" />
