@@ -13,7 +13,7 @@ const BookingPreview: React.FC = () => {
 
   const workingHours = [
     { day: "Poniedziałek - Piątek", hours: "9:00 - 20:00" },
-    { day: "Sobota", hours: "10:00 - 16:00" },
+    { day: "Sobota", hours: "9:00 - 20:00" },
     { day: "Niedziela", hours: "Zamknięte" }
   ];
 
