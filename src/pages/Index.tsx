@@ -31,7 +31,7 @@ const Index = () => {
               <span>•</span>
               <span>beatachlebna@wp.pl</span>
               <span>•</span>
-              <span>ul. Piękna 15, Warszawa</span>
+              <span>Puławska 320, lokal 4, Warszawa 02-845</span>
             </div>
           </div>
         </div>

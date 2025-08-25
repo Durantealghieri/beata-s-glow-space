@@ -8,7 +8,7 @@ const BookingPreview: React.FC = () => {
   const contactInfo = [
     { icon: Phone, label: "Telefon", value: "+48 695 452 442", link: "tel:+48695452442" },
     { icon: Mail, label: "Email", value: "beatachlebna@wp.pl", link: "mailto:beatachlebna@wp.pl" },
-    { icon: MapPin, label: "Adres", value: "ul. Piękna 15, 00-123 Warszawa", link: "https://maps.google.com" }
+    { icon: MapPin, label: "Adres", value: "Puławska 320, lokal 4, Warszawa 02-845", link: "https://maps.google.com" }
   ];
 
   const workingHours = [
