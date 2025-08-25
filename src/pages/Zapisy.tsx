@@ -51,7 +51,10 @@ const Zapisy: React.FC = () => {
                     </div>
                     <div className="flex items-center space-x-3">
                       <Calendar className="h-5 w-5 text-salon-rose" />
-                      <span className="text-muted-foreground">Pon-Pt: 9:00-18:00, Sob: 9:00-15:00</span>
+                      <div className="text-muted-foreground">
+                        <div>Poniedziałek-Sobota: 9:00 - 20:00</div>
+                        <div>Niedziela: Nieczynne</div>
+                      </div>
                     </div>
                   </div>
                 </div>
