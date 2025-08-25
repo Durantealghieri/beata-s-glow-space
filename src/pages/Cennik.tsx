@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Navigation from '@/components/Navigation';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -6,6 +6,10 @@ import { Button } from '@/components/ui/button';
 import { Clock, Star, CheckCircle } from 'lucide-react';
 
 const Cennik = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const services = [
     {
       category: "TRYCHOLOGIA KOSMETOLOGICZNA",

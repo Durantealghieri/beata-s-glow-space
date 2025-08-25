@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Calendar, User, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -7,6 +7,10 @@ import Navigation from '@/components/Navigation';
 import facialTreatment from '@/assets/facial-treatment.jpg';
 
 const Blog: React.FC = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const featuredArticle = {
     title: "Znaczenie diagnostyki pH skóry w praktyce kosmetologicznej",
     content: `Współczesna kosmetologia stawia na indywidualne podejście do każdego klienta, co obejmuje również analizę stanu skóry i jej potrzeb. Jednym z kluczowych elementów skutecznej diagnostyki skóry jest pomiar jej pH. To pozornie prosta, ale niezwykle istotna miara, która pozwala specjalistom w dziedzinie kosmetologii dostosować zabiegi i produkty do indywidualnych wymagań skóry.
