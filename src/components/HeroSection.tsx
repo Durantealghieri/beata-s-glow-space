@@ -62,7 +62,7 @@ const HeroSection: React.FC = () => {
                 <div className="text-sm text-muted-foreground">zadowolonych klientek</div>
               </div>
               <div className="text-center p-4 rounded-lg bg-white/80 backdrop-blur-sm">
-                <div className="text-2xl font-bold text-salon-rose">50+</div>
+                <div className="text-2xl font-bold text-salon-rose">Dziesiątki</div>
                 <div className="text-sm text-muted-foreground">szkoleń specjalistycznych</div>
               </div>
             </div>
