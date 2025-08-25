@@ -113,29 +113,7 @@ const BookingPreview: React.FC = () => {
                 Proste kroki do Twojej idealnej skóry
               </CardDescription>
             </CardHeader>
-            <CardContent className="space-y-4">
-              {bookingSteps.map((step, index) => (
-                <div key={index} className="flex space-x-3">
-                  <div className="flex-shrink-0 w-8 h-8 bg-salon-rose rounded-full flex items-center justify-center text-white text-sm font-semibold">
-                    {step.step}
-                  </div>
-                  <div>
-                    <div className="font-medium text-sm text-foreground mb-1">
-                      {step.title}
-                    </div>
-                    <div className="text-xs text-muted-foreground leading-relaxed">
-                      {step.description}
-                    </div>
-                  </div>
-                </div>
-              ))}
-              
-              <div className="pt-4 border-t">
-                <Button variant="outline" className="w-full">
-                  <Mail className="h-4 w-4 mr-2" />
-                  Napisz do nas
-                </Button>
-              </div>
+            <CardContent>
             </CardContent>
           </Card>
         </div>
