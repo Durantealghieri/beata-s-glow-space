@@ -24,6 +24,12 @@ const Zabiegi: React.FC = () => {
           element.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }, 300); // Increased delay to ensure collapsible content is rendered
       }
+    } else {
+      // No hash means "Wszystkie" was selected - close all sections and scroll to top
+      setOpenCategories(new Set());
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 100);
     }
   }, [location.hash]);
 
