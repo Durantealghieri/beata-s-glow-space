@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Award, BookOpen, Users, Heart } from 'lucide-react';
 import Navigation from '@/components/Navigation';
@@ -7,6 +7,10 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 
 const About = () => {
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const achievements = [
     { icon: Award, label: "20+ lat doświadczenia", color: "bg-salon-rose" },
