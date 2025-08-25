@@ -53,7 +53,7 @@ const Zapisy: React.FC = () => {
                       <Calendar className="h-5 w-5 text-salon-rose" />
                       <div className="text-muted-foreground">
                         <div>Poniedziałek-Sobota: 9:00 - 20:00</div>
-                        <div>Niedziela: Nieczynne</div>
+                        <div>Niedziela: nieczynne</div>
                       </div>
                     </div>
                   </div>
