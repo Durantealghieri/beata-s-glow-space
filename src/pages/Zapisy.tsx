@@ -21,8 +21,7 @@ const Zapisy: React.FC = () => {
               Umów wizytę
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Skontaktuj się z nami, aby umówić wizytę na profesjonalne zabiegi kosmetyczne. 
-              Odpowiemy na wszystkie Twoje pytania i dopasujemy terapię do Twoich potrzeb.
+              Zadbaj o zdrowie i piękno swojej skóry już dziś. Skontaktuj się ze mną, aby wybrać dogodny termin wizyty i rozpocząć terapię dopasowaną do Twoich potrzeb.
             </p>
           </div>
         </section>
