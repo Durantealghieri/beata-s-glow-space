@@ -13,11 +13,16 @@ const Zabiegi: React.FC = () => {
 
   useEffect(() => {
     if (location.hash) {
-      const element = document.getElementById(location.hash.substring(1));
+      const hashWithoutHash = location.hash.substring(1);
+      // Open the category that corresponds to the hash
+      setOpenCategories(new Set([hashWithoutHash]));
+      
+      // Scroll to the element after a delay to ensure it's rendered
+      const element = document.getElementById(hashWithoutHash);
       if (element) {
         setTimeout(() => {
           element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }, 100);
+        }, 300); // Increased delay to ensure collapsible content is rendered
       }
     }
   }, [location.hash]);
