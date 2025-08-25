@@ -73,7 +73,7 @@ const HeroSection: React.FC = () => {
                 Umów wizytę
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Button>
-              <Button variant="outline" size="lg">
+              <Button variant="outline" size="lg" onClick={() => navigate('/zabiegi')}>
                 Zobacz nasze zabiegi
               </Button>
             </div>
