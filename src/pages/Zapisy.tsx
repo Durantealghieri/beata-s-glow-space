@@ -43,7 +43,7 @@ const Zapisy: React.FC = () => {
                     </div>
                     <div className="flex items-center space-x-3">
                       <Mail className="h-5 w-5 text-salon-rose" />
-                      <span className="text-muted-foreground">kontakt@gabinet.pl</span>
+                      <span className="text-muted-foreground">beatachlebna@wp.pl</span>
                     </div>
                     <div className="flex items-center space-x-3">
                       <Calendar className="h-5 w-5 text-salon-rose" />
