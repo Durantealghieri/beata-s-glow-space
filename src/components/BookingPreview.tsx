@@ -62,9 +62,7 @@ const BookingPreview: React.FC = () => {
                 <Phone className="h-5 w-5 text-salon-rose" />
                 <span>Kontakt</span>
               </CardTitle>
-              <CardDescription>
-                Skontaktuj się z nami w dogodny dla Ciebie sposób
-              </CardDescription>
+              
             </CardHeader>
             <CardContent className="space-y-4">
               {contactInfo.map((contact, index) => <div key={index} className="flex items-start space-x-3">
