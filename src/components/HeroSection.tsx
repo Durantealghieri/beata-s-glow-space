@@ -4,19 +4,12 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ArrowRight, Star, Sparkles } from 'lucide-react';
 import salonInterior from '@/assets/salon-interior.jpg';
-
 const HeroSection: React.FC = () => {
   const navigate = useNavigate();
-
-  return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+  return <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
-        <img
-          src={salonInterior}
-          alt="Eleganckie wnętrze salonu kosmetycznego"
-          className="w-full h-full object-cover"
-        />
+        <img src={salonInterior} alt="Eleganckie wnętrze salonu kosmetycznego" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 to-white/60" />
       </div>
 
@@ -25,18 +18,7 @@ const HeroSection: React.FC = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
             {/* Badge */}
-            <div className="flex items-center space-x-2">
-              <Badge className="bg-salon-rose text-foreground border-salon-rose/20">
-                <Sparkles className="h-3 w-3 mr-1" />
-                Profesjonalna kosmetologia
-              </Badge>
-              <div className="flex items-center space-x-1">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" />
-                ))}
-                <span className="text-sm text-muted-foreground ml-2">5.0 (120+ opinii)</span>
-              </div>
-            </div>
+            
 
             {/* Main Heading */}
             <div className="space-y-4">
@@ -128,8 +110,6 @@ const HeroSection: React.FC = () => {
           <div className="w-1 h-3 bg-salon-rose rounded-full mt-2 animate-pulse" />
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
