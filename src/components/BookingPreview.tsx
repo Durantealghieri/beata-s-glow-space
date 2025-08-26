@@ -91,10 +91,10 @@ const BookingPreview: React.FC = () => {
             <CardHeader>
               <CardTitle className="flex items-center space-x-2">
                 <Clock className="h-5 w-5 text-salon-rose" />
-                <span>Godziny pracy</span>
+                
               </CardTitle>
               <CardDescription>
-                Jestem do Twojej dyspozycji w poniższych godzinach
+                Jesteśmy do Twojej dyspozycji w poniższych godzinach
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-3">
