@@ -77,9 +77,7 @@ const BookingPreview: React.FC = () => {
                   </div>
                 </div>)}
               
-              <div className="pt-4 border-t">
-                
-              </div>
+              
             </CardContent>
           </Card>
 
