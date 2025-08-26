@@ -78,10 +78,7 @@ const BookingPreview: React.FC = () => {
                 </div>)}
               
               <div className="pt-4 border-t">
-                <Button className="w-full">
-                  <Phone className="h-4 w-4 mr-2" />
-                  Zadzwoń teraz
-                </Button>
+                
               </div>
             </CardContent>
           </Card>
