@@ -94,7 +94,7 @@ const BookingPreview: React.FC = () => {
                 <span>Godziny pracy</span>
               </CardTitle>
               <CardDescription>
-                Jesteśmy do Twojej dyspozycji w poniższych godzinach
+                Jestem do Twojej dyspozycji w poniższych godzinach
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-3">
