@@ -104,18 +104,6 @@ const BookingPreview: React.FC = () => {
 
         </div>
 
-        <div className="text-center mt-12">
-          <Card className="inline-block p-6 bg-gradient-to-r from-salon-rose/10 to-salon-cream/20 border-salon-rose/20">
-            <div className="flex items-center justify-center space-x-2 text-salon-rose mb-2">
-              <Star className="h-5 w-5" />
-              <span className="font-semibold">Pierwsza konsultacja GRATIS</span>
-              <Star className="h-5 w-5" />
-            </div>
-            <p className="text-sm text-muted-foreground">
-              Skorzystaj z bezpłatnej analizy skóry i doboru odpowiednich zabiegów
-            </p>
-          </Card>
-        </div>
       </div>
     </section>
   );
