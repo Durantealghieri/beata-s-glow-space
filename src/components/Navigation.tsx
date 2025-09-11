@@ -81,7 +81,7 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection = 'home' }) => {
           {/* Logo/Brand */}
           <div className="flex-shrink-0">
             <Link to="/" className="text-2xl font-bold text-foreground hover:text-muted-foreground transition-colors">
-              Gabinet Fuli
+              Gabinet Fuli - Beata Andraszewska-Chlebna
             </Link>
           </div>
 
