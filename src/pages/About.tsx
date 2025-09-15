@@ -141,7 +141,7 @@ const About = () => {
             <Badge variant="secondary" className="text-sm">Kosmetologia medyczna</Badge>
             <Badge variant="secondary" className="text-sm">Anti-aging</Badge>
             <Badge variant="secondary" className="text-sm">Kosmetologia holistyczna</Badge>
-            <Badge variant="secondary" className="text-sm">Dermatologia estetyczna</Badge>
+            <Badge variant="secondary" className="text-sm">Trychologia</Badge>
             <Badge variant="secondary" className="text-sm">Pielęgnacja onkologiczna</Badge>
             <Badge variant="secondary" className="text-sm">Leczenie blizn</Badge>
             <Badge variant="secondary" className="text-sm">Mezoterapia</Badge>
