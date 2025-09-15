@@ -251,6 +251,85 @@ const Zabiegi: React.FC = () => {
           benefits: ["Modelowanie sylwetki", "Ujędrnienie", "Redukcja cellulitu"]
         }
       ]
+    },
+    {
+      id: 'pielegnacja-wlosow-tahe',
+      title: 'Pielęgnacja włosów Tahe',
+      description: 'Profesjonalne zabiegi regeneracyjne i odbudowujące dla włosów',
+      services: [
+        {
+          title: "Botox",
+          description: "Intensywna regeneracja i wygładzenie włosów",
+          duration: "90 min",
+          price: "350 zł",
+          popular: true,
+          benefits: ["Głębokie odżywienie", "Wygładzenie", "Regeneracja"]
+        },
+        {
+          title: "Proteiny złota",
+          description: "Luksusowa odbudowa struktury włosa z proteinami złota",
+          duration: "75 min",
+          price: "400 zł",
+          popular: true,
+          benefits: ["Odbudowa struktury", "Luksusowa pielęgnacja", "Blask"]
+        },
+        {
+          title: "Koktajl witaminowy",
+          description: "Intensywne odżywienie włosów witaminami i minerałami",
+          duration: "60 min",
+          price: "280 zł",
+          popular: false,
+          benefits: ["Witaminizacja", "Odżywienie", "Wzmocnienie"]
+        },
+        {
+          title: "Zabieg peptydowy",
+          description: "Nowoczesna terapia z wykorzystaniem peptydów",
+          duration: "75 min",
+          price: "350 zł",
+          popular: true,
+          benefits: ["Stymulacja wzrostu", "Regeneracja", "Wzmocnienie"]
+        },
+        {
+          title: "Proteiny włosy kręcone",
+          description: "Specjalistyczny zabieg dla włosów kręconych i falowanych",
+          duration: "90 min",
+          price: "380 zł",
+          popular: false,
+          benefits: ["Definicja loków", "Nawilżenie", "Elastyczność"]
+        },
+        {
+          title: "Zabieg plex",
+          description: "Rekonstrukcja zniszczonych wiązań w strukturze włosa",
+          duration: "60 min",
+          price: "320 zł",
+          popular: true,
+          benefits: ["Odbudowa wiązań", "Wzmocnienie", "Ochrona"]
+        },
+        {
+          title: "Nanoplastia gold",
+          description: "Luksusowe prostowanie i odbudowa z cząsteczkami złota",
+          duration: "120 min",
+          price: "450 zł",
+          popular: true,
+          benefits: ["Trwałe prostowanie", "Luksus", "Regeneracja"]
+        },
+        {
+          title: "Bioplastia i K-glicolic",
+          description: "Naturalna bioplastia z kwasem glikolowym",
+          duration: "90 min",
+          price: "400 zł",
+          popular: false,
+          benefits: ["Naturalne prostowanie", "Odbudowa", "Delikatność"]
+        },
+        {
+          title: "Ozonoterapia",
+          description: "Terapia ozonem dla skóry głowy i włosów",
+          duration: "45 min",
+          price: "200 zł",
+          popular: false,
+          benefits: ["Dezynfekcja", "Stymulacja krążenia", "Oczyszczenie"]
+        }
+      ]
     }
   ];
 
