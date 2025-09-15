@@ -5,50 +5,37 @@ import Navigation from '@/components/Navigation';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-
 const About = () => {
   // Scroll to top when component mounts
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  const achievements = [
-    { icon: Award, label: "20+ lat doświadczenia", color: "bg-salon-rose" },
-    { icon: BookOpen, label: "50+ szkoleń specjalistycznych", color: "bg-salon-cream" },
-    { icon: Users, label: "2000+ zadowolonych klientek", color: "bg-muted" },
-    { icon: Heart, label: "Indywidualne podejście", color: "bg-accent" }
-  ];
-
-  const qualifications = [
-    "Kosmetolog, Trycholog, Fitoterapeuta",
-    "Dyplomowany kosmetolog, z wieloletnim doświadczeniem - absolwentka Wyższej Szkoły Inżynierii i Zdrowia w Warszawie na kierunku kosmetologia",
-    "Absolwentka Instytutu Medycyny Klasztornej – Towaroznastwo Zielarskie",
-    "Absolwentka The International Academy of Reflexology & Meridian Therapy - Dietetyka w Tradycyjnej Medycynie Chińskiej oraz Auriculotherapy. Refleksologia",
-    "Edukator marki Sinesia",
-    "Wolontariuszka w Fundacji Piękniejsze Życie",
-    "Ekspert w dziedzinie pielęgnacji pacjentów onkologicznych w gabinecie kosmetologicznym"
-  ];
-
-  const workshops = [
-    "Akupunktura Kosmetologiczna w Medycynie Estetycznej",
-    "Rozpoznanie po twarzy",
-    "Technika likwidacji zmarszczek w zapobieganiu starzenia się twarzy",
-    "Kosmetyki koszerne",
-    "Kosmetyki dla zwierząt",
-    "Specyfikacja i recepturowanie"
-  ];
-
-  return (
-    <div className="min-h-screen bg-background">
+  const achievements = [{
+    icon: Award,
+    label: "20+ lat doświadczenia",
+    color: "bg-salon-rose"
+  }, {
+    icon: BookOpen,
+    label: "50+ szkoleń specjalistycznych",
+    color: "bg-salon-cream"
+  }, {
+    icon: Users,
+    label: "2000+ zadowolonych klientek",
+    color: "bg-muted"
+  }, {
+    icon: Heart,
+    label: "Indywidualne podejście",
+    color: "bg-accent"
+  }];
+  const qualifications = ["Kosmetolog, Trycholog, Fitoterapeuta", "Dyplomowany kosmetolog, z wieloletnim doświadczeniem - absolwentka Wyższej Szkoły Inżynierii i Zdrowia w Warszawie na kierunku kosmetologia", "Absolwentka Instytutu Medycyny Klasztornej – Towaroznastwo Zielarskie", "Absolwentka The International Academy of Reflexology & Meridian Therapy - Dietetyka w Tradycyjnej Medycynie Chińskiej oraz Auriculotherapy. Refleksologia", "Edukator marki Sinesia", "Wolontariuszka w Fundacji Piękniejsze Życie", "Ekspert w dziedzinie pielęgnacji pacjentów onkologicznych w gabinecie kosmetologicznym"];
+  const workshops = ["Akupunktura Kosmetologiczna w Medycynie Estetycznej", "Rozpoznanie po twarzy", "Technika likwidacji zmarszczek w zapobieganiu starzenia się twarzy", "Kosmetyki koszerne", "Kosmetyki dla zwierząt", "Specyfikacja i recepturowanie"];
+  return <div className="min-h-screen bg-background">
       <Navigation currentSection="o-mnie" />
       
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Navigation back */}
         <div className="mb-8">
-          <Link 
-            to="/" 
-            className="inline-flex items-center text-muted-foreground hover:text-foreground transition-colors"
-          >
+          <Link to="/" className="inline-flex items-center text-muted-foreground hover:text-foreground transition-colors">
             <ArrowLeft className="h-4 w-4 mr-2" />
             Powrót do strony głównej
           </Link>
@@ -101,12 +88,10 @@ const About = () => {
             
             <div className="space-y-6 text-center">
               <div className="space-y-4">
-                {qualifications.map((qualification, index) => (
-                  <div key={index} className="flex items-start justify-center space-x-3">
+                {qualifications.map((qualification, index) => <div key={index} className="flex items-start justify-center space-x-3">
                     <div className="w-2 h-2 bg-salon-rose rounded-full flex-shrink-0 mt-2" />
                     <p className="text-muted-foreground leading-relaxed text-left max-w-3xl">{qualification}</p>
-                  </div>
-                ))}
+                  </div>)}
               </div>
               
             </div>
@@ -120,16 +105,14 @@ const About = () => {
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {achievements.map((achievement, index) => (
-              <div key={index} className="flex items-center space-x-3 p-4 rounded-lg bg-white/50">
+            {achievements.map((achievement, index) => <div key={index} className="flex items-center space-x-3 p-4 rounded-lg bg-white/50">
                 <div className={`p-2 rounded-full ${achievement.color}`}>
                   <achievement.icon className="h-5 w-5 text-foreground" />
                 </div>
                 <span className="text-sm font-medium text-foreground">
                   {achievement.label}
                 </span>
-              </div>
-            ))}
+              </div>)}
           </div>
         </section>
 
@@ -157,7 +140,7 @@ const About = () => {
           <div className="flex flex-wrap justify-center gap-3">
             <Badge variant="secondary" className="text-sm">Kosmetologia medyczna</Badge>
             <Badge variant="secondary" className="text-sm">Anti-aging</Badge>
-            <Badge variant="secondary" className="text-sm">Pielęgnacja problemowa</Badge>
+            <Badge variant="secondary" className="text-sm">Kosmetologia holistyczna</Badge>
             <Badge variant="secondary" className="text-sm">Dermatologia estetyczna</Badge>
             <Badge variant="secondary" className="text-sm">Pielęgnacja onkologiczna</Badge>
             <Badge variant="secondary" className="text-sm">Leczenie blizn</Badge>
@@ -186,8 +169,6 @@ const About = () => {
           </div>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default About;
