@@ -261,7 +261,7 @@ const Zabiegi: React.FC = () => {
           title: "Botox",
           description: "Intensywna regeneracja i wygładzenie włosów",
           duration: "90 min",
-          price: "350 zł",
+          price: "Krótkie: 155 zł | Półdługie: 200 zł | Długie: 280 zł",
           popular: true,
           benefits: ["Głębokie odżywienie", "Wygładzenie", "Regeneracja"]
         },
@@ -269,7 +269,7 @@ const Zabiegi: React.FC = () => {
           title: "Proteiny złota",
           description: "Luksusowa odbudowa struktury włosa z proteinami złota",
           duration: "75 min",
-          price: "400 zł",
+          price: "Krótkie: 100 zł | Półdługie: 120 zł | Długie: 160 zł",
           popular: true,
           benefits: ["Odbudowa struktury", "Luksusowa pielęgnacja", "Blask"]
         },
