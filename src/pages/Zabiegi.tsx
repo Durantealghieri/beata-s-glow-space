@@ -277,7 +277,7 @@ const Zabiegi: React.FC = () => {
           title: "Koktajl witaminowy",
           description: "Intensywne odżywienie włosów witaminami i minerałami",
           duration: "60 min",
-          price: "280 zł",
+          price: "Krótkie: 110 zł | Półdługie: 160 zł | Długie: 180 zł",
           popular: false,
           benefits: ["Witaminizacja", "Odżywienie", "Wzmocnienie"]
         },
@@ -285,7 +285,7 @@ const Zabiegi: React.FC = () => {
           title: "Zabieg peptydowy",
           description: "Nowoczesna terapia z wykorzystaniem peptydów",
           duration: "75 min",
-          price: "350 zł",
+          price: "Krótkie: 160 zł | Półdługie: 190 zł | Długie: 280 zł",
           popular: true,
           benefits: ["Stymulacja wzrostu", "Regeneracja", "Wzmocnienie"]
         },
@@ -293,7 +293,7 @@ const Zabiegi: React.FC = () => {
           title: "Proteiny włosy kręcone",
           description: "Specjalistyczny zabieg dla włosów kręconych i falowanych",
           duration: "90 min",
-          price: "380 zł",
+          price: "Krótkie: 200 zł | Półdługie: 250 zł | Długie: 280 zł",
           popular: false,
           benefits: ["Definicja loków", "Nawilżenie", "Elastyczność"]
         },
@@ -301,7 +301,7 @@ const Zabiegi: React.FC = () => {
           title: "Zabieg plex",
           description: "Rekonstrukcja zniszczonych wiązań w strukturze włosa",
           duration: "60 min",
-          price: "320 zł",
+          price: "Krótkie: 80 zł | Półdługie: 100 zł | Długie: 170 zł",
           popular: true,
           benefits: ["Odbudowa wiązań", "Wzmocnienie", "Ochrona"]
         },
@@ -309,7 +309,7 @@ const Zabiegi: React.FC = () => {
           title: "Nanoplastia gold",
           description: "Luksusowe prostowanie i odbudowa z cząsteczkami złota",
           duration: "120 min",
-          price: "450 zł",
+          price: "Krótkie: 440 zł | Półdługie: 660 zł | Długie: 880 zł",
           popular: true,
           benefits: ["Trwałe prostowanie", "Luksus", "Regeneracja"]
         },
@@ -317,7 +317,7 @@ const Zabiegi: React.FC = () => {
           title: "Bioplastia i K-glicolic",
           description: "Naturalna bioplastia z kwasem glikolowym",
           duration: "90 min",
-          price: "400 zł",
+          price: "Krótkie: 550 zł | Półdługie: 880 zł | Długie: 1320 zł",
           popular: false,
           benefits: ["Naturalne prostowanie", "Odbudowa", "Delikatność"]
         },
@@ -325,7 +325,7 @@ const Zabiegi: React.FC = () => {
           title: "Ozonoterapia",
           description: "Terapia ozonem dla skóry głowy i włosów",
           duration: "45 min",
-          price: "200 zł",
+          price: "Krótkie: 90 zł | Półdługie: 110 zł | Długie: 170 zł",
           popular: false,
           benefits: ["Dezynfekcja", "Stymulacja krążenia", "Oczyszczenie"]
         }
