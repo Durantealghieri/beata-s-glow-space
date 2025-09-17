@@ -454,6 +454,62 @@ const Zabiegi: React.FC = () => {
           price: "750 zł",
           popular: true,
           benefits: ["Obszerna pielęgnacja", "Kompleksowe odmłodzenie", "Harmonijny efekt"]
+        },
+        {
+          title: "Terapia na wypadające włosy EPN na skórę głowy. Pakiet 3 zabiegów + 1 zabieg gratis",
+          description: "Kompleksowy pakiet terapii przeciw wypadaniu włosów z elektroporacją",
+          duration: "60 min",
+          price: "1500 zł",
+          popular: true,
+          benefits: ["Pakiet 4 zabiegów", "Stymulacja wzrostu", "Wzmocnienie cebulek"]
+        },
+        {
+          title: "Pakiet 3 zabiegów na twarz + gratis 3 zabiegi na szyję",
+          description: "Kompleksowy pakiet zabiegów dla twarzy z bonusowymi zabiegami na szyję",
+          duration: "60 min",
+          price: "1650 zł",
+          popular: true,
+          benefits: ["6 zabiegów w cenie", "Kompleksowa pielęgnacja", "Oszczędność"]
+        },
+        {
+          title: "Twarz - Terapia łączona mezoterapia mikroigłowa EPN z elektroporacją + kwasy. Pakiet 3 zabiegów + 3 zabiegi na szyję gratis",
+          description: "Zaawansowany pakiet terapii łączonej z bonusowymi zabiegami na szyję",
+          duration: "60 min",
+          price: "1450 zł",
+          popular: true,
+          benefits: ["6 zabiegów w pakiecie", "Zaawansowana technologia", "Maksymalny efekt"]
+        },
+        {
+          title: "Pakiet 3 zabiegów na rozstępy (wybrany obszar) + 1 zabieg gratis",
+          description: "Specjalistyczny pakiet do redukcji rozstępów z dodatkowym zabiegiem",
+          duration: "60 min",
+          price: "1500 zł",
+          popular: true,
+          benefits: ["4 zabiegi w pakiecie", "Znacząca redukcja", "Regeneracja skóry"]
+        },
+        {
+          title: "Pakiet 3 zabiegów na twarz + szyję + 3 zabiegi gratis na dekolt",
+          description: "Rozszerzony pakiet zabiegów z bonusowymi zabiegami na dekolt",
+          duration: "90 min",
+          price: "1800 zł",
+          popular: true,
+          benefits: ["6 zabiegów w pakiecie", "Kompleksowa pielęgnacja", "Harmonijny efekt"]
+        },
+        {
+          title: "Twarz + szyja, terapia łączona mezoterapia mikroigłowa EPN z elektroporacją + kwasy. Pakiet 3 zabiegów",
+          description: "Profesjonalny pakiet zaawansowanej terapii łączonej dla twarzy i szyi",
+          duration: "90 min",
+          price: "1800 zł",
+          popular: true,
+          benefits: ["3 zabiegi w pakiecie", "Profesjonalna terapia", "Długotrwały efekt"]
+        },
+        {
+          title: "Twarz + szyja + dekolt, Terapia łączona mezoterapia mikroigłowa EPN z elektroporacją + kwasy",
+          description: "Najobszerniejsza terapia łączona obejmująca twarz, szyję i dekolt",
+          duration: "120 min",
+          price: "1900 zł",
+          popular: true,
+          benefits: ["Obszerna pielęgnacja", "Zaawansowane technologie", "Kompleksowe odmłodzenie"]
         }
       ]
     }
