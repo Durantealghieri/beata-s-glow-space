@@ -21,7 +21,7 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection = 'home' }) => {
       subItems: ['Wszystkie', 'Trychologia Kosmetologiczna', 'Masaże', 'Terapia Wodorem', 'Kosmetologia Onkologiczna', 'Mezoterapia Mikroigłowa', 'Zabiegi Pielęgnacyjne', 'Peeling Kwasowy', 'Radiofrekwencja']
     },
     {
-      name: 'Warsztaty',
+      name: 'Wydarzenia i warsztaty',
       id: 'warsztaty',
       subItems: []
     },
