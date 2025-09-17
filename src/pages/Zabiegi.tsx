@@ -393,6 +393,69 @@ const Zabiegi: React.FC = () => {
           benefits: ["Ujędrnienie", "Nawilżenie", "Redukcja przebarwień"]
         }
       ]
+    },
+    {
+      id: 'kosmetologia',
+      title: 'Kosmetologia',
+      description: 'Zaawansowane zabiegi kosmetologiczne dla różnych partii ciała',
+      services: [
+        {
+          title: "Skóra głowy",
+          description: "Profesjonalny zabieg kosmetologiczny dla skóry głowy",
+          duration: "45 min",
+          price: "550 zł",
+          popular: false,
+          benefits: ["Regeneracja", "Oczyszczenie", "Stymulacja"]
+        },
+        {
+          title: "Rozstępy (wybrany obszar)",
+          description: "Specjalistyczny zabieg redukcji rozstępów",
+          duration: "60 min",
+          price: "450 zł",
+          popular: true,
+          benefits: ["Redukcja rozstępów", "Wygładzenie", "Regeneracja"]
+        },
+        {
+          title: "Twarz",
+          description: "Kompleksowy zabieg kosmetologiczny twarzy",
+          duration: "60 min",
+          price: "600 zł",
+          popular: true,
+          benefits: ["Odmłodzenie", "Regeneracja", "Wygładzenie"]
+        },
+        {
+          title: "Twarz + szyja",
+          description: "Zabieg kosmetologiczny obejmujący twarz i szyję",
+          duration: "60 min",
+          price: "650 zł",
+          popular: true,
+          benefits: ["Kompleksowa pielęgnacja", "Ujędrnienie", "Odmłodzenie"]
+        },
+        {
+          title: "Twarz - terapia łączona mezoterapia mikroigłowa EPN z elektroporacją + kwasy",
+          description: "Zaawansowana terapia łącząca mezoterapię z elektroporacją i kwasami",
+          duration: "60 min",
+          price: "700 zł",
+          popular: true,
+          benefits: ["Maksymalny efekt", "Głęboka regeneracja", "Stymulacja kolagenu"]
+        },
+        {
+          title: "Twarz - preparat anty aging",
+          description: "Specjalistyczny zabieg przeciwstarzeniowy twarzy",
+          duration: "60 min",
+          price: "800 zł",
+          popular: true,
+          benefits: ["Efekt anti-aging", "Redukcja zmarszczek", "Odmłodzenie"]
+        },
+        {
+          title: "Twarz + szyja + dekolt",
+          description: "Kompleksowy zabieg kosmetologiczny twarzy, szyi i dekoltu",
+          duration: "90 min",
+          price: "750 zł",
+          popular: true,
+          benefits: ["Obszerna pielęgnacja", "Kompleksowe odmłodzenie", "Harmonijny efekt"]
+        }
+      ]
     }
   ];
 
