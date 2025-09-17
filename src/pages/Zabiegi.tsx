@@ -330,6 +330,69 @@ const Zabiegi: React.FC = () => {
           benefits: ["Dezynfekcja", "Stymulacja krążenia", "Oczyszczenie"]
         }
       ]
+    },
+    {
+      id: 'niwelowanie-zmarszczek',
+      title: 'Niwelowanie zmarszczek - Md Muscle',
+      description: 'Profesjonalne zabiegi medyczne do redukcji zmarszczek mimicznych',
+      services: [
+        {
+          title: "Broda",
+          description: "Wygładzenie zmarszczek w okolicy brody",
+          duration: "30 min",
+          price: "450 zł",
+          popular: false,
+          benefits: ["Wygładzenie", "Redukcja zmarszczek", "Efekt naturalny"]
+        },
+        {
+          title: "Bruksizm",
+          description: "Terapia zmarszczek związanych z bruksizmem",
+          duration: "30 min",
+          price: "1000 zł",
+          popular: true,
+          benefits: ["Redukcja napięcia", "Ochrona zębów", "Wygładzenie"]
+        },
+        {
+          title: "Czoło",
+          description: "Wygładzenie zmarszczek na czole",
+          duration: "30 min",
+          price: "550 zł",
+          popular: true,
+          benefits: ["Młodszy wygląd", "Wygładzenie", "Naturalne efekty"]
+        },
+        {
+          title: "Lwia zmarszczka",
+          description: "Redukcja pionowych zmarszczek między brwiami",
+          duration: "30 min",
+          price: "500 zł",
+          popular: true,
+          benefits: ["Łagodny wyraz", "Redukcja zmarszczek", "Odmłodzenie"]
+        },
+        {
+          title: "Nos - zmarszczki królicze",
+          description: "Wygładzenie drobnych zmarszczek na nosie",
+          duration: "30 min",
+          price: "400 zł",
+          popular: false,
+          benefits: ["Precyzyjne działanie", "Delikatne wygładzenie", "Naturalne efekty"]
+        },
+        {
+          title: "Kurze łapki",
+          description: "Redukcja zmarszczek wokół oczu",
+          duration: "30 min",
+          price: "500 zł",
+          popular: true,
+          benefits: ["Młodszy wygląd", "Otwarte spojrzenie", "Wygładzenie"]
+        },
+        {
+          title: "Dłonie",
+          description: "Odmładzanie skóry dłoni",
+          duration: "60 min",
+          price: "1600 zł",
+          popular: false,
+          benefits: ["Ujędrnienie", "Nawilżenie", "Redukcja przebarwień"]
+        }
+      ]
     }
   ];
 
