@@ -22,7 +22,7 @@ const AboutPreview: React.FC = () => {
     label: "Indywidualne podejście pełne pasji",
     color: "bg-accent"
   }];
-  const qualifications = ["Kosmetolog z licencją zawodową", "Specjalista mezoterapii igłowej", "Certyfikowany aplikator kwasów", "Trener marki Dermaheal", "Członek Polskiego Towarzystwa Kosmetycznego"];
+  const qualifications = ["Kosmetolog, Trycholog, Fitoterapeuta", "Dyplomowany kosmetolog, z wieloletnim doświadczeniem - absolwentka Wyższej Szkoły Inżynierii i Zdrowia w Warszawie na kierunku kosmetologia", "Absolwentka Instytutu Medycyny Klasztornej – Towaroznastwo Zielarskie", "Absolwentka The International Academy of Reflexology & Meridian Therapy - Dietetyka w Tradycyjnej Medycynie Chińskiej oraz Auriculotherapy. Refleksologia", "Edukator marki Sinesia", "Wolontariuszka w Fundacji Piękniejsze Życie", "Ekspert w dziedzinie pielęgnacji pacjentów onkologicznych w gabinecie kosmetologicznym"];
   return <section className="py-16 bg-gradient-to-br from-salon-cream to-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
