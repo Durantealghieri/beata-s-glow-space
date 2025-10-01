@@ -27,9 +27,7 @@ const AboutPreview: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-3xl font-bold text-foreground mb-6">
-              Poznaj Beatę Andraszewską Chlebną
-            </h2>
+            <h2 className="text-3xl font-bold text-foreground mb-6">Poznaj mnie</h2>
             
             <div className="prose prose-lg max-w-none text-muted-foreground mb-8">
               <p className="leading-relaxed">
