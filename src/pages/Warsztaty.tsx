@@ -39,7 +39,7 @@ const Warsztaty = () => {
               <div className="w-full flex justify-center">
                 <div 
                   className="fb-page" 
-                  data-href="https://www.facebook.com/fuliwarszawa"
+                  data-href="https://www.facebook.com/profile.php?id=100077473834025"
                   data-tabs="timeline,events"
                   data-width="500"
                   data-height="600"
@@ -49,10 +49,10 @@ const Warsztaty = () => {
                   data-show-facepile="true"
                 >
                   <blockquote 
-                    cite="https://www.facebook.com/fuliwarszawa" 
+                    cite="https://www.facebook.com/profile.php?id=100077473834025" 
                     className="fb-xfbml-parse-ignore"
                   >
-                    <a href="https://www.facebook.com/fuliwarszawa">
+                    <a href="https://www.facebook.com/profile.php?id=100077473834025">
                       Beata Andraszewska Chlebna - Kosmetologia
                     </a>
                   </blockquote>
@@ -69,7 +69,7 @@ const Warsztaty = () => {
                   className="gap-2"
                 >
                   <a 
-                    href="https://www.facebook.com/fuliwarszawa" 
+                    href="https://www.facebook.com/profile.php?id=100077473834025" 
                     target="_blank" 
                     rel="noopener noreferrer"
                   >
