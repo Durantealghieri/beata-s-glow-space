@@ -108,7 +108,7 @@ const ServicesPreview: React.FC = () => {
 
             <div className="pt-6">
               <Button size="lg" className="w-full sm:w-auto" asChild>
-                <Link to="/cennik">
+                <Link to="/zabiegi">
                   Zobacz wszystkie zabiegi
                 </Link>
               </Button>
