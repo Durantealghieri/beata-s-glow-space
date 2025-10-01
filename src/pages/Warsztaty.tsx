@@ -10,10 +10,22 @@ const Warsztaty = () => {
     // Load Facebook SDK
     (function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
+      if (d.getElementById(id)) {
+        // If SDK already loaded, reparse
+        if ((window as any).FB) {
+          (window as any).FB.XFBML.parse();
+        }
+        return;
+      }
       js = d.createElement(s) as HTMLScriptElement;
       js.id = id;
       js.src = "https://connect.facebook.net/pl_PL/sdk.js#xfbml=1&version=v18.0";
+      js.onload = () => {
+        // Parse the page once SDK is loaded
+        if ((window as any).FB) {
+          (window as any).FB.XFBML.parse();
+        }
+      };
       fjs.parentNode?.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
   }, []);
