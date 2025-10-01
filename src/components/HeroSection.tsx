@@ -18,16 +18,7 @@ const HeroSection: React.FC = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
             {/* Badge */}
-            <div className="flex items-center space-x-2">
-              <Badge className="bg-salon-rose text-foreground border-salon-rose/20">
-                <Sparkles className="h-3 w-3 mr-1" />
-                Profesjonalna kosmetologia
-              </Badge>
-              <div className="flex items-center space-x-1">
-                {[...Array(5)].map((_, i) => <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" />)}
-                <span className="text-sm text-muted-foreground ml-2">5.0 (120+ opinii)</span>
-              </div>
-            </div>
+            
 
             {/* Main Heading */}
             <div className="space-y-4">
