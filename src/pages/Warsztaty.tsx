@@ -55,8 +55,8 @@ const Warsztaty = () => {
                   className="fb-page" 
                   data-href="https://www.facebook.com/fuliwarszawa"
                   data-tabs="timeline,events"
-                  data-width={isMobile ? "340" : "1200"}
-                  data-height={isMobile ? "600" : "1200"}
+                  data-width={isMobile ? "340" : "800"}
+                  data-height={isMobile ? "600" : "340"}
                   data-small-header="false"
                   data-adapt-container-width="true"
                   data-hide-cover="false"
