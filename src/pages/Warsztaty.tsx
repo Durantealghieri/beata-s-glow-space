@@ -1,9 +1,13 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Navigation from '@/components/Navigation';
 import { Button } from '@/components/ui/button';
 import { ExternalLink } from 'lucide-react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const Warsztaty = () => {
+  const isMobile = useIsMobile();
+  const [fbLoaded, setFbLoaded] = useState(false);
+
   useEffect(() => {
     window.scrollTo(0, 0);
 
@@ -11,24 +15,22 @@ const Warsztaty = () => {
     (function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) {
-        // If SDK already loaded, reparse
-        if ((window as any).FB) {
-          (window as any).FB.XFBML.parse();
-        }
+        setFbLoaded(true);
         return;
       }
       js = d.createElement(s) as HTMLScriptElement;
       js.id = id;
       js.src = "https://connect.facebook.net/pl_PL/sdk.js#xfbml=1&version=v18.0";
-      js.onload = () => {
-        // Parse the page once SDK is loaded
-        if ((window as any).FB) {
-          (window as any).FB.XFBML.parse();
-        }
-      };
+      js.onload = () => setFbLoaded(true);
       fjs.parentNode?.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
   }, []);
+
+  useEffect(() => {
+    if (fbLoaded && (window as any).FB) {
+      (window as any).FB.XFBML.parse();
+    }
+  }, [isMobile, fbLoaded]);
 
   return (
     <div className="min-h-screen bg-background">
@@ -49,35 +51,12 @@ const Warsztaty = () => {
           <div className="bg-card rounded-lg shadow-elegant p-6 mb-8">
             <div className="flex flex-col items-center gap-6">
               <div className="w-full flex justify-center">
-                {/* Desktop version - large */}
                 <div 
-                  className="fb-page hidden md:block" 
+                  className="fb-page" 
                   data-href="https://www.facebook.com/fuliwarszawa"
                   data-tabs="timeline,events"
-                  data-width="1200"
-                  data-height="1200"
-                  data-small-header="false"
-                  data-adapt-container-width="true"
-                  data-hide-cover="false"
-                  data-show-facepile="true"
-                >
-                  <blockquote 
-                    cite="https://www.facebook.com/fuliwarszawa" 
-                    className="fb-xfbml-parse-ignore"
-                  >
-                    <a href="https://www.facebook.com/fuliwarszawa">
-                      Beata Andraszewska Chlebna - Kosmetologia
-                    </a>
-                  </blockquote>
-                </div>
-                
-                {/* Mobile version - compact */}
-                <div 
-                  className="fb-page block md:hidden" 
-                  data-href="https://www.facebook.com/fuliwarszawa"
-                  data-tabs="timeline,events"
-                  data-width="340"
-                  data-height="600"
+                  data-width={isMobile ? "340" : "1200"}
+                  data-height={isMobile ? "600" : "1200"}
                   data-small-header="false"
                   data-adapt-container-width="true"
                   data-hide-cover="false"
