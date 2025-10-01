@@ -23,7 +23,7 @@ const Warsztaty = () => {
       <div id="fb-root"></div>
       <Navigation currentSection="warsztaty" />
       <main className="container mx-auto px-4 py-12">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <header className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-salon-gold to-salon-rose bg-clip-text text-transparent">
               Wydarzenia i warsztaty
@@ -37,12 +37,35 @@ const Warsztaty = () => {
           <div className="bg-card rounded-lg shadow-elegant p-6 mb-8">
             <div className="flex flex-col items-center gap-6">
               <div className="w-full flex justify-center">
+                {/* Desktop version - large */}
                 <div 
-                  className="fb-page" 
+                  className="fb-page hidden md:block" 
                   data-href="https://www.facebook.com/fuliwarszawa"
                   data-tabs="timeline,events"
-                  data-width="800"
-                  data-height="900"
+                  data-width="1200"
+                  data-height="1200"
+                  data-small-header="false"
+                  data-adapt-container-width="true"
+                  data-hide-cover="false"
+                  data-show-facepile="true"
+                >
+                  <blockquote 
+                    cite="https://www.facebook.com/fuliwarszawa" 
+                    className="fb-xfbml-parse-ignore"
+                  >
+                    <a href="https://www.facebook.com/fuliwarszawa">
+                      Beata Andraszewska Chlebna - Kosmetologia
+                    </a>
+                  </blockquote>
+                </div>
+                
+                {/* Mobile version - compact */}
+                <div 
+                  className="fb-page block md:hidden" 
+                  data-href="https://www.facebook.com/fuliwarszawa"
+                  data-tabs="timeline,events"
+                  data-width="340"
+                  data-height="600"
                   data-small-header="false"
                   data-adapt-container-width="true"
                   data-hide-cover="false"
