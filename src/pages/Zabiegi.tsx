@@ -398,7 +398,56 @@ const Zabiegi: React.FC = () => {
       id: 'tropokolagen',
       title: 'Tropokolagen',
       description: 'Profesjonalne zabiegi niwelujące zmarszczki',
-      services: []
+      services: [
+        {
+          title: "Oczy",
+          description: "Profesjonalny zabieg niwelujący zmarszczki wokół oczu",
+          duration: "45 min",
+          price: "500 zł",
+          popular: false,
+          benefits: ["Redukcja zmarszczek", "Odmłodzenie", "Naturalny efekt"]
+        },
+        {
+          title: "Rozstępy",
+          description: "Zabieg redukujący widoczność rozstępów",
+          duration: "60 min",
+          price: "700 zł",
+          popular: false,
+          benefits: ["Redukcja rozstępów", "Wygładzenie", "Regeneracja skóry"]
+        },
+        {
+          title: "Brzuch",
+          description: "Zabieg niwelujący zmarszczki w okolicy brzucha",
+          duration: "60 min",
+          price: "800 zł",
+          popular: false,
+          benefits: ["Ujędrnienie", "Wygładzenie", "Regeneracja"]
+        },
+        {
+          title: "Twarz",
+          description: "Kompleksowy zabieg niwelujący zmarszczki twarzy",
+          duration: "60 min",
+          price: "700 zł",
+          popular: true,
+          benefits: ["Redukcja zmarszczek", "Odmłodzenie", "Naturalny efekt"]
+        },
+        {
+          title: "Twarz + szyja",
+          description: "Zabieg obejmujący twarz i szyję",
+          duration: "60 min",
+          price: "800 zł",
+          popular: true,
+          benefits: ["Kompleksowa pielęgnacja", "Ujędrnienie", "Harmonijny efekt"]
+        },
+        {
+          title: "Twarz + szyja + dekolt",
+          description: "Najbardziej kompleksowy zabieg niwelujący zmarszczki",
+          duration: "90 min",
+          price: "850 zł",
+          popular: true,
+          benefits: ["Obszerna pielęgnacja", "Odmłodzenie", "Długotrwały efekt"]
+        }
+      ]
     },
     {
       id: 'kosmetologia',
