@@ -18,7 +18,7 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection = 'home' }) => {
     {
       name: 'Zabiegi',
       id: 'zabiegi',
-      subItems: ['Wszystkie', 'Trychologia Kosmetologiczna', 'Masaże', 'Terapia Wodorem', 'Kosmetologia Onkologiczna', 'Mezoterapia Mikroigłowa', 'Zabiegi Pielęgnacyjne', 'Peeling Kwasowy', 'Radiofrekwencja']
+      subItems: ['Wszystkie', 'Kosmetologia', 'Kosmetologia Onkologiczna', 'Masaże', 'Mezoterapia Mikroigłowa Dermapen', 'Niwelowanie zmarszczek - Md Muscle', 'Peeling Kwasowy', 'Pielęgnacja włosów Tahe', 'Radiofrekwencja - RF Lifting', 'Terapia Wodorem Molekularnym', 'Tropokolagen', 'Trychologia Kosmetologiczna', 'Zabiegi Pielęgnacyjne - Twarz']
     },
     {
       name: 'Wydarzenia i warsztaty',
@@ -127,14 +127,18 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection = 'home' }) => {
                                   if (item.id === 'zabiegi') {
                                     switch (subItem) {
                                       case 'Wszystkie': return '/zabiegi';
-                                      case 'Trychologia Kosmetologiczna': return '/zabiegi#trychologia';
-                                      case 'Masaże': return '/zabiegi#masaze';
-                                      case 'Terapia Wodorem': return '/zabiegi#terapia-wodorem';
+                                      case 'Kosmetologia': return '/zabiegi#kosmetologia';
                                       case 'Kosmetologia Onkologiczna': return '/zabiegi#kosmetologia-onkologiczna';
-                                      case 'Mezoterapia Mikroigłowa': return '/zabiegi#mezoterapia';
-                                      case 'Zabiegi Pielęgnacyjne': return '/zabiegi#zabiegi-pielegnacyjne';
+                                      case 'Masaże': return '/zabiegi#masaze';
+                                      case 'Mezoterapia Mikroigłowa Dermapen': return '/zabiegi#mezoterapia';
+                                      case 'Niwelowanie zmarszczek - Md Muscle': return '/zabiegi#niwelowanie-zmarszczek';
                                       case 'Peeling Kwasowy': return '/zabiegi#peeling-kwasowy';
-                                      case 'Radiofrekwencja': return '/zabiegi#radiofrekwencja';
+                                      case 'Pielęgnacja włosów Tahe': return '/zabiegi#pielegnacja-wlosow-tahe';
+                                      case 'Radiofrekwencja - RF Lifting': return '/zabiegi#radiofrekwencja';
+                                      case 'Terapia Wodorem Molekularnym': return '/zabiegi#terapia-wodorem';
+                                      case 'Tropokolagen': return '/zabiegi#tropokolagen';
+                                      case 'Trychologia Kosmetologiczna': return '/zabiegi#trychologia';
+                                      case 'Zabiegi Pielęgnacyjne - Twarz': return '/zabiegi#zabiegi-pielegnacyjne';
                                       default: return '/zabiegi';
                                     }
                                   }
@@ -214,14 +218,18 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection = 'home' }) => {
                                 if (item.id === 'zabiegi') {
                                   switch (subItem) {
                                     case 'Wszystkie': return '/zabiegi';
-                                    case 'Trychologia Kosmetologiczna': return '/zabiegi#trychologia';
-                                    case 'Masaże': return '/zabiegi#masaze';
-                                    case 'Terapia Wodorem': return '/zabiegi#terapia-wodorem';
+                                    case 'Kosmetologia': return '/zabiegi#kosmetologia';
                                     case 'Kosmetologia Onkologiczna': return '/zabiegi#kosmetologia-onkologiczna';
-                                    case 'Mezoterapia Mikroigłowa': return '/zabiegi#mezoterapia';
-                                    case 'Zabiegi Pielęgnacyjne': return '/zabiegi#zabiegi-pielegnacyjne';
+                                    case 'Masaże': return '/zabiegi#masaze';
+                                    case 'Mezoterapia Mikroigłowa Dermapen': return '/zabiegi#mezoterapia';
+                                    case 'Niwelowanie zmarszczek - Md Muscle': return '/zabiegi#niwelowanie-zmarszczek';
                                     case 'Peeling Kwasowy': return '/zabiegi#peeling-kwasowy';
-                                    case 'Radiofrekwencja': return '/zabiegi#radiofrekwencja';
+                                    case 'Pielęgnacja włosów Tahe': return '/zabiegi#pielegnacja-wlosow-tahe';
+                                    case 'Radiofrekwencja - RF Lifting': return '/zabiegi#radiofrekwencja';
+                                    case 'Terapia Wodorem Molekularnym': return '/zabiegi#terapia-wodorem';
+                                    case 'Tropokolagen': return '/zabiegi#tropokolagen';
+                                    case 'Trychologia Kosmetologiczna': return '/zabiegi#trychologia';
+                                    case 'Zabiegi Pielęgnacyjne - Twarz': return '/zabiegi#zabiegi-pielegnacyjne';
                                     default: return '/zabiegi';
                                   }
                                 }
