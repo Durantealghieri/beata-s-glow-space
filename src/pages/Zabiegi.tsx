@@ -45,411 +45,6 @@ const Zabiegi: React.FC = () => {
 
   const serviceCategories = [
     {
-      id: 'trychologia',
-      title: 'Trychologia Kosmetologiczna',
-      description: 'Specjalistyczne zabiegi dla zdrowia włosów i skóry głowy',
-      services: [
-        {
-          title: "Konsultacja Trychologiczna",
-          description: "Profesjonalna konsultacja dotycząca problemów skóry głowy i włosów",
-          duration: "45 min",
-          price: "200 zł",
-          popular: false,
-          benefits: ["Analiza problemów", "Plan terapii", "Profesjonalne doradztwo"]
-        },
-        {
-          title: "Mezoterapia skóry głowy",
-          description: "Zaawansowana terapia regeneracyjna",
-          duration: "60 min",
-          price: "300-900 zł",
-          popular: true,
-          benefits: ["Regeneracja", "Stymulacja wzrostu", "Odżywienie"]
-        },
-        {
-          title: "Terapia profilaktyczna",
-          description: "Zapobieganie problemom skóry głowy",
-          duration: "45 min",
-          price: "300 zł",
-          popular: false,
-          benefits: ["Profilaktyka", "Wzmocnienie", "Ochrona"]
-        }
-      ]
-    },
-    {
-      id: 'masaze',
-      title: 'Masaże',
-      description: 'Relaksacyjne i terapeutyczne masaże ciała i twarzy',
-      services: [
-        {
-          title: "Kobido",
-          description: "Tradycyjny japoński masaż twarzy",
-          duration: "60 min",
-          price: "250 zł",
-          popular: true,
-          benefits: ["Lifting naturalny", "Relaksacja", "Tradycyjna technika"]
-        },
-        {
-          title: "Kobido + ampułka + maska",
-          description: "Rozszerzony masaż kobido z dodatkowymi zabiegami",
-          duration: "75 min",
-          price: "350 zł",
-          popular: true,
-          benefits: ["Kompleksowa pielęgnacja", "Intensywne nawilżenie", "Maksymalny efekt"]
-        },
-        {
-          title: "Drenaż limfatyczny",
-          description: "Masaż wspomagający system limfatyczny",
-          duration: "60 min",
-          price: "200-300 zł",
-          popular: false,
-          benefits: ["Detoks", "Odwodnienie", "Poprawa krążenia"]
-        }
-      ]
-    },
-    {
-      id: 'terapia-wodorem',
-      title: 'Terapia Wodorem Molekularnym',
-      description: 'Innowacyjne zabiegi z wykorzystaniem wodoru molekularnego',
-      services: [
-        {
-          title: "Inhalacja wodorem 60min",
-          description: "Standardowa sesja terapii wodorowej",
-          duration: "60 min",
-          price: "110 zł",
-          popular: true,
-          benefits: ["Pełna regeneracja", "Antyoksydacja", "Energia"]
-        },
-        {
-          title: "Inhalacja + piezo Mist + terapia światłem",
-          description: "Kompleksowa terapia wodorowa z dodatkami",
-          duration: "60 min",
-          price: "300 zł",
-          popular: true,
-          benefits: ["Kompleksowa terapia", "Nawilżenie", "Regeneracja światłem"]
-        }
-      ]
-    },
-    {
-      id: 'kosmetologia-onkologiczna',
-      title: 'Kosmetologia Onkologiczna',
-      description: 'Specjalistyczne zabiegi dla pacjentów onkologicznych',
-      services: [
-        {
-          title: "Zabieg twarz",
-          description: "Specjalistyczny zabieg dla pacjentów onkologicznych - twarz",
-          duration: "60 min",
-          price: "300 zł",
-          popular: false,
-          benefits: ["Specjalistyczny", "Delikatny", "Bezpieczny"]
-        },
-        {
-          title: "Zabieg ciało",
-          description: "Specjalistyczny zabieg dla pacjentów onkologicznych - ciało",
-          duration: "90 min",
-          price: "500-600 zł",
-          popular: false,
-          benefits: ["Kompleksowa pielęgnacja", "Bezpieczeństwo", "Komfort"]
-        }
-      ]
-    },
-    {
-      id: 'mezoterapia',
-      title: 'Mezoterapia Mikroigłowa Dermapen',
-      description: 'Zaawansowane zabiegi mezoterapii mikroigłowej',
-      services: [
-        {
-          title: "Twarz",
-          description: "Mezoterapia mikroigłowa twarzy",
-          duration: "60 min",
-          price: "600-1000 zł",
-          popular: true,
-          benefits: ["Regeneracja", "Stymulacja kolagenu", "Odmłodzenie"]
-        },
-        {
-          title: "Twarz, szyja, dekolt Egzosomy Bio Pulsacyjne",
-          description: "Kompleksowa mezoterapia z egzosomami",
-          duration: "90 min",
-          price: "1000 zł",
-          popular: true,
-          benefits: ["Kompleksowa pielęgnacja", "Obszerne działanie", "Maksymalny efekt"]
-        }
-      ]
-    },
-    {
-      id: 'zabiegi-pielegnacyjne',
-      title: 'Zabiegi Pielęgnacyjne - Twarz',
-      description: 'Profesjonalne zabiegi pielęgnacyjne dla skóry twarzy',
-      services: [
-        {
-          title: "Interactive System",
-          description: "zabieg wyrównujący, bio stymulujący, antyoksydacyjny",
-          duration: "60 min",
-          price: "350-400 zł",
-          popular: true,
-          benefits: ["Wyrównanie", "Bio stymulacja", "Antyoksydacja"]
-        },
-        {
-          title: "Hydra Diamond Facial",
-          description: "zabieg wieloetapowy (hydroabrazja, mezoterapia bezigłowa, infuzja tlenowa, masaż próżniowy, rf)",
-          duration: "90 min",
-          price: "450 zł",
-          popular: true,
-          benefits: ["Wieloetapowość", "Kompleksowość", "Nowoczesność"]
-        },
-        {
-          title: "Boto Fill",
-          description: "bioaktywne odmłodzenie wokół oczu",
-          duration: "45 min",
-          price: "350-400 zł",
-          popular: true,
-          benefits: ["Odmłodzenie oczu", "Bioaktywność", "Regeneracja"]
-        }
-      ]
-    },
-    {
-      id: 'peeling-kwasowy',
-      title: 'Peeling Kwasowy',
-      description: 'Zaawansowane peelingi kwasowe dla odnowy skóry',
-      services: [
-        {
-          title: "Zabieg AHA-BHA-AKA twarz",
-          description: "Peeling z kwasami AHA, BHA i AKA",
-          duration: "60 min",
-          price: "350 zł",
-          popular: true,
-          benefits: ["Wielokwasowy", "Kompleksowy", "Skuteczny"]
-        },
-        {
-          title: "Intensywnie eksfoliujący twarz",
-          description: "Głęboki peeling eksfoliujący twarzy",
-          duration: "60 min",
-          price: "350 zł",
-          popular: false,
-          benefits: ["Głęboka eksfoliacja", "Odnowa", "Wygładzenie"]
-        }
-      ]
-    },
-    {
-      id: 'radiofrekwencja',
-      title: 'Radiofrekwencja - RF Lifting',
-      description: 'Bezinwazyjne zabiegi liftingujące z wykorzystaniem fal radiowych',
-      services: [
-        {
-          title: "Twarz",
-          description: "RF lifting twarzy",
-          duration: "45 min",
-          price: "200 zł",
-          popular: false,
-          benefits: ["Lifting bezinwazyjny", "Ujędrnienie", "Stymulacja kolagenu"]
-        },
-        {
-          title: "Ciało (brzuch, pośladki, uda)",
-          description: "RF lifting wybranych partii ciała",
-          duration: "60 min",
-          price: "400 zł",
-          popular: true,
-          benefits: ["Modelowanie sylwetki", "Ujędrnienie", "Redukcja cellulitu"]
-        }
-      ]
-    },
-    {
-      id: 'pielegnacja-wlosow-tahe',
-      title: 'Pielęgnacja włosów Tahe',
-      description: 'Profesjonalne zabiegi regeneracyjne i odbudowujące dla włosów',
-      services: [
-        {
-          title: "Botox",
-          description: "Intensywna regeneracja i wygładzenie włosów",
-          duration: "90 min",
-          price: "Krótkie: 155 zł | Półdługie: 200 zł | Długie: 280 zł",
-          popular: true,
-          benefits: ["Głębokie odżywienie", "Wygładzenie", "Regeneracja"]
-        },
-        {
-          title: "Proteiny złota",
-          description: "Luksusowa odbudowa struktury włosa z proteinami złota",
-          duration: "75 min",
-          price: "Krótkie: 100 zł | Półdługie: 120 zł | Długie: 160 zł",
-          popular: true,
-          benefits: ["Odbudowa struktury", "Luksusowa pielęgnacja", "Blask"]
-        },
-        {
-          title: "Koktajl witaminowy",
-          description: "Intensywne odżywienie włosów witaminami i minerałami",
-          duration: "60 min",
-          price: "Krótkie: 110 zł | Półdługie: 160 zł | Długie: 180 zł",
-          popular: false,
-          benefits: ["Witaminizacja", "Odżywienie", "Wzmocnienie"]
-        },
-        {
-          title: "Zabieg peptydowy",
-          description: "Nowoczesna terapia z wykorzystaniem peptydów",
-          duration: "75 min",
-          price: "Krótkie: 160 zł | Półdługie: 190 zł | Długie: 280 zł",
-          popular: true,
-          benefits: ["Stymulacja wzrostu", "Regeneracja", "Wzmocnienie"]
-        },
-        {
-          title: "Proteiny włosy kręcone",
-          description: "Specjalistyczny zabieg dla włosów kręconych i falowanych",
-          duration: "90 min",
-          price: "Krótkie: 200 zł | Półdługie: 250 zł | Długie: 280 zł",
-          popular: false,
-          benefits: ["Definicja loków", "Nawilżenie", "Elastyczność"]
-        },
-        {
-          title: "Zabieg plex",
-          description: "Rekonstrukcja zniszczonych wiązań w strukturze włosa",
-          duration: "60 min",
-          price: "Krótkie: 80 zł | Półdługie: 100 zł | Długie: 170 zł",
-          popular: true,
-          benefits: ["Odbudowa wiązań", "Wzmocnienie", "Ochrona"]
-        },
-        {
-          title: "Nanoplastia gold",
-          description: "Luksusowe prostowanie i odbudowa z cząsteczkami złota",
-          duration: "120 min",
-          price: "Krótkie: 440 zł | Półdługie: 660 zł | Długie: 880 zł",
-          popular: true,
-          benefits: ["Trwałe prostowanie", "Luksus", "Regeneracja"]
-        },
-        {
-          title: "Bioplastia i K-glicolic",
-          description: "Naturalna bioplastia z kwasem glikolowym",
-          duration: "90 min",
-          price: "Krótkie: 550 zł | Półdługie: 880 zł | Długie: 1320 zł",
-          popular: false,
-          benefits: ["Naturalne prostowanie", "Odbudowa", "Delikatność"]
-        },
-        {
-          title: "Ozonoterapia",
-          description: "Terapia ozonem dla skóry głowy i włosów",
-          duration: "45 min",
-          price: "Krótkie: 90 zł | Półdługie: 110 zł | Długie: 170 zł",
-          popular: false,
-          benefits: ["Dezynfekcja", "Stymulacja krążenia", "Oczyszczenie"]
-        }
-      ]
-    },
-    {
-      id: 'niwelowanie-zmarszczek',
-      title: 'Niwelowanie zmarszczek - Md Muscle',
-      description: 'Profesjonalne zabiegi medyczne do redukcji zmarszczek mimicznych',
-      services: [
-        {
-          title: "Broda",
-          description: "Wygładzenie zmarszczek w okolicy brody",
-          duration: "30 min",
-          price: "450 zł",
-          popular: false,
-          benefits: ["Wygładzenie", "Redukcja zmarszczek", "Efekt naturalny"]
-        },
-        {
-          title: "Bruksizm",
-          description: "Terapia zmarszczek związanych z bruksizmem",
-          duration: "30 min",
-          price: "1000 zł",
-          popular: true,
-          benefits: ["Redukcja napięcia", "Ochrona zębów", "Wygładzenie"]
-        },
-        {
-          title: "Czoło",
-          description: "Wygładzenie zmarszczek na czole",
-          duration: "30 min",
-          price: "550 zł",
-          popular: true,
-          benefits: ["Młodszy wygląd", "Wygładzenie", "Naturalne efekty"]
-        },
-        {
-          title: "Lwia zmarszczka",
-          description: "Redukcja pionowych zmarszczek między brwiami",
-          duration: "30 min",
-          price: "500 zł",
-          popular: true,
-          benefits: ["Łagodny wyraz", "Redukcja zmarszczek", "Odmłodzenie"]
-        },
-        {
-          title: "Nos - zmarszczki królicze",
-          description: "Wygładzenie drobnych zmarszczek na nosie",
-          duration: "30 min",
-          price: "400 zł",
-          popular: false,
-          benefits: ["Precyzyjne działanie", "Delikatne wygładzenie", "Naturalne efekty"]
-        },
-        {
-          title: "Kurze łapki",
-          description: "Redukcja zmarszczek wokół oczu",
-          duration: "30 min",
-          price: "500 zł",
-          popular: true,
-          benefits: ["Młodszy wygląd", "Otwarte spojrzenie", "Wygładzenie"]
-        },
-        {
-          title: "Dłonie",
-          description: "Odmładzanie skóry dłoni",
-          duration: "60 min",
-          price: "1600 zł",
-          popular: false,
-          benefits: ["Ujędrnienie", "Nawilżenie", "Redukcja przebarwień"]
-        }
-      ]
-    },
-    {
-      id: 'tropokolagen',
-      title: 'Tropokolagen',
-      description: 'Profesjonalne zabiegi niwelujące zmarszczki',
-      services: [
-        {
-          title: "Oczy",
-          description: "Profesjonalny zabieg niwelujący zmarszczki wokół oczu",
-          duration: "45 min",
-          price: "500 zł",
-          popular: false,
-          benefits: ["Redukcja zmarszczek", "Odmłodzenie", "Naturalny efekt"]
-        },
-        {
-          title: "Rozstępy",
-          description: "Zabieg redukujący widoczność rozstępów",
-          duration: "60 min",
-          price: "700 zł",
-          popular: false,
-          benefits: ["Redukcja rozstępów", "Wygładzenie", "Regeneracja skóry"]
-        },
-        {
-          title: "Brzuch",
-          description: "Zabieg niwelujący zmarszczki w okolicy brzucha",
-          duration: "60 min",
-          price: "800 zł",
-          popular: false,
-          benefits: ["Ujędrnienie", "Wygładzenie", "Regeneracja"]
-        },
-        {
-          title: "Twarz",
-          description: "Kompleksowy zabieg niwelujący zmarszczki twarzy",
-          duration: "60 min",
-          price: "700 zł",
-          popular: true,
-          benefits: ["Redukcja zmarszczek", "Odmłodzenie", "Naturalny efekt"]
-        },
-        {
-          title: "Twarz + szyja",
-          description: "Zabieg obejmujący twarz i szyję",
-          duration: "60 min",
-          price: "800 zł",
-          popular: true,
-          benefits: ["Kompleksowa pielęgnacja", "Ujędrnienie", "Harmonijny efekt"]
-        },
-        {
-          title: "Twarz + szyja + dekolt",
-          description: "Najbardziej kompleksowy zabieg niwelujący zmarszczki",
-          duration: "90 min",
-          price: "850 zł",
-          popular: true,
-          benefits: ["Obszerna pielęgnacja", "Odmłodzenie", "Długotrwały efekt"]
-        }
-      ]
-    },
-    {
       id: 'kosmetologia',
       title: 'Kosmetologia',
       description: 'Zaawansowane zabiegi kosmetologiczne dla różnych partii ciała - mezoterapia mikroigłowa z elektroporacją',
@@ -565,6 +160,411 @@ const Zabiegi: React.FC = () => {
           price: "1900 zł",
           popular: true,
           benefits: ["Obszerna pielęgnacja", "Zaawansowane technologie", "Kompleksowe odmłodzenie"]
+        }
+      ]
+    },
+    {
+      id: 'kosmetologia-onkologiczna',
+      title: 'Kosmetologia Onkologiczna',
+      description: 'Specjalistyczne zabiegi dla pacjentów onkologicznych',
+      services: [
+        {
+          title: "Zabieg twarz",
+          description: "Specjalistyczny zabieg dla pacjentów onkologicznych - twarz",
+          duration: "60 min",
+          price: "300 zł",
+          popular: false,
+          benefits: ["Specjalistyczny", "Delikatny", "Bezpieczny"]
+        },
+        {
+          title: "Zabieg ciało",
+          description: "Specjalistyczny zabieg dla pacjentów onkologicznych - ciało",
+          duration: "90 min",
+          price: "500-600 zł",
+          popular: false,
+          benefits: ["Kompleksowa pielęgnacja", "Bezpieczeństwo", "Komfort"]
+        }
+      ]
+    },
+    {
+      id: 'masaze',
+      title: 'Masaże',
+      description: 'Relaksacyjne i terapeutyczne masaże ciała i twarzy',
+      services: [
+        {
+          title: "Kobido",
+          description: "Tradycyjny japoński masaż twarzy",
+          duration: "60 min",
+          price: "250 zł",
+          popular: true,
+          benefits: ["Lifting naturalny", "Relaksacja", "Tradycyjna technika"]
+        },
+        {
+          title: "Kobido + ampułka + maska",
+          description: "Rozszerzony masaż kobido z dodatkowymi zabiegami",
+          duration: "75 min",
+          price: "350 zł",
+          popular: true,
+          benefits: ["Kompleksowa pielęgnacja", "Intensywne nawilżenie", "Maksymalny efekt"]
+        },
+        {
+          title: "Drenaż limfatyczny",
+          description: "Masaż wspomagający system limfatyczny",
+          duration: "60 min",
+          price: "200-300 zł",
+          popular: false,
+          benefits: ["Detoks", "Odwodnienie", "Poprawa krążenia"]
+        }
+      ]
+    },
+    {
+      id: 'mezoterapia',
+      title: 'Mezoterapia Mikroigłowa Dermapen',
+      description: 'Zaawansowane zabiegi mezoterapii mikroigłowej',
+      services: [
+        {
+          title: "Twarz",
+          description: "Mezoterapia mikroigłowa twarzy",
+          duration: "60 min",
+          price: "600-1000 zł",
+          popular: true,
+          benefits: ["Regeneracja", "Stymulacja kolagenu", "Odmłodzenie"]
+        },
+        {
+          title: "Twarz, szyja, dekolt Egzosomy Bio Pulsacyjne",
+          description: "Kompleksowa mezoterapia z egzosomami",
+          duration: "90 min",
+          price: "1000 zł",
+          popular: true,
+          benefits: ["Kompleksowa pielęgnacja", "Obszerne działanie", "Maksymalny efekt"]
+        }
+      ]
+    },
+    {
+      id: 'niwelowanie-zmarszczek',
+      title: 'Niwelowanie zmarszczek - Md Muscle',
+      description: 'Profesjonalne zabiegi medyczne do redukcji zmarszczek mimicznych',
+      services: [
+        {
+          title: "Broda",
+          description: "Wygładzenie zmarszczek w okolicy brody",
+          duration: "30 min",
+          price: "450 zł",
+          popular: false,
+          benefits: ["Wygładzenie", "Redukcja zmarszczek", "Efekt naturalny"]
+        },
+        {
+          title: "Bruksizm",
+          description: "Terapia zmarszczek związanych z bruksizmem",
+          duration: "30 min",
+          price: "1000 zł",
+          popular: true,
+          benefits: ["Redukcja napięcia", "Ochrona zębów", "Wygładzenie"]
+        },
+        {
+          title: "Czoło",
+          description: "Wygładzenie zmarszczek na czole",
+          duration: "30 min",
+          price: "550 zł",
+          popular: true,
+          benefits: ["Młodszy wygląd", "Wygładzenie", "Naturalne efekty"]
+        },
+        {
+          title: "Lwia zmarszczka",
+          description: "Redukcja pionowych zmarszczek między brwiami",
+          duration: "30 min",
+          price: "500 zł",
+          popular: true,
+          benefits: ["Łagodny wyraz", "Redukcja zmarszczek", "Odmłodzenie"]
+        },
+        {
+          title: "Nos - zmarszczki królicze",
+          description: "Wygładzenie drobnych zmarszczek na nosie",
+          duration: "30 min",
+          price: "400 zł",
+          popular: false,
+          benefits: ["Precyzyjne działanie", "Delikatne wygładzenie", "Naturalne efekty"]
+        },
+        {
+          title: "Kurze łapki",
+          description: "Redukcja zmarszczek wokół oczu",
+          duration: "30 min",
+          price: "500 zł",
+          popular: true,
+          benefits: ["Młodszy wygląd", "Otwarte spojrzenie", "Wygładzenie"]
+        },
+        {
+          title: "Dłonie",
+          description: "Odmładzanie skóry dłoni",
+          duration: "60 min",
+          price: "1600 zł",
+          popular: false,
+          benefits: ["Ujędrnienie", "Nawilżenie", "Redukcja przebarwień"]
+        }
+      ]
+    },
+    {
+      id: 'peeling-kwasowy',
+      title: 'Peeling Kwasowy',
+      description: 'Zaawansowane peelingi kwasowe dla odnowy skóry',
+      services: [
+        {
+          title: "Zabieg AHA-BHA-AKA twarz",
+          description: "Peeling z kwasami AHA, BHA i AKA",
+          duration: "60 min",
+          price: "350 zł",
+          popular: true,
+          benefits: ["Wielokwasowy", "Kompleksowy", "Skuteczny"]
+        },
+        {
+          title: "Intensywnie eksfoliujący twarz",
+          description: "Głęboki peeling eksfoliujący twarzy",
+          duration: "60 min",
+          price: "350 zł",
+          popular: false,
+          benefits: ["Głęboka eksfoliacja", "Odnowa", "Wygładzenie"]
+        }
+      ]
+    },
+    {
+      id: 'pielegnacja-wlosow-tahe',
+      title: 'Pielęgnacja włosów Tahe',
+      description: 'Profesjonalne zabiegi regeneracyjne i odbudowujące dla włosów',
+      services: [
+        {
+          title: "Botox",
+          description: "Intensywna regeneracja i wygładzenie włosów",
+          duration: "90 min",
+          price: "Krótkie: 155 zł | Półdługie: 200 zł | Długie: 280 zł",
+          popular: true,
+          benefits: ["Głębokie odżywienie", "Wygładzenie", "Regeneracja"]
+        },
+        {
+          title: "Proteiny złota",
+          description: "Luksusowa odbudowa struktury włosa z proteinami złota",
+          duration: "75 min",
+          price: "Krótkie: 100 zł | Półdługie: 120 zł | Długie: 160 zł",
+          popular: true,
+          benefits: ["Odbudowa struktury", "Luksusowa pielęgnacja", "Blask"]
+        },
+        {
+          title: "Koktajl witaminowy",
+          description: "Intensywne odżywienie włosów witaminami i minerałami",
+          duration: "60 min",
+          price: "Krótkie: 110 zł | Półdługie: 160 zł | Długie: 180 zł",
+          popular: false,
+          benefits: ["Witaminizacja", "Odżywienie", "Wzmocnienie"]
+        },
+        {
+          title: "Zabieg peptydowy",
+          description: "Nowoczesna terapia z wykorzystaniem peptydów",
+          duration: "75 min",
+          price: "Krótkie: 160 zł | Półdługie: 190 zł | Długie: 280 zł",
+          popular: true,
+          benefits: ["Stymulacja wzrostu", "Regeneracja", "Wzmocnienie"]
+        },
+        {
+          title: "Proteiny włosy kręcone",
+          description: "Specjalistyczny zabieg dla włosów kręconych i falowanych",
+          duration: "90 min",
+          price: "Krótkie: 200 zł | Półdługie: 250 zł | Długie: 280 zł",
+          popular: false,
+          benefits: ["Definicja loków", "Nawilżenie", "Elastyczność"]
+        },
+        {
+          title: "Zabieg plex",
+          description: "Rekonstrukcja zniszczonych wiązań w strukturze włosa",
+          duration: "60 min",
+          price: "Krótkie: 80 zł | Półdługie: 100 zł | Długie: 170 zł",
+          popular: true,
+          benefits: ["Odbudowa wiązań", "Wzmocnienie", "Ochrona"]
+        },
+        {
+          title: "Nanoplastia gold",
+          description: "Luksusowe prostowanie i odbudowa z cząsteczkami złota",
+          duration: "120 min",
+          price: "Krótkie: 440 zł | Półdługie: 660 zł | Długie: 880 zł",
+          popular: true,
+          benefits: ["Trwałe prostowanie", "Luksus", "Regeneracja"]
+        },
+        {
+          title: "Bioplastia i K-glicolic",
+          description: "Naturalna bioplastia z kwasem glikolowym",
+          duration: "90 min",
+          price: "Krótkie: 550 zł | Półdługie: 880 zł | Długie: 1320 zł",
+          popular: false,
+          benefits: ["Naturalne prostowanie", "Odbudowa", "Delikatność"]
+        },
+        {
+          title: "Ozonoterapia",
+          description: "Terapia ozonem dla skóry głowy i włosów",
+          duration: "45 min",
+          price: "Krótkie: 90 zł | Półdługie: 110 zł | Długie: 170 zł",
+          popular: false,
+          benefits: ["Dezynfekcja", "Stymulacja krążenia", "Oczyszczenie"]
+        }
+      ]
+    },
+    {
+      id: 'radiofrekwencja',
+      title: 'Radiofrekwencja - RF Lifting',
+      description: 'Bezinwazyjne zabiegi liftingujące z wykorzystaniem fal radiowych',
+      services: [
+        {
+          title: "Twarz",
+          description: "RF lifting twarzy",
+          duration: "45 min",
+          price: "200 zł",
+          popular: false,
+          benefits: ["Lifting bezinwazyjny", "Ujędrnienie", "Stymulacja kolagenu"]
+        },
+        {
+          title: "Ciało (brzuch, pośladki, uda)",
+          description: "RF lifting wybranych partii ciała",
+          duration: "60 min",
+          price: "400 zł",
+          popular: true,
+          benefits: ["Modelowanie sylwetki", "Ujędrnienie", "Redukcja cellulitu"]
+        }
+      ]
+    },
+    {
+      id: 'terapia-wodorem',
+      title: 'Terapia Wodorem Molekularnym',
+      description: 'Innowacyjne zabiegi z wykorzystaniem wodoru molekularnego',
+      services: [
+        {
+          title: "Inhalacja wodorem 60min",
+          description: "Standardowa sesja terapii wodorowej",
+          duration: "60 min",
+          price: "110 zł",
+          popular: true,
+          benefits: ["Pełna regeneracja", "Antyoksydacja", "Energia"]
+        },
+        {
+          title: "Inhalacja + piezo Mist + terapia światłem",
+          description: "Kompleksowa terapia wodorowa z dodatkami",
+          duration: "60 min",
+          price: "300 zł",
+          popular: true,
+          benefits: ["Kompleksowa terapia", "Nawilżenie", "Regeneracja światłem"]
+        }
+      ]
+    },
+    {
+      id: 'tropokolagen',
+      title: 'Tropokolagen',
+      description: 'Profesjonalne zabiegi niwelujące zmarszczki',
+      services: [
+        {
+          title: "Oczy",
+          description: "Profesjonalny zabieg niwelujący zmarszczki wokół oczu",
+          duration: "45 min",
+          price: "500 zł",
+          popular: false,
+          benefits: ["Redukcja zmarszczek", "Odmłodzenie", "Naturalny efekt"]
+        },
+        {
+          title: "Rozstępy",
+          description: "Zabieg redukujący widoczność rozstępów",
+          duration: "60 min",
+          price: "700 zł",
+          popular: false,
+          benefits: ["Redukcja rozstępów", "Wygładzenie", "Regeneracja skóry"]
+        },
+        {
+          title: "Brzuch",
+          description: "Zabieg niwelujący zmarszczki w okolicy brzucha",
+          duration: "60 min",
+          price: "800 zł",
+          popular: false,
+          benefits: ["Ujędrnienie", "Wygładzenie", "Regeneracja"]
+        },
+        {
+          title: "Twarz",
+          description: "Kompleksowy zabieg niwelujący zmarszczki twarzy",
+          duration: "60 min",
+          price: "700 zł",
+          popular: true,
+          benefits: ["Redukcja zmarszczek", "Odmłodzenie", "Naturalny efekt"]
+        },
+        {
+          title: "Twarz + szyja",
+          description: "Zabieg obejmujący twarz i szyję",
+          duration: "60 min",
+          price: "800 zł",
+          popular: true,
+          benefits: ["Kompleksowa pielęgnacja", "Ujędrnienie", "Harmonijny efekt"]
+        },
+        {
+          title: "Twarz + szyja + dekolt",
+          description: "Najbardziej kompleksowy zabieg niwelujący zmarszczki",
+          duration: "90 min",
+          price: "850 zł",
+          popular: true,
+          benefits: ["Obszerna pielęgnacja", "Odmłodzenie", "Długotrwały efekt"]
+        }
+      ]
+    },
+    {
+      id: 'trychologia',
+      title: 'Trychologia Kosmetologiczna',
+      description: 'Specjalistyczne zabiegi dla zdrowia włosów i skóry głowy',
+      services: [
+        {
+          title: "Konsultacja Trychologiczna",
+          description: "Profesjonalna konsultacja dotycząca problemów skóry głowy i włosów",
+          duration: "45 min",
+          price: "200 zł",
+          popular: false,
+          benefits: ["Analiza problemów", "Plan terapii", "Profesjonalne doradztwo"]
+        },
+        {
+          title: "Mezoterapia skóry głowy",
+          description: "Zaawansowana terapia regeneracyjna",
+          duration: "60 min",
+          price: "300-900 zł",
+          popular: true,
+          benefits: ["Regeneracja", "Stymulacja wzrostu", "Odżywienie"]
+        },
+        {
+          title: "Terapia profilaktyczna",
+          description: "Zapobieganie problemom skóry głowy",
+          duration: "45 min",
+          price: "300 zł",
+          popular: false,
+          benefits: ["Profilaktyka", "Wzmocnienie", "Ochrona"]
+        }
+      ]
+    },
+    {
+      id: 'zabiegi-pielegnacyjne',
+      title: 'Zabiegi Pielęgnacyjne - Twarz',
+      description: 'Profesjonalne zabiegi pielęgnacyjne dla skóry twarzy',
+      services: [
+        {
+          title: "Interactive System",
+          description: "zabieg wyrównujący, bio stymulujący, antyoksydacyjny",
+          duration: "60 min",
+          price: "350-400 zł",
+          popular: true,
+          benefits: ["Wyrównanie", "Bio stymulacja", "Antyoksydacja"]
+        },
+        {
+          title: "Hydra Diamond Facial",
+          description: "zabieg wieloetapowy (hydroabrazja, mezoterapia bezigłowa, infuzja tlenowa, masaż próżniowy, rf)",
+          duration: "90 min",
+          price: "450 zł",
+          popular: true,
+          benefits: ["Wieloetapowość", "Kompleksowość", "Nowoczesność"]
+        },
+        {
+          title: "Boto Fill",
+          description: "bioaktywne odmłodzenie wokół oczu",
+          duration: "45 min",
+          price: "350-400 zł",
+          popular: true,
+          benefits: ["Odmłodzenie oczu", "Bioaktywność", "Regeneracja"]
         }
       ]
     }
