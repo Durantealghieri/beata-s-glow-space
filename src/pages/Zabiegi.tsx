@@ -397,7 +397,7 @@ const Zabiegi: React.FC = () => {
     {
       id: 'kosmetologia',
       title: 'Kosmetologia',
-      description: 'Zaawansowane zabiegi kosmetologiczne dla różnych partii ciała',
+      description: 'Zaawansowane zabiegi kosmetologiczne dla różnych partii ciała - mezoterapia mikroigłowa z elektroporacją',
       services: [
         {
           title: "Skóra głowy",
