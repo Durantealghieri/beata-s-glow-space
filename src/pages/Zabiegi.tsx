@@ -395,6 +395,12 @@ const Zabiegi: React.FC = () => {
       ]
     },
     {
+      id: 'tropokolagen',
+      title: 'Tropokolagen',
+      description: 'Profesjonalne zabiegi niwelujące zmarszczki',
+      services: []
+    },
+    {
       id: 'kosmetologia',
       title: 'Kosmetologia',
       description: 'Zaawansowane zabiegi kosmetologiczne dla różnych partii ciała - mezoterapia mikroigłowa z elektroporacją',
