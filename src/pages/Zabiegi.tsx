@@ -6,33 +6,36 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 import { Sparkles, Clock, Star, ArrowRight, ChevronDown } from 'lucide-react';
-
 const Zabiegi: React.FC = () => {
   const location = useLocation();
   const [openCategories, setOpenCategories] = useState<Set<string>>(new Set());
-
   useEffect(() => {
     if (location.hash) {
       const hashWithoutHash = location.hash.substring(1);
       // Open the category that corresponds to the hash
       setOpenCategories(new Set([hashWithoutHash]));
-      
+
       // Scroll to the element after a delay to ensure it's rendered
       const element = document.getElementById(hashWithoutHash);
       if (element) {
         setTimeout(() => {
-          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          element.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
         }, 300); // Increased delay to ensure collapsible content is rendered
       }
     } else {
       // No hash means "Wszystkie" was selected - close all sections and scroll to top
       setOpenCategories(new Set());
       setTimeout(() => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
       }, 100);
     }
   }, [location.hash]);
-
   const toggleCategory = (categoryId: string) => {
     const newOpenCategories = new Set(openCategories);
     if (newOpenCategories.has(categoryId)) {
@@ -42,536 +45,453 @@ const Zabiegi: React.FC = () => {
     }
     setOpenCategories(newOpenCategories);
   };
-
-  const serviceCategories = [
-    {
-      id: 'kosmetologia',
-      title: 'Kosmetologia',
-      description: 'Zaawansowane zabiegi kosmetologiczne dla różnych partii ciała - mezoterapia mikroigłowa z elektroporacją',
-      services: [
-        {
-          title: "Skóra głowy",
-          description: "Profesjonalny zabieg kosmetologiczny dla skóry głowy",
-          duration: "45 min",
-          price: "550 zł",
-          popular: false,
-          benefits: ["Regeneracja", "Oczyszczenie", "Stymulacja"]
-        },
-        {
-          title: "Rozstępy (wybrany obszar)",
-          description: "Specjalistyczny zabieg redukcji rozstępów",
-          duration: "60 min",
-          price: "450 zł",
-          popular: true,
-          benefits: ["Redukcja rozstępów", "Wygładzenie", "Regeneracja"]
-        },
-        {
-          title: "Twarz",
-          description: "Kompleksowy zabieg kosmetologiczny twarzy",
-          duration: "60 min",
-          price: "600 zł",
-          popular: true,
-          benefits: ["Odmłodzenie", "Regeneracja", "Wygładzenie"]
-        },
-        {
-          title: "Twarz + szyja",
-          description: "Zabieg kosmetologiczny obejmujący twarz i szyję",
-          duration: "60 min",
-          price: "650 zł",
-          popular: true,
-          benefits: ["Kompleksowa pielęgnacja", "Ujędrnienie", "Odmłodzenie"]
-        },
-        {
-          title: "Twarz - terapia łączona mezoterapia mikroigłowa EPN z elektroporacją + kwasy",
-          description: "Zaawansowana terapia łącząca mezoterapię z elektroporacją i kwasami",
-          duration: "60 min",
-          price: "700 zł",
-          popular: true,
-          benefits: ["Maksymalny efekt", "Głęboka regeneracja", "Stymulacja kolagenu"]
-        },
-        {
-          title: "Twarz - preparat anty aging",
-          description: "Specjalistyczny zabieg przeciwstarzeniowy twarzy",
-          duration: "60 min",
-          price: "800 zł",
-          popular: true,
-          benefits: ["Efekt anti-aging", "Redukcja zmarszczek", "Odmłodzenie"]
-        },
-        {
-          title: "Twarz + szyja + dekolt",
-          description: "Kompleksowy zabieg kosmetologiczny twarzy, szyi i dekoltu",
-          duration: "90 min",
-          price: "750 zł",
-          popular: true,
-          benefits: ["Obszerna pielęgnacja", "Kompleksowe odmłodzenie", "Harmonijny efekt"]
-        },
-        {
-          title: "Terapia na wypadające włosy EPN na skórę głowy. Pakiet 3 zabiegów + 1 zabieg gratis",
-          description: "Kompleksowy pakiet terapii przeciw wypadaniu włosów z elektroporacją",
-          duration: "60 min",
-          price: "1500 zł",
-          popular: true,
-          benefits: ["Pakiet 4 zabiegów", "Stymulacja wzrostu", "Wzmocnienie cebulek"]
-        },
-        {
-          title: "Pakiet 3 zabiegów na twarz + gratis 3 zabiegi na szyję",
-          description: "Kompleksowy pakiet zabiegów dla twarzy z bonusowymi zabiegami na szyję",
-          duration: "60 min",
-          price: "1650 zł",
-          popular: true,
-          benefits: ["6 zabiegów w cenie", "Kompleksowa pielęgnacja", "Oszczędność"]
-        },
-        {
-          title: "Twarz - Terapia łączona mezoterapia mikroigłowa EPN z elektroporacją + kwasy. Pakiet 3 zabiegów + 3 zabiegi na szyję gratis",
-          description: "Zaawansowany pakiet terapii łączonej z bonusowymi zabiegami na szyję",
-          duration: "60 min",
-          price: "1450 zł",
-          popular: true,
-          benefits: ["6 zabiegów w pakiecie", "Zaawansowana technologia", "Maksymalny efekt"]
-        },
-        {
-          title: "Pakiet 3 zabiegów na rozstępy (wybrany obszar) + 1 zabieg gratis",
-          description: "Specjalistyczny pakiet do redukcji rozstępów z dodatkowym zabiegiem",
-          duration: "60 min",
-          price: "1500 zł",
-          popular: true,
-          benefits: ["4 zabiegi w pakiecie", "Znacząca redukcja", "Regeneracja skóry"]
-        },
-        {
-          title: "Pakiet 3 zabiegów na twarz + szyję + 3 zabiegi gratis na dekolt",
-          description: "Rozszerzony pakiet zabiegów z bonusowymi zabiegami na dekolt",
-          duration: "90 min",
-          price: "1800 zł",
-          popular: true,
-          benefits: ["6 zabiegów w pakiecie", "Kompleksowa pielęgnacja", "Harmonijny efekt"]
-        },
-        {
-          title: "Twarz + szyja, terapia łączona mezoterapia mikroigłowa EPN z elektroporacją + kwasy. Pakiet 3 zabiegów",
-          description: "Profesjonalny pakiet zaawansowanej terapii łączonej dla twarzy i szyi",
-          duration: "90 min",
-          price: "1800 zł",
-          popular: true,
-          benefits: ["3 zabiegi w pakiecie", "Profesjonalna terapia", "Długotrwały efekt"]
-        },
-        {
-          title: "Twarz + szyja + dekolt, Terapia łączona mezoterapia mikroigłowa EPN z elektroporacją + kwasy",
-          description: "Najobszerniejsza terapia łączona obejmująca twarz, szyję i dekolt",
-          duration: "120 min",
-          price: "1900 zł",
-          popular: true,
-          benefits: ["Obszerna pielęgnacja", "Zaawansowane technologie", "Kompleksowe odmłodzenie"]
-        }
-      ]
-    },
-    {
-      id: 'kosmetologia-onkologiczna',
-      title: 'Kosmetologia Onkologiczna',
-      description: 'Specjalistyczne zabiegi dla pacjentów onkologicznych',
-      services: [
-        {
-          title: "Zabieg twarz",
-          description: "Specjalistyczny zabieg dla pacjentów onkologicznych - twarz",
-          duration: "60 min",
-          price: "300 zł",
-          popular: false,
-          benefits: ["Specjalistyczny", "Delikatny", "Bezpieczny"]
-        },
-        {
-          title: "Zabieg ciało",
-          description: "Specjalistyczny zabieg dla pacjentów onkologicznych - ciało",
-          duration: "90 min",
-          price: "500-600 zł",
-          popular: false,
-          benefits: ["Kompleksowa pielęgnacja", "Bezpieczeństwo", "Komfort"]
-        }
-      ]
-    },
-    {
-      id: 'masaze',
-      title: 'Masaże',
-      description: 'Relaksacyjne i terapeutyczne masaże ciała i twarzy',
-      services: [
-        {
-          title: "Kobido",
-          description: "Tradycyjny japoński masaż twarzy",
-          duration: "60 min",
-          price: "250 zł",
-          popular: true,
-          benefits: ["Lifting naturalny", "Relaksacja", "Tradycyjna technika"]
-        },
-        {
-          title: "Kobido + ampułka + maska",
-          description: "Rozszerzony masaż kobido z dodatkowymi zabiegami",
-          duration: "75 min",
-          price: "350 zł",
-          popular: true,
-          benefits: ["Kompleksowa pielęgnacja", "Intensywne nawilżenie", "Maksymalny efekt"]
-        },
-        {
-          title: "Drenaż limfatyczny",
-          description: "Masaż wspomagający system limfatyczny",
-          duration: "60 min",
-          price: "200-300 zł",
-          popular: false,
-          benefits: ["Detoks", "Odwodnienie", "Poprawa krążenia"]
-        }
-      ]
-    },
-    {
-      id: 'mezoterapia',
-      title: 'Mezoterapia Mikroigłowa Dermapen',
-      description: 'Zaawansowane zabiegi mezoterapii mikroigłowej',
-      services: [
-        {
-          title: "Twarz",
-          description: "Mezoterapia mikroigłowa twarzy",
-          duration: "60 min",
-          price: "600-1000 zł",
-          popular: true,
-          benefits: ["Regeneracja", "Stymulacja kolagenu", "Odmłodzenie"]
-        },
-        {
-          title: "Twarz, szyja, dekolt Egzosomy Bio Pulsacyjne",
-          description: "Kompleksowa mezoterapia z egzosomami",
-          duration: "90 min",
-          price: "1000 zł",
-          popular: true,
-          benefits: ["Kompleksowa pielęgnacja", "Obszerne działanie", "Maksymalny efekt"]
-        }
-      ]
-    },
-    {
-      id: 'niwelowanie-zmarszczek',
-      title: 'Niwelowanie zmarszczek - Md Muscle',
-      description: 'Profesjonalne zabiegi medyczne do redukcji zmarszczek mimicznych',
-      services: [
-        {
-          title: "Broda",
-          description: "Wygładzenie zmarszczek w okolicy brody",
-          duration: "30 min",
-          price: "450 zł",
-          popular: false,
-          benefits: ["Wygładzenie", "Redukcja zmarszczek", "Efekt naturalny"]
-        },
-        {
-          title: "Bruksizm",
-          description: "Terapia zmarszczek związanych z bruksizmem",
-          duration: "30 min",
-          price: "1000 zł",
-          popular: true,
-          benefits: ["Redukcja napięcia", "Ochrona zębów", "Wygładzenie"]
-        },
-        {
-          title: "Czoło",
-          description: "Wygładzenie zmarszczek na czole",
-          duration: "30 min",
-          price: "550 zł",
-          popular: true,
-          benefits: ["Młodszy wygląd", "Wygładzenie", "Naturalne efekty"]
-        },
-        {
-          title: "Lwia zmarszczka",
-          description: "Redukcja pionowych zmarszczek między brwiami",
-          duration: "30 min",
-          price: "500 zł",
-          popular: true,
-          benefits: ["Łagodny wyraz", "Redukcja zmarszczek", "Odmłodzenie"]
-        },
-        {
-          title: "Nos - zmarszczki królicze",
-          description: "Wygładzenie drobnych zmarszczek na nosie",
-          duration: "30 min",
-          price: "400 zł",
-          popular: false,
-          benefits: ["Precyzyjne działanie", "Delikatne wygładzenie", "Naturalne efekty"]
-        },
-        {
-          title: "Kurze łapki",
-          description: "Redukcja zmarszczek wokół oczu",
-          duration: "30 min",
-          price: "500 zł",
-          popular: true,
-          benefits: ["Młodszy wygląd", "Otwarte spojrzenie", "Wygładzenie"]
-        },
-        {
-          title: "Dłonie",
-          description: "Odmładzanie skóry dłoni",
-          duration: "60 min",
-          price: "1600 zł",
-          popular: false,
-          benefits: ["Ujędrnienie", "Nawilżenie", "Redukcja przebarwień"]
-        }
-      ]
-    },
-    {
-      id: 'peeling-kwasowy',
-      title: 'Peeling Kwasowy',
-      description: 'Zaawansowane peelingi kwasowe dla odnowy skóry',
-      services: [
-        {
-          title: "Zabieg AHA-BHA-AKA twarz",
-          description: "Peeling z kwasami AHA, BHA i AKA",
-          duration: "60 min",
-          price: "350 zł",
-          popular: true,
-          benefits: ["Wielokwasowy", "Kompleksowy", "Skuteczny"]
-        },
-        {
-          title: "Intensywnie eksfoliujący twarz",
-          description: "Głęboki peeling eksfoliujący twarzy",
-          duration: "60 min",
-          price: "350 zł",
-          popular: false,
-          benefits: ["Głęboka eksfoliacja", "Odnowa", "Wygładzenie"]
-        }
-      ]
-    },
-    {
-      id: 'pielegnacja-wlosow-tahe',
-      title: 'Pielęgnacja włosów Tahe',
-      description: 'Profesjonalne zabiegi regeneracyjne i odbudowujące dla włosów',
-      services: [
-        {
-          title: "Botox",
-          description: "Intensywna regeneracja i wygładzenie włosów",
-          duration: "90 min",
-          price: "Krótkie: 155 zł | Półdługie: 200 zł | Długie: 280 zł",
-          popular: true,
-          benefits: ["Głębokie odżywienie", "Wygładzenie", "Regeneracja"]
-        },
-        {
-          title: "Proteiny złota",
-          description: "Luksusowa odbudowa struktury włosa z proteinami złota",
-          duration: "75 min",
-          price: "Krótkie: 100 zł | Półdługie: 120 zł | Długie: 160 zł",
-          popular: true,
-          benefits: ["Odbudowa struktury", "Luksusowa pielęgnacja", "Blask"]
-        },
-        {
-          title: "Koktajl witaminowy",
-          description: "Intensywne odżywienie włosów witaminami i minerałami",
-          duration: "60 min",
-          price: "Krótkie: 110 zł | Półdługie: 160 zł | Długie: 180 zł",
-          popular: false,
-          benefits: ["Witaminizacja", "Odżywienie", "Wzmocnienie"]
-        },
-        {
-          title: "Zabieg peptydowy",
-          description: "Nowoczesna terapia z wykorzystaniem peptydów",
-          duration: "75 min",
-          price: "Krótkie: 160 zł | Półdługie: 190 zł | Długie: 280 zł",
-          popular: true,
-          benefits: ["Stymulacja wzrostu", "Regeneracja", "Wzmocnienie"]
-        },
-        {
-          title: "Proteiny włosy kręcone",
-          description: "Specjalistyczny zabieg dla włosów kręconych i falowanych",
-          duration: "90 min",
-          price: "Krótkie: 200 zł | Półdługie: 250 zł | Długie: 280 zł",
-          popular: false,
-          benefits: ["Definicja loków", "Nawilżenie", "Elastyczność"]
-        },
-        {
-          title: "Zabieg plex",
-          description: "Rekonstrukcja zniszczonych wiązań w strukturze włosa",
-          duration: "60 min",
-          price: "Krótkie: 80 zł | Półdługie: 100 zł | Długie: 170 zł",
-          popular: true,
-          benefits: ["Odbudowa wiązań", "Wzmocnienie", "Ochrona"]
-        },
-        {
-          title: "Nanoplastia gold",
-          description: "Luksusowe prostowanie i odbudowa z cząsteczkami złota",
-          duration: "120 min",
-          price: "Krótkie: 440 zł | Półdługie: 660 zł | Długie: 880 zł",
-          popular: true,
-          benefits: ["Trwałe prostowanie", "Luksus", "Regeneracja"]
-        },
-        {
-          title: "Bioplastia i K-glicolic",
-          description: "Naturalna bioplastia z kwasem glikolowym",
-          duration: "90 min",
-          price: "Krótkie: 550 zł | Półdługie: 880 zł | Długie: 1320 zł",
-          popular: false,
-          benefits: ["Naturalne prostowanie", "Odbudowa", "Delikatność"]
-        },
-        {
-          title: "Ozonoterapia",
-          description: "Terapia ozonem dla skóry głowy i włosów",
-          duration: "45 min",
-          price: "Krótkie: 90 zł | Półdługie: 110 zł | Długie: 170 zł",
-          popular: false,
-          benefits: ["Dezynfekcja", "Stymulacja krążenia", "Oczyszczenie"]
-        }
-      ]
-    },
-    {
-      id: 'radiofrekwencja',
-      title: 'Radiofrekwencja - RF Lifting',
-      description: 'Bezinwazyjne zabiegi liftingujące z wykorzystaniem fal radiowych',
-      services: [
-        {
-          title: "Twarz",
-          description: "RF lifting twarzy",
-          duration: "45 min",
-          price: "200 zł",
-          popular: false,
-          benefits: ["Lifting bezinwazyjny", "Ujędrnienie", "Stymulacja kolagenu"]
-        },
-        {
-          title: "Ciało (brzuch, pośladki, uda)",
-          description: "RF lifting wybranych partii ciała",
-          duration: "60 min",
-          price: "400 zł",
-          popular: true,
-          benefits: ["Modelowanie sylwetki", "Ujędrnienie", "Redukcja cellulitu"]
-        }
-      ]
-    },
-    {
-      id: 'terapia-wodorem',
-      title: 'Terapia Wodorem Molekularnym',
-      description: 'Innowacyjne zabiegi z wykorzystaniem wodoru molekularnego',
-      services: [
-        {
-          title: "Inhalacja wodorem 60min",
-          description: "Standardowa sesja terapii wodorowej",
-          duration: "60 min",
-          price: "110 zł",
-          popular: true,
-          benefits: ["Pełna regeneracja", "Antyoksydacja", "Energia"]
-        },
-        {
-          title: "Inhalacja + piezo Mist + terapia światłem",
-          description: "Kompleksowa terapia wodorowa z dodatkami",
-          duration: "60 min",
-          price: "300 zł",
-          popular: true,
-          benefits: ["Kompleksowa terapia", "Nawilżenie", "Regeneracja światłem"]
-        }
-      ]
-    },
-    {
-      id: 'tropokolagen',
-      title: 'Tropokolagen',
-      description: 'Profesjonalne zabiegi niwelujące zmarszczki',
-      services: [
-        {
-          title: "Oczy",
-          description: "Profesjonalny zabieg niwelujący zmarszczki wokół oczu",
-          duration: "45 min",
-          price: "500 zł",
-          popular: false,
-          benefits: ["Redukcja zmarszczek", "Odmłodzenie", "Naturalny efekt"]
-        },
-        {
-          title: "Rozstępy",
-          description: "Zabieg redukujący widoczność rozstępów",
-          duration: "60 min",
-          price: "700 zł",
-          popular: false,
-          benefits: ["Redukcja rozstępów", "Wygładzenie", "Regeneracja skóry"]
-        },
-        {
-          title: "Brzuch",
-          description: "Zabieg niwelujący zmarszczki w okolicy brzucha",
-          duration: "60 min",
-          price: "800 zł",
-          popular: false,
-          benefits: ["Ujędrnienie", "Wygładzenie", "Regeneracja"]
-        },
-        {
-          title: "Twarz",
-          description: "Kompleksowy zabieg niwelujący zmarszczki twarzy",
-          duration: "60 min",
-          price: "700 zł",
-          popular: true,
-          benefits: ["Redukcja zmarszczek", "Odmłodzenie", "Naturalny efekt"]
-        },
-        {
-          title: "Twarz + szyja",
-          description: "Zabieg obejmujący twarz i szyję",
-          duration: "60 min",
-          price: "800 zł",
-          popular: true,
-          benefits: ["Kompleksowa pielęgnacja", "Ujędrnienie", "Harmonijny efekt"]
-        },
-        {
-          title: "Twarz + szyja + dekolt",
-          description: "Najbardziej kompleksowy zabieg niwelujący zmarszczki",
-          duration: "90 min",
-          price: "850 zł",
-          popular: true,
-          benefits: ["Obszerna pielęgnacja", "Odmłodzenie", "Długotrwały efekt"]
-        }
-      ]
-    },
-    {
-      id: 'trychologia',
-      title: 'Trychologia Kosmetologiczna',
-      description: 'Specjalistyczne zabiegi dla zdrowia włosów i skóry głowy',
-      services: [
-        {
-          title: "Konsultacja Trychologiczna",
-          description: "Profesjonalna konsultacja dotycząca problemów skóry głowy i włosów",
-          duration: "45 min",
-          price: "200 zł",
-          popular: false,
-          benefits: ["Analiza problemów", "Plan terapii", "Profesjonalne doradztwo"]
-        },
-        {
-          title: "Mezoterapia skóry głowy",
-          description: "Zaawansowana terapia regeneracyjna",
-          duration: "60 min",
-          price: "300-900 zł",
-          popular: true,
-          benefits: ["Regeneracja", "Stymulacja wzrostu", "Odżywienie"]
-        },
-        {
-          title: "Terapia profilaktyczna",
-          description: "Zapobieganie problemom skóry głowy",
-          duration: "45 min",
-          price: "300 zł",
-          popular: false,
-          benefits: ["Profilaktyka", "Wzmocnienie", "Ochrona"]
-        }
-      ]
-    },
-    {
-      id: 'zabiegi-pielegnacyjne',
-      title: 'Zabiegi Pielęgnacyjne - Twarz',
-      description: 'Profesjonalne zabiegi pielęgnacyjne dla skóry twarzy',
-      services: [
-        {
-          title: "Interactive System",
-          description: "zabieg wyrównujący, bio stymulujący, antyoksydacyjny",
-          duration: "60 min",
-          price: "350-400 zł",
-          popular: true,
-          benefits: ["Wyrównanie", "Bio stymulacja", "Antyoksydacja"]
-        },
-        {
-          title: "Hydra Diamond Facial",
-          description: "zabieg wieloetapowy (hydroabrazja, mezoterapia bezigłowa, infuzja tlenowa, masaż próżniowy, rf)",
-          duration: "90 min",
-          price: "450 zł",
-          popular: true,
-          benefits: ["Wieloetapowość", "Kompleksowość", "Nowoczesność"]
-        },
-        {
-          title: "Boto Fill",
-          description: "bioaktywne odmłodzenie wokół oczu",
-          duration: "45 min",
-          price: "350-400 zł",
-          popular: true,
-          benefits: ["Odmłodzenie oczu", "Bioaktywność", "Regeneracja"]
-        }
-      ]
-    }
-  ];
-
-  return (
-    <div className="min-h-screen bg-background">
+  const serviceCategories = [{
+    id: 'kosmetologia',
+    title: 'Kosmetologia',
+    description: 'Zaawansowane zabiegi kosmetologiczne dla różnych partii ciała - mezoterapia mikroigłowa z elektroporacją',
+    services: [{
+      title: "Skóra głowy",
+      description: "Profesjonalny zabieg kosmetologiczny dla skóry głowy",
+      duration: "45 min",
+      price: "550 zł",
+      popular: false,
+      benefits: ["Regeneracja", "Oczyszczenie", "Stymulacja"]
+    }, {
+      title: "Rozstępy (wybrany obszar)",
+      description: "Specjalistyczny zabieg redukcji rozstępów",
+      duration: "60 min",
+      price: "450 zł",
+      popular: true,
+      benefits: ["Redukcja rozstępów", "Wygładzenie", "Regeneracja"]
+    }, {
+      title: "Twarz",
+      description: "Kompleksowy zabieg kosmetologiczny twarzy",
+      duration: "60 min",
+      price: "600 zł",
+      popular: true,
+      benefits: ["Odmłodzenie", "Regeneracja", "Wygładzenie"]
+    }, {
+      title: "Twarz + szyja",
+      description: "Zabieg kosmetologiczny obejmujący twarz i szyję",
+      duration: "60 min",
+      price: "650 zł",
+      popular: true,
+      benefits: ["Kompleksowa pielęgnacja", "Ujędrnienie", "Odmłodzenie"]
+    }, {
+      title: "Twarz - terapia łączona mezoterapia mikroigłowa EPN z elektroporacją + kwasy",
+      description: "Zaawansowana terapia łącząca mezoterapię z elektroporacją i kwasami",
+      duration: "60 min",
+      price: "700 zł",
+      popular: true,
+      benefits: ["Maksymalny efekt", "Głęboka regeneracja", "Stymulacja kolagenu"]
+    }, {
+      title: "Twarz - preparat anty aging",
+      description: "Specjalistyczny zabieg przeciwstarzeniowy twarzy",
+      duration: "60 min",
+      price: "800 zł",
+      popular: true,
+      benefits: ["Efekt anti-aging", "Redukcja zmarszczek", "Odmłodzenie"]
+    }, {
+      title: "Twarz + szyja + dekolt",
+      description: "Kompleksowy zabieg kosmetologiczny twarzy, szyi i dekoltu",
+      duration: "90 min",
+      price: "750 zł",
+      popular: true,
+      benefits: ["Obszerna pielęgnacja", "Kompleksowe odmłodzenie", "Harmonijny efekt"]
+    }, {
+      title: "Terapia na wypadające włosy EPN na skórę głowy. Pakiet 3 zabiegów + 1 zabieg gratis",
+      description: "Kompleksowy pakiet terapii przeciw wypadaniu włosów z elektroporacją",
+      duration: "60 min",
+      price: "1500 zł",
+      popular: true,
+      benefits: ["Pakiet 4 zabiegów", "Stymulacja wzrostu", "Wzmocnienie cebulek"]
+    }, {
+      title: "Pakiet 3 zabiegów na twarz + gratis 3 zabiegi na szyję",
+      description: "Kompleksowy pakiet zabiegów dla twarzy z bonusowymi zabiegami na szyję",
+      duration: "60 min",
+      price: "1650 zł",
+      popular: true,
+      benefits: ["6 zabiegów w cenie", "Kompleksowa pielęgnacja", "Oszczędność"]
+    }, {
+      title: "Twarz - Terapia łączona mezoterapia mikroigłowa EPN z elektroporacją + kwasy. Pakiet 3 zabiegów + 3 zabiegi na szyję gratis",
+      description: "Zaawansowany pakiet terapii łączonej z bonusowymi zabiegami na szyję",
+      duration: "60 min",
+      price: "1450 zł",
+      popular: true,
+      benefits: ["6 zabiegów w pakiecie", "Zaawansowana technologia", "Maksymalny efekt"]
+    }, {
+      title: "Pakiet 3 zabiegów na rozstępy (wybrany obszar) + 1 zabieg gratis",
+      description: "Specjalistyczny pakiet do redukcji rozstępów z dodatkowym zabiegiem",
+      duration: "60 min",
+      price: "1500 zł",
+      popular: true,
+      benefits: ["4 zabiegi w pakiecie", "Znacząca redukcja", "Regeneracja skóry"]
+    }, {
+      title: "Pakiet 3 zabiegów na twarz + szyję + 3 zabiegi gratis na dekolt",
+      description: "Rozszerzony pakiet zabiegów z bonusowymi zabiegami na dekolt",
+      duration: "90 min",
+      price: "1800 zł",
+      popular: true,
+      benefits: ["6 zabiegów w pakiecie", "Kompleksowa pielęgnacja", "Harmonijny efekt"]
+    }, {
+      title: "Twarz + szyja, terapia łączona mezoterapia mikroigłowa EPN z elektroporacją + kwasy. Pakiet 3 zabiegów",
+      description: "Profesjonalny pakiet zaawansowanej terapii łączonej dla twarzy i szyi",
+      duration: "90 min",
+      price: "1800 zł",
+      popular: true,
+      benefits: ["3 zabiegi w pakiecie", "Profesjonalna terapia", "Długotrwały efekt"]
+    }, {
+      title: "Twarz + szyja + dekolt, Terapia łączona mezoterapia mikroigłowa EPN z elektroporacją + kwasy",
+      description: "Najobszerniejsza terapia łączona obejmująca twarz, szyję i dekolt",
+      duration: "120 min",
+      price: "1900 zł",
+      popular: true,
+      benefits: ["Obszerna pielęgnacja", "Zaawansowane technologie", "Kompleksowe odmłodzenie"]
+    }]
+  }, {
+    id: 'kosmetologia-onkologiczna',
+    title: 'Kosmetologia Onkologiczna',
+    description: 'Specjalistyczne zabiegi dla pacjentów onkologicznych',
+    services: [{
+      title: "Zabieg twarz",
+      description: "Specjalistyczny zabieg dla pacjentów onkologicznych - twarz",
+      duration: "60 min",
+      price: "300 zł",
+      popular: false,
+      benefits: ["Specjalistyczny", "Delikatny", "Bezpieczny"]
+    }, {
+      title: "Zabieg ciało",
+      description: "Specjalistyczny zabieg dla pacjentów onkologicznych - ciało",
+      duration: "90 min",
+      price: "500-600 zł",
+      popular: false,
+      benefits: ["Kompleksowa pielęgnacja", "Bezpieczeństwo", "Komfort"]
+    }]
+  }, {
+    id: 'masaze',
+    title: 'Masaże',
+    description: 'Relaksacyjne i terapeutyczne masaże ciała i twarzy',
+    services: [{
+      title: "Kobido",
+      description: "Tradycyjny japoński masaż twarzy",
+      duration: "60 min",
+      price: "250 zł",
+      popular: true,
+      benefits: ["Lifting naturalny", "Relaksacja", "Tradycyjna technika"]
+    }, {
+      title: "Kobido + ampułka + maska",
+      description: "Rozszerzony masaż kobido z dodatkowymi zabiegami",
+      duration: "75 min",
+      price: "350 zł",
+      popular: true,
+      benefits: ["Kompleksowa pielęgnacja", "Intensywne nawilżenie", "Maksymalny efekt"]
+    }, {
+      title: "Drenaż limfatyczny",
+      description: "Masaż wspomagający system limfatyczny",
+      duration: "60 min",
+      price: "200-300 zł",
+      popular: false,
+      benefits: ["Detoks", "Odwodnienie", "Poprawa krążenia"]
+    }]
+  }, {
+    id: 'mezoterapia',
+    title: 'Mezoterapia Mikroigłowa Dermapen',
+    description: 'Zaawansowane zabiegi mezoterapii mikroigłowej',
+    services: [{
+      title: "Twarz",
+      description: "Mezoterapia mikroigłowa twarzy",
+      duration: "60 min",
+      price: "600-1000 zł",
+      popular: true,
+      benefits: ["Regeneracja", "Stymulacja kolagenu", "Odmłodzenie"]
+    }, {
+      title: "Twarz, szyja, dekolt Egzosomy Bio Pulsacyjne",
+      description: "Kompleksowa mezoterapia z egzosomami",
+      duration: "90 min",
+      price: "1000 zł",
+      popular: true,
+      benefits: ["Kompleksowa pielęgnacja", "Obszerne działanie", "Maksymalny efekt"]
+    }]
+  }, {
+    id: 'niwelowanie-zmarszczek',
+    title: 'Niwelowanie zmarszczek - Md Muscle',
+    description: 'Profesjonalne zabiegi medyczne do redukcji zmarszczek mimicznych',
+    services: [{
+      title: "Broda",
+      description: "Wygładzenie zmarszczek w okolicy brody",
+      duration: "30 min",
+      price: "450 zł",
+      popular: false,
+      benefits: ["Wygładzenie", "Redukcja zmarszczek", "Efekt naturalny"]
+    }, {
+      title: "Bruksizm",
+      description: "Terapia zmarszczek związanych z bruksizmem",
+      duration: "30 min",
+      price: "1000 zł",
+      popular: true,
+      benefits: ["Redukcja napięcia", "Ochrona zębów", "Wygładzenie"]
+    }, {
+      title: "Czoło",
+      description: "Wygładzenie zmarszczek na czole",
+      duration: "30 min",
+      price: "550 zł",
+      popular: true,
+      benefits: ["Młodszy wygląd", "Wygładzenie", "Naturalne efekty"]
+    }, {
+      title: "Lwia zmarszczka",
+      description: "Redukcja pionowych zmarszczek między brwiami",
+      duration: "30 min",
+      price: "500 zł",
+      popular: true,
+      benefits: ["Łagodny wyraz", "Redukcja zmarszczek", "Odmłodzenie"]
+    }, {
+      title: "Nos - zmarszczki królicze",
+      description: "Wygładzenie drobnych zmarszczek na nosie",
+      duration: "30 min",
+      price: "400 zł",
+      popular: false,
+      benefits: ["Precyzyjne działanie", "Delikatne wygładzenie", "Naturalne efekty"]
+    }, {
+      title: "Kurze łapki",
+      description: "Redukcja zmarszczek wokół oczu",
+      duration: "30 min",
+      price: "500 zł",
+      popular: true,
+      benefits: ["Młodszy wygląd", "Otwarte spojrzenie", "Wygładzenie"]
+    }, {
+      title: "Dłonie",
+      description: "Odmładzanie skóry dłoni",
+      duration: "60 min",
+      price: "1600 zł",
+      popular: false,
+      benefits: ["Ujędrnienie", "Nawilżenie", "Redukcja przebarwień"]
+    }]
+  }, {
+    id: 'peeling-kwasowy',
+    title: 'Peeling Kwasowy',
+    description: 'Zaawansowane peelingi kwasowe dla odnowy skóry',
+    services: [{
+      title: "Zabieg AHA-BHA-AKA twarz",
+      description: "Peeling z kwasami AHA, BHA i AKA",
+      duration: "60 min",
+      price: "350 zł",
+      popular: true,
+      benefits: ["Wielokwasowy", "Kompleksowy", "Skuteczny"]
+    }, {
+      title: "Intensywnie eksfoliujący twarz",
+      description: "Głęboki peeling eksfoliujący twarzy",
+      duration: "60 min",
+      price: "350 zł",
+      popular: false,
+      benefits: ["Głęboka eksfoliacja", "Odnowa", "Wygładzenie"]
+    }]
+  }, {
+    id: 'pielegnacja-wlosow-tahe',
+    title: 'Pielęgnacja włosów Tahe',
+    description: 'Profesjonalne zabiegi regeneracyjne i odbudowujące dla włosów',
+    services: [{
+      title: "Botox",
+      description: "Intensywna regeneracja i wygładzenie włosów",
+      duration: "90 min",
+      price: "Krótkie: 155 zł | Półdługie: 200 zł | Długie: 280 zł",
+      popular: true,
+      benefits: ["Głębokie odżywienie", "Wygładzenie", "Regeneracja"]
+    }, {
+      title: "Proteiny złota",
+      description: "Luksusowa odbudowa struktury włosa z proteinami złota",
+      duration: "75 min",
+      price: "Krótkie: 100 zł | Półdługie: 120 zł | Długie: 160 zł",
+      popular: true,
+      benefits: ["Odbudowa struktury", "Luksusowa pielęgnacja", "Blask"]
+    }, {
+      title: "Koktajl witaminowy",
+      description: "Intensywne odżywienie włosów witaminami i minerałami",
+      duration: "60 min",
+      price: "Krótkie: 110 zł | Półdługie: 160 zł | Długie: 180 zł",
+      popular: false,
+      benefits: ["Witaminizacja", "Odżywienie", "Wzmocnienie"]
+    }, {
+      title: "Zabieg peptydowy",
+      description: "Nowoczesna terapia z wykorzystaniem peptydów",
+      duration: "75 min",
+      price: "Krótkie: 160 zł | Półdługie: 190 zł | Długie: 280 zł",
+      popular: true,
+      benefits: ["Stymulacja wzrostu", "Regeneracja", "Wzmocnienie"]
+    }, {
+      title: "Proteiny włosy kręcone",
+      description: "Specjalistyczny zabieg dla włosów kręconych i falowanych",
+      duration: "90 min",
+      price: "Krótkie: 200 zł | Półdługie: 250 zł | Długie: 280 zł",
+      popular: false,
+      benefits: ["Definicja loków", "Nawilżenie", "Elastyczność"]
+    }, {
+      title: "Zabieg plex",
+      description: "Rekonstrukcja zniszczonych wiązań w strukturze włosa",
+      duration: "60 min",
+      price: "Krótkie: 80 zł | Półdługie: 100 zł | Długie: 170 zł",
+      popular: true,
+      benefits: ["Odbudowa wiązań", "Wzmocnienie", "Ochrona"]
+    }, {
+      title: "Nanoplastia gold",
+      description: "Luksusowe prostowanie i odbudowa z cząsteczkami złota",
+      duration: "120 min",
+      price: "Krótkie: 440 zł | Półdługie: 660 zł | Długie: 880 zł",
+      popular: true,
+      benefits: ["Trwałe prostowanie", "Luksus", "Regeneracja"]
+    }, {
+      title: "Bioplastia i K-glicolic",
+      description: "Naturalna bioplastia z kwasem glikolowym",
+      duration: "90 min",
+      price: "Krótkie: 550 zł | Półdługie: 880 zł | Długie: 1320 zł",
+      popular: false,
+      benefits: ["Naturalne prostowanie", "Odbudowa", "Delikatność"]
+    }, {
+      title: "Ozonoterapia",
+      description: "Terapia ozonem dla skóry głowy i włosów",
+      duration: "45 min",
+      price: "Krótkie: 90 zł | Półdługie: 110 zł | Długie: 170 zł",
+      popular: false,
+      benefits: ["Dezynfekcja", "Stymulacja krążenia", "Oczyszczenie"]
+    }]
+  }, {
+    id: 'radiofrekwencja',
+    title: 'Radiofrekwencja - RF Lifting',
+    description: 'Bezinwazyjne zabiegi liftingujące z wykorzystaniem fal radiowych',
+    services: [{
+      title: "Twarz",
+      description: "RF lifting twarzy",
+      duration: "45 min",
+      price: "200 zł",
+      popular: false,
+      benefits: ["Lifting bezinwazyjny", "Ujędrnienie", "Stymulacja kolagenu"]
+    }, {
+      title: "Ciało (brzuch, pośladki, uda)",
+      description: "RF lifting wybranych partii ciała",
+      duration: "60 min",
+      price: "400 zł",
+      popular: true,
+      benefits: ["Modelowanie sylwetki", "Ujędrnienie", "Redukcja cellulitu"]
+    }]
+  }, {
+    id: 'terapia-wodorem',
+    title: 'Terapia Wodorem Molekularnym',
+    description: 'Innowacyjne zabiegi z wykorzystaniem wodoru molekularnego',
+    services: [{
+      title: "Inhalacja wodorem 60min",
+      description: "Standardowa sesja terapii wodorowej",
+      duration: "60 min",
+      price: "110 zł",
+      popular: true,
+      benefits: ["Pełna regeneracja", "Antyoksydacja", "Energia"]
+    }, {
+      title: "Inhalacja + piezo Mist + terapia światłem",
+      description: "Kompleksowa terapia wodorowa z dodatkami",
+      duration: "60 min",
+      price: "300 zł",
+      popular: true,
+      benefits: ["Kompleksowa terapia", "Nawilżenie", "Regeneracja światłem"]
+    }]
+  }, {
+    id: 'tropokolagen',
+    title: 'Tropokolagen',
+    description: 'Profesjonalne zabiegi niwelujące zmarszczki',
+    services: [{
+      title: "Oczy",
+      description: "Profesjonalny zabieg niwelujący zmarszczki wokół oczu",
+      duration: "45 min",
+      price: "500 zł",
+      popular: false,
+      benefits: ["Redukcja zmarszczek", "Odmłodzenie", "Naturalny efekt"]
+    }, {
+      title: "Rozstępy",
+      description: "Zabieg redukujący widoczność rozstępów",
+      duration: "60 min",
+      price: "700 zł",
+      popular: false,
+      benefits: ["Redukcja rozstępów", "Wygładzenie", "Regeneracja skóry"]
+    }, {
+      title: "Brzuch",
+      description: "Zabieg niwelujący zmarszczki w okolicy brzucha",
+      duration: "60 min",
+      price: "800 zł",
+      popular: false,
+      benefits: ["Ujędrnienie", "Wygładzenie", "Regeneracja"]
+    }, {
+      title: "Twarz",
+      description: "Kompleksowy zabieg niwelujący zmarszczki twarzy",
+      duration: "60 min",
+      price: "700 zł",
+      popular: true,
+      benefits: ["Redukcja zmarszczek", "Odmłodzenie", "Naturalny efekt"]
+    }, {
+      title: "Twarz + szyja",
+      description: "Zabieg obejmujący twarz i szyję",
+      duration: "60 min",
+      price: "800 zł",
+      popular: true,
+      benefits: ["Kompleksowa pielęgnacja", "Ujędrnienie", "Harmonijny efekt"]
+    }, {
+      title: "Twarz + szyja + dekolt",
+      description: "Najbardziej kompleksowy zabieg niwelujący zmarszczki",
+      duration: "90 min",
+      price: "850 zł",
+      popular: true,
+      benefits: ["Obszerna pielęgnacja", "Odmłodzenie", "Długotrwały efekt"]
+    }]
+  }, {
+    id: 'trychologia',
+    title: 'Trychologia Kosmetologiczna',
+    description: 'Specjalistyczne zabiegi dla zdrowia włosów i skóry głowy',
+    services: [{
+      title: "Konsultacja Trychologiczna",
+      description: "Profesjonalna konsultacja dotycząca problemów skóry głowy i włosów",
+      duration: "45 min",
+      price: "200 zł",
+      popular: false,
+      benefits: ["Analiza problemów", "Plan terapii", "Profesjonalne doradztwo"]
+    }, {
+      title: "Mezoterapia skóry głowy",
+      description: "Zaawansowana terapia regeneracyjna",
+      duration: "60 min",
+      price: "300-900 zł",
+      popular: true,
+      benefits: ["Regeneracja", "Stymulacja wzrostu", "Odżywienie"]
+    }, {
+      title: "Terapia profilaktyczna",
+      description: "Zapobieganie problemom skóry głowy",
+      duration: "45 min",
+      price: "300 zł",
+      popular: false,
+      benefits: ["Profilaktyka", "Wzmocnienie", "Ochrona"]
+    }]
+  }, {
+    id: 'zabiegi-pielegnacyjne',
+    title: 'Zabiegi Pielęgnacyjne - Twarz',
+    description: 'Profesjonalne zabiegi pielęgnacyjne dla skóry twarzy',
+    services: [{
+      title: "Interactive System",
+      description: "zabieg wyrównujący, bio stymulujący, antyoksydacyjny",
+      duration: "60 min",
+      price: "350-400 zł",
+      popular: true,
+      benefits: ["Wyrównanie", "Bio stymulacja", "Antyoksydacja"]
+    }, {
+      title: "Hydra Diamond Facial",
+      description: "zabieg wieloetapowy (hydroabrazja, mezoterapia bezigłowa, infuzja tlenowa, masaż próżniowy, rf)",
+      duration: "90 min",
+      price: "450 zł",
+      popular: true,
+      benefits: ["Wieloetapowość", "Kompleksowość", "Nowoczesność"]
+    }, {
+      title: "Boto Fill",
+      description: "bioaktywne odmłodzenie wokół oczu",
+      duration: "45 min",
+      price: "350-400 zł",
+      popular: true,
+      benefits: ["Odmłodzenie oczu", "Bioaktywność", "Regeneracja"]
+    }]
+  }];
+  return <div className="min-h-screen bg-background">
       <Navigation currentSection="zabiegi" />
       
       <main className="py-16">
@@ -580,14 +500,11 @@ const Zabiegi: React.FC = () => {
             <h1 className="text-4xl font-bold text-foreground mb-4">
               Nasze Zabiegi
             </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Profesjonalna kosmetologia z wykorzystaniem najnowocześniejszych technologii i najwyższej jakości produktów
-            </p>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Profesjonalna kosmetologia z wykorzystaniem najnowocześniejszych technologii i najwyższej jakości produktów. Nie pracuję schematami, zawsze dobieram terapię indywidualnie do potrzeb klienta.</p>
           </div>
 
           <div className="space-y-16">
-            {serviceCategories.map((category) => (
-              <section key={category.id} id={category.id} className="scroll-mt-20">
+            {serviceCategories.map(category => <section key={category.id} id={category.id} className="scroll-mt-20">
                 <div className="text-center mb-8">
                   <h2 className="text-3xl font-bold text-foreground mb-4">
                     {category.title}
@@ -597,11 +514,7 @@ const Zabiegi: React.FC = () => {
                   </p>
                 </div>
 
-                <Collapsible 
-                  open={openCategories.has(category.id)} 
-                  onOpenChange={() => toggleCategory(category.id)}
-                  className="w-full"
-                >
+                <Collapsible open={openCategories.has(category.id)} onOpenChange={() => toggleCategory(category.id)} className="w-full">
                   <div className="flex justify-center mb-6">
                     <CollapsibleTrigger asChild>
                       <Button size="lg" className="flex items-center gap-2 px-8 py-3 text-lg bg-salon-rose hover:bg-salon-rose/90 text-foreground">
@@ -613,16 +526,13 @@ const Zabiegi: React.FC = () => {
                   
                   <CollapsibleContent className="space-y-4">
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                      {category.services.map((service, index) => (
-                        <Card key={index} className="relative group hover:shadow-hover transition-all duration-300">
-                          {service.popular && (
-                            <div className="absolute -top-2 -right-2 z-10">
+                      {category.services.map((service, index) => <Card key={index} className="relative group hover:shadow-hover transition-all duration-300">
+                          {service.popular && <div className="absolute -top-2 -right-2 z-10">
                               <Badge className="bg-salon-rose text-foreground">
                                 <Star className="h-3 w-3 mr-1" />
                                 Popularne
                               </Badge>
-                            </div>
-                          )}
+                            </div>}
                           <CardHeader>
                             <CardTitle className="text-lg group-hover:text-salon-rose transition-colors">
                               {service.title}
@@ -642,24 +552,20 @@ const Zabiegi: React.FC = () => {
                               </div>
                             </div>
                             <div className="flex flex-wrap gap-2 mb-4">
-                              {service.benefits.map((benefit, idx) => (
-                                <Badge key={idx} variant="secondary" className="text-xs">
+                              {service.benefits.map((benefit, idx) => <Badge key={idx} variant="secondary" className="text-xs">
                                   {benefit}
-                                </Badge>
-                              ))}
+                                </Badge>)}
                             </div>
                             <Button className="w-full" size="sm">
                               Umów wizytę
                               <ArrowRight className="ml-2 h-4 w-4" />
                             </Button>
                           </CardContent>
-                        </Card>
-                      ))}
+                        </Card>)}
                     </div>
                   </CollapsibleContent>
                 </Collapsible>
-              </section>
-            ))}
+              </section>)}
           </div>
         </div>
       </main>
@@ -675,8 +581,6 @@ const Zabiegi: React.FC = () => {
           </div>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Zabiegi;
