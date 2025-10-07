@@ -1,283 +1,216 @@
-import { useEffect, useState } from 'react';
-import Navigation from '@/components/Navigation';
-import { Calendar } from '@/components/ui/calendar';
+import React, { useEffect, useState } from 'react';
+import { ArrowLeft, Calendar as CalendarIcon, User, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
-import { Plus, Calendar as CalendarIcon, Clock, Trash2, Edit } from 'lucide-react';
-import { format } from 'date-fns';
-import { pl } from 'date-fns/locale';
-import { toast } from '@/hooks/use-toast';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import Navigation from '@/components/Navigation';
 
-interface Event {
-  id: string;
+interface Post {
+  id: number;
   title: string;
-  description: string;
-  date: Date;
-  time: string;
+  content: string;
+  date: string;
+  author: string;
+  readTime: string;
+  excerpt: string;
 }
 
-const Warsztaty = () => {
-  const [selectedDate, setSelectedDate] = useState<Date | undefined>(new Date());
-  const [events, setEvents] = useState<Event[]>([]);
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const [editingEvent, setEditingEvent] = useState<Event | null>(null);
-  const [formData, setFormData] = useState({
-    title: '',
-    description: '',
-    time: ''
-  });
+const Warsztaty: React.FC = () => {
+  const [selectedMonth, setSelectedMonth] = useState<string | null>(null);
+  const [expandedPost, setExpandedPost] = useState<number | null>(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const eventsOnSelectedDate = events.filter(event => 
-    selectedDate && format(event.date, 'yyyy-MM-dd') === format(selectedDate, 'yyyy-MM-dd')
-  );
+  const posts: Post[] = [
+    {
+      id: 1,
+      title: "Warsztat pielęgnacji skóry zimą",
+      content: `Zapraszamy na wyjątkowy warsztat poświęcony zimowej pielęgnacji skóry. Podczas tego wydarzenia dowiesz się, jak zadbać o swoją cerę w trudnych warunkach zimowych, kiedy mróz i wiatr szczególnie osuszają i podrażniają skórę.`,
+      date: "15 grudnia 2025",
+      author: "Beata Andraszewska Chlebna",
+      readTime: "2 godz.",
+      excerpt: "Poznaj sekrety zimowej pielęgnacji skóry i naucz się, jak chronić cerę przed mrozem."
+    },
+    {
+      id: 2,
+      title: "Promocja świąteczna - pakiety zabiegowe",
+      content: `Z okazji nadchodzących świąt przygotowaliśmy dla Was wyjątkowe pakiety zabiegowe w promocyjnych cenach. To idealny pomysł na prezent dla siebie lub bliskiej osoby!`,
+      date: "10 grudnia 2025",
+      author: "Beata Andraszewska Chlebna",
+      readTime: "5 min czytania",
+      excerpt: "Specjalne pakiety zabiegowe w promocyjnych cenach świątecznych."
+    },
+    {
+      id: 3,
+      title: "Wydarzenie: Dzień otwarty w gabinecie",
+      content: `Serdecznie zapraszamy na dzień otwarty w naszym gabinecie! To doskonała okazja, aby poznać naszą ofertę, zobaczyć gabinet od środka i skorzystać z darmowych konsultacji.`,
+      date: "5 listopada 2025",
+      author: "Beata Andraszewska Chlebna",
+      readTime: "3 godz.",
+      excerpt: "Zapraszamy na dzień otwarty z darmowymi konsultacjami i prezentacją zabiegów."
+    }
+  ];
 
-  const datesWithEvents = events.map(event => format(event.date, 'yyyy-MM-dd'));
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const parsePostDate = (dateStr: string): Date => {
+    const monthMap: { [key: string]: number } = {
+      'stycznia': 0, 'lutego': 1, 'marca': 2, 'kwietnia': 3,
+      'maja': 4, 'czerwca': 5, 'lipca': 6, 'sierpnia': 7,
+      'września': 8, 'października': 9, 'listopada': 10, 'grudnia': 11
+    };
     
-    if (!selectedDate || !formData.title || !formData.time) {
-      toast({
-        title: "Błąd",
-        description: "Wypełnij wszystkie wymagane pola",
-        variant: "destructive"
-      });
-      return;
-    }
-
-    if (editingEvent) {
-      setEvents(events.map(event => 
-        event.id === editingEvent.id 
-          ? { ...event, ...formData, date: selectedDate }
-          : event
-      ));
-      toast({
-        title: "Sukces",
-        description: "Wydarzenie zostało zaktualizowane"
-      });
-    } else {
-      const newEvent: Event = {
-        id: Date.now().toString(),
-        title: formData.title,
-        description: formData.description,
-        date: selectedDate,
-        time: formData.time
-      };
-      setEvents([...events, newEvent]);
-      toast({
-        title: "Sukces",
-        description: "Wydarzenie zostało dodane"
-      });
-    }
-
-    setFormData({ title: '', description: '', time: '' });
-    setEditingEvent(null);
-    setIsDialogOpen(false);
+    const parts = dateStr.split(' ');
+    const day = parseInt(parts[0]);
+    const month = monthMap[parts[1].toLowerCase()];
+    const year = parseInt(parts[2]);
+    
+    return new Date(year, month, day);
   };
 
-  const handleEdit = (event: Event) => {
-    setEditingEvent(event);
-    setFormData({
-      title: event.title,
-      description: event.description,
-      time: event.time
+  const getUniqueMonths = (): string[] => {
+    const months = posts.map(post => {
+      const date = parsePostDate(post.date);
+      const monthNames = ['Styczeń', 'Luty', 'Marzec', 'Kwiecień', 'Maj', 'Czerwiec', 
+                          'Lipiec', 'Sierpień', 'Wrzesień', 'Październik', 'Listopad', 'Grudzień'];
+      return `${monthNames[date.getMonth()]} ${date.getFullYear()}`;
     });
-    setSelectedDate(event.date);
-    setIsDialogOpen(true);
-  };
-
-  const handleDelete = (id: string) => {
-    setEvents(events.filter(event => event.id !== id));
-    toast({
-      title: "Sukces",
-      description: "Wydarzenie zostało usunięte"
+    return Array.from(new Set(months)).sort((a, b) => {
+      const partsA = a.split(' ');
+      const partsB = b.split(' ');
+      const monthNames = ['Styczeń', 'Luty', 'Marzec', 'Kwiecień', 'Maj', 'Czerwiec', 
+                          'Lipiec', 'Sierpień', 'Wrzesień', 'Październik', 'Listopad', 'Grudzień'];
+      const dateA = new Date(parseInt(partsA[1]), monthNames.indexOf(partsA[0]));
+      const dateB = new Date(parseInt(partsB[1]), monthNames.indexOf(partsB[0]));
+      return dateB.getTime() - dateA.getTime();
     });
   };
 
-  const openNewEventDialog = () => {
-    setEditingEvent(null);
-    setFormData({ title: '', description: '', time: '' });
-    setIsDialogOpen(true);
+  const filteredPosts = selectedMonth
+    ? posts.filter(post => {
+        const postDate = parsePostDate(post.date);
+        const monthNames = ['Styczeń', 'Luty', 'Marzec', 'Kwiecień', 'Maj', 'Czerwiec', 
+                            'Lipiec', 'Sierpień', 'Wrzesień', 'Październik', 'Listopad', 'Grudzień'];
+        const postMonth = `${monthNames[postDate.getMonth()]} ${postDate.getFullYear()}`;
+        return postMonth === selectedMonth;
+      })
+    : posts;
+
+  const togglePost = (postId: number) => {
+    setExpandedPost(expandedPost === postId ? null : postId);
   };
+
+  const uniqueMonths = getUniqueMonths();
 
   return (
     <div className="min-h-screen bg-background">
       <Navigation currentSection="warsztaty" />
-      <main className="container mx-auto px-4 py-12">
+      
+      <main className="container mx-auto px-4 py-8 md:py-16">
         <div className="max-w-7xl mx-auto">
           <header className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-salon-gold to-salon-rose bg-clip-text text-transparent">
-              Wydarzenia i warsztaty
+              Kalendarz wydarzeń
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Zarządzaj wydarzeniami, warsztatami i promocjami w jednym miejscu
+              Bądź na bieżąco z nadchodzącymi warsztatami, wydarzeniami i promocjami
             </p>
           </header>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Calendar Section */}
-            <Card className="shadow-elegant">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <CalendarIcon className="w-5 h-5 text-salon-gold" />
-                  Kalendarz wydarzeń
-                </CardTitle>
-                <CardDescription>
-                  Wybierz datę, aby zobaczyć lub dodać wydarzenia
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="flex justify-center">
-                <Calendar
-                  mode="single"
-                  selected={selectedDate}
-                  onSelect={setSelectedDate}
-                  locale={pl}
-                  className="rounded-md border pointer-events-auto"
-                  modifiers={{
-                    hasEvent: (date) => datesWithEvents.includes(format(date, 'yyyy-MM-dd'))
-                  }}
-                  modifiersClassNames={{
-                    hasEvent: 'bg-salon-gold/20 font-bold'
-                  }}
-                />
-              </CardContent>
-            </Card>
-
-            {/* Events List Section */}
-            <Card className="shadow-elegant">
-              <CardHeader>
-                <div className="flex items-center justify-between">
-                  <div>
-                    <CardTitle>
-                      {selectedDate ? format(selectedDate, 'dd MMMM yyyy', { locale: pl }) : 'Wybierz datę'}
-                    </CardTitle>
-                    <CardDescription>
-                      {eventsOnSelectedDate.length === 0 
-                        ? 'Brak wydarzeń tego dnia' 
-                        : `${eventsOnSelectedDate.length} ${eventsOnSelectedDate.length === 1 ? 'wydarzenie' : 'wydarzenia'}`}
-                    </CardDescription>
-                  </div>
-                  <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-                    <DialogTrigger asChild>
-                      <Button 
-                        onClick={openNewEventDialog}
-                        className="gap-2"
-                        disabled={!selectedDate}
-                      >
-                        <Plus className="w-4 h-4" />
-                        Dodaj
-                      </Button>
-                    </DialogTrigger>
-                    <DialogContent>
-                      <form onSubmit={handleSubmit}>
-                        <DialogHeader>
-                          <DialogTitle>
-                            {editingEvent ? 'Edytuj wydarzenie' : 'Nowe wydarzenie'}
-                          </DialogTitle>
-                          <DialogDescription>
-                            {selectedDate && format(selectedDate, 'dd MMMM yyyy', { locale: pl })}
-                          </DialogDescription>
-                        </DialogHeader>
-                        <div className="space-y-4 py-4">
-                          <div className="space-y-2">
-                            <Label htmlFor="title">Tytuł *</Label>
-                            <Input
-                              id="title"
-                              value={formData.title}
-                              onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                              placeholder="Nazwa wydarzenia"
-                              required
-                            />
-                          </div>
-                          <div className="space-y-2">
-                            <Label htmlFor="time">Godzina *</Label>
-                            <Input
-                              id="time"
-                              type="time"
-                              value={formData.time}
-                              onChange={(e) => setFormData({ ...formData, time: e.target.value })}
-                              required
-                            />
-                          </div>
-                          <div className="space-y-2">
-                            <Label htmlFor="description">Opis</Label>
-                            <Textarea
-                              id="description"
-                              value={formData.description}
-                              onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-                              placeholder="Szczegóły wydarzenia..."
-                              rows={4}
-                            />
+          <div className="grid lg:grid-cols-[1fr_320px] gap-8">
+            {/* Main Content */}
+            <div className="space-y-8">
+              {filteredPosts.length === 0 ? (
+                <Card className="shadow-elegant">
+                  <CardContent className="py-12 text-center">
+                    <CalendarIcon className="w-16 h-16 mx-auto mb-4 text-muted-foreground opacity-50" />
+                    <h3 className="text-xl font-semibold mb-2">Brak wydarzeń</h3>
+                    <p className="text-muted-foreground mb-4">
+                      Nie znaleziono wydarzeń w wybranym miesiącu.
+                    </p>
+                    <Button onClick={() => setSelectedMonth(null)} variant="outline">
+                      Wyczyść filtr
+                    </Button>
+                  </CardContent>
+                </Card>
+              ) : (
+                filteredPosts.map((post) => (
+                  <Card key={post.id} className="shadow-elegant hover:shadow-lg transition-shadow">
+                    <CardHeader>
+                      <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                        <div className="flex-1">
+                          <CardTitle className="text-2xl mb-2">{post.title}</CardTitle>
+                          <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
+                            <div className="flex items-center gap-1">
+                              <CalendarIcon className="w-4 h-4" />
+                              <span>{post.date}</span>
+                            </div>
+                            <div className="flex items-center gap-1">
+                              <User className="w-4 h-4" />
+                              <span>{post.author}</span>
+                            </div>
+                            <div className="flex items-center gap-1">
+                              <Clock className="w-4 h-4" />
+                              <span>{post.readTime}</span>
+                            </div>
                           </div>
                         </div>
-                        <DialogFooter>
-                          <Button type="submit">
-                            {editingEvent ? 'Zaktualizuj' : 'Dodaj wydarzenie'}
-                          </Button>
-                        </DialogFooter>
-                      </form>
-                    </DialogContent>
-                  </Dialog>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-3 max-h-[500px] overflow-y-auto">
-                  {eventsOnSelectedDate.length === 0 ? (
-                    <div className="text-center py-8 text-muted-foreground">
-                      <CalendarIcon className="w-12 h-12 mx-auto mb-2 opacity-50" />
-                      <p>Brak wydarzeń tego dnia</p>
-                      {selectedDate && (
-                        <p className="text-sm mt-1">Kliknij "Dodaj", aby utworzyć wydarzenie</p>
-                      )}
-                    </div>
-                  ) : (
-                    eventsOnSelectedDate.map(event => (
-                      <div 
-                        key={event.id} 
-                        className="bg-salon-cream/30 border border-salon-gold/20 rounded-lg p-4 space-y-2"
-                      >
-                        <div className="flex items-start justify-between gap-2">
-                          <h3 className="font-semibold text-foreground">{event.title}</h3>
-                          <div className="flex gap-1">
-                            <Button
-                              variant="ghost"
-                              size="icon"
-                              onClick={() => handleEdit(event)}
-                              className="h-8 w-8"
-                            >
-                              <Edit className="w-4 h-4" />
-                            </Button>
-                            <Button
-                              variant="ghost"
-                              size="icon"
-                              onClick={() => handleDelete(event.id)}
-                              className="h-8 w-8 text-destructive hover:text-destructive"
-                            >
-                              <Trash2 className="w-4 h-4" />
-                            </Button>
-                          </div>
-                        </div>
-                        <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                          <Clock className="w-4 h-4" />
-                          <span>{event.time}</span>
-                        </div>
-                        {event.description && (
-                          <p className="text-sm text-muted-foreground">{event.description}</p>
+                      </div>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="prose prose-sm max-w-none">
+                        {expandedPost === post.id ? (
+                          <div className="whitespace-pre-line">{post.content}</div>
+                        ) : (
+                          <p className="text-muted-foreground">{post.excerpt}</p>
                         )}
                       </div>
-                    ))
-                  )}
-                </div>
-              </CardContent>
-            </Card>
+                      <Button
+                        onClick={() => togglePost(post.id)}
+                        variant="link"
+                        className="mt-4 p-0 h-auto font-semibold"
+                      >
+                        {expandedPost === post.id ? 'Zwiń' : 'Czytaj więcej'}
+                      </Button>
+                    </CardContent>
+                  </Card>
+                ))
+              )}
+            </div>
+
+            {/* Sidebar - Month Filter */}
+            <aside className="lg:sticky lg:top-24 h-fit">
+              <Card className="shadow-elegant">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <CalendarIcon className="w-5 h-5 text-salon-gold" />
+                    Filtruj po miesiącu
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-2">
+                    {selectedMonth && (
+                      <Button
+                        variant="outline"
+                        className="w-full justify-start mb-4"
+                        onClick={() => setSelectedMonth(null)}
+                      >
+                        Wyczyść filtr
+                      </Button>
+                    )}
+                    {uniqueMonths.map((month) => (
+                      <Button
+                        key={month}
+                        variant={selectedMonth === month ? "default" : "ghost"}
+                        className="w-full justify-start"
+                        onClick={() => setSelectedMonth(month)}
+                      >
+                        {month}
+                      </Button>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </aside>
           </div>
         </div>
       </main>
