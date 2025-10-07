@@ -3,6 +3,7 @@ import { ArrowLeft, Calendar as CalendarIcon, User, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Navigation from '@/components/Navigation';
+import kiermaszImage from '@/assets/kiermasz-swiateczny.jpg';
 
 interface Post {
   id: number;
@@ -12,6 +13,7 @@ interface Post {
   author: string;
   readTime: string;
   excerpt: string;
+  image?: string;
 }
 
 const Warsztaty: React.FC = () => {
@@ -40,7 +42,8 @@ Kiermasz odbędzie się w dniach 9-10 grudnia w godzinach 11:00-17:00. To doskon
       date: "9 grudnia 2025",
       author: "Beata Andraszewska Chlebna",
       readTime: "2 dni, 11:00-17:00",
-      excerpt: "Kiermasz świąteczny z naturalnymi kosmetykami, degustacją oliwy, darmową oceną skóry i termografią."
+      excerpt: "Kiermasz świąteczny z naturalnymi kosmetykami, degustacją oliwy, darmową oceną skóry i termografią.",
+      image: kiermaszImage
     },
     {
       id: 2,
@@ -176,6 +179,13 @@ Kiermasz odbędzie się w dniach 9-10 grudnia w godzinach 11:00-17:00. To doskon
                       </div>
                     </CardHeader>
                     <CardContent>
+                      {post.image && (
+                        <img 
+                          src={post.image} 
+                          alt={post.title}
+                          className="w-full h-auto rounded-lg mb-4 object-cover"
+                        />
+                      )}
                       <div className="prose prose-sm max-w-none">
                         {expandedPost === post.id ? (
                           <div className="whitespace-pre-line">{post.content}</div>
