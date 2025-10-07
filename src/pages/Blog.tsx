@@ -128,7 +128,7 @@ Połączenie mikronakłuwania z elektroporacją określane bywa mianem terapii s
 **Podsumowanie**
 
 Mezoterapia mikroigłowa z elektroporacją to innowacyjna technika, która wynosi klasyczne mikronakłuwanie na wyższy poziom. Dzięki synergii mechanicznego i elektrycznego działania, zabieg ten zapewnia skórze kompleksową stymulację i odżywienie. Liczne źródła i doświadczenia kliniczne potwierdzają, że taka kombinacja przekłada się na efektywniejszą regenerację skóry, głębszą penetrację składników aktywnych i szybsze rezultaty estetyczne. Bez zwiększenia inwazyjności uzyskujemy maksymalne korzyści – skóra staje się wyraźnie gładsza, jędrniejsza i pełna blasku. Jest to z pewnością metoda godna uwagi w arsenale współczesnej kosmetologii i dermatologii estetycznej, oferująca nowy wymiar odnowy skóry dla wymagających pacjentów.`,
-      date: "30 września 2025",
+      date: "7 października 2025",
       author: "Beata Andraszewska Chlebna",
       readTime: "12 min czytania",
       excerpt: "Poznaj innowacyjną technikę łączącą mikronakłuwanie z elektroporacją. Dowiedz się, jak działa ten zabieg, jakie daje efekty i dla kogo jest przeznaczony."
@@ -221,7 +221,7 @@ Po farbowaniu:
 Farbowanie włosów po chemioterapii jest możliwe i może znacząco poprawić samopoczucie osoby powracającej do zdrowia, jednak wymaga rozwagi, czasu i odpowiedniej pielęgnacji. Kluczowe jest odczekanie przynajmniej około pół roku od zakończenia leczenia onkologicznego przed sięgnięciem po farbę.
 
 W tym okresie włosy odbudowują się, a skóra głowy wraca do normy, co zmniejsza ryzyko podrażnień. Dermatolodzy i trycholodzy zalecają delikatne podejście: wybór łagodniejszych, naturalnych metod koloryzacji oraz skrupulatne dbanie o kondycję włosów przed i po zabiegu. Nie zapominajmy, że cierpliwość jest tu najważniejsza – zbyt pochopne farbowanie może przynieść więcej szkody niż pożytku. Przy odpowiednim przygotowaniu, doborze bezpiecznych farb i przestrzeganiu zaleceń specjalistów, powrót do ulubionego koloru włosów będzie nie tylko możliwy, ale i bezpieczny dla naszej urody oraz zdrowia.`,
-      date: "7 października 2025",
+      date: "30 września 2025",
       author: "Beata Andraszewska Chlebna",
       readTime: "10 min czytania",
       excerpt: "Wiele osób po zakończeniu leczenia onkologicznego zastanawia się, czy i kiedy mogą bezpiecznie wrócić do farbowania włosów. Poznaj zalecenia specjalistów dotyczące bezpiecznej koloryzacji po chemioterapii."
