@@ -3,14 +3,12 @@ import { Link } from 'react-router-dom';
 import { ArrowLeft, Calendar as CalendarIcon, User, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Calendar } from '@/components/ui/calendar';
 import Navigation from '@/components/Navigation';
 import facialTreatment from '@/assets/facial-treatment.jpg';
-import { format, isSameMonth, parseISO } from 'date-fns';
-import { pl } from 'date-fns/locale';
+import { parseISO } from 'date-fns';
 
 const Blog: React.FC = () => {
-  const [selectedDate, setSelectedDate] = useState<Date | undefined>(undefined);
+  const [selectedMonth, setSelectedMonth] = useState<string | null>(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -274,28 +272,34 @@ Diagnostyka pH skóry to niezwykle istotny element w pracy kosmetologa, który p
     }
   ];
 
-  // Parse article dates and filter
-  const parseArticleDate = (dateString: string) => {
-    // Convert Polish date format to ISO (e.g., "7 października 2025" to Date)
-    const monthMap: { [key: string]: string } = {
-      'stycznia': '01', 'lutego': '02', 'marca': '03', 'kwietnia': '04',
-      'maja': '05', 'czerwca': '06', 'lipca': '07', 'sierpnia': '08',
-      'września': '09', 'października': '10', 'listopada': '11', 'grudnia': '12'
-    };
-    
+  // Extract unique months from articles
+  const getMonthYear = (dateString: string) => {
     const parts = dateString.split(' ');
-    const day = parts[0].padStart(2, '0');
-    const month = monthMap[parts[1]];
-    const year = parts[2];
-    
-    return parseISO(`${year}-${month}-${day}`);
+    const month = parts[1]; // e.g., "października"
+    const year = parts[2]; // e.g., "2025"
+    return `${month} ${year}`;
   };
 
-  const filteredArticles = selectedDate
-    ? articles.filter(article => {
-        const articleDate = parseArticleDate(article.date);
-        return isSameMonth(articleDate, selectedDate);
-      })
+  const uniqueMonths = Array.from(
+    new Set(articles.map(article => getMonthYear(article.date)))
+  ).sort((a, b) => {
+    const monthMap: { [key: string]: number } = {
+      'stycznia': 1, 'lutego': 2, 'marca': 3, 'kwietnia': 4,
+      'maja': 5, 'czerwca': 6, 'lipca': 7, 'sierpnia': 8,
+      'września': 9, 'października': 10, 'listopada': 11, 'grudnia': 12
+    };
+    
+    const [monthA, yearA] = a.split(' ');
+    const [monthB, yearB] = b.split(' ');
+    
+    if (yearA !== yearB) {
+      return parseInt(yearB) - parseInt(yearA); // Sort by year descending
+    }
+    return monthMap[monthB] - monthMap[monthA]; // Sort by month descending
+  });
+
+  const filteredArticles = selectedMonth
+    ? articles.filter(article => getMonthYear(article.date) === selectedMonth)
     : articles;
 
   return (
@@ -331,7 +335,7 @@ Diagnostyka pH skóry to niezwykle istotny element w pracy kosmetologa, który p
                   <Button 
                     variant="outline" 
                     className="mt-4"
-                    onClick={() => setSelectedDate(undefined)}
+                    onClick={() => setSelectedMonth(null)}
                   >
                     Pokaż wszystkie artykuły
                   </Button>
@@ -390,30 +394,31 @@ Diagnostyka pH skóry to niezwykle istotny element w pracy kosmetologa, który p
             )}
           </div>
 
-          {/* Calendar Sidebar */}
+          {/* Month Filter Sidebar */}
           <aside className="lg:sticky lg:top-8 h-fit">
             <Card className="shadow-card">
               <CardHeader>
-                <CardTitle className="text-lg">Filtruj po dacie</CardTitle>
+                <CardTitle className="text-lg">Filtruj po miesiącu</CardTitle>
               </CardHeader>
-              <CardContent className="flex flex-col items-center">
-                <Calendar
-                  mode="single"
-                  selected={selectedDate}
-                  onSelect={setSelectedDate}
-                  locale={pl}
-                  className="rounded-md border pointer-events-auto"
-                />
-                {selectedDate && (
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="mt-4 w-full"
-                    onClick={() => setSelectedDate(undefined)}
-                  >
-                    Wyczyść filtr
-                  </Button>
-                )}
+              <CardContent>
+                <div className="space-y-2">
+                  {uniqueMonths.map((monthYear) => {
+                    const [month, year] = monthYear.split(' ');
+                    const capitalizedMonth = month.charAt(0).toUpperCase() + month.slice(1);
+                    const displayText = `${capitalizedMonth} ${year}`;
+                    
+                    return (
+                      <Button
+                        key={monthYear}
+                        variant={selectedMonth === monthYear ? "default" : "ghost"}
+                        className="w-full justify-start"
+                        onClick={() => setSelectedMonth(monthYear === selectedMonth ? null : monthYear)}
+                      >
+                        {displayText}
+                      </Button>
+                    );
+                  })}
+                </div>
               </CardContent>
             </Card>
           </aside>
