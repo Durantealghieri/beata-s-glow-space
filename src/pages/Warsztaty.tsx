@@ -25,6 +25,25 @@ const Warsztaty: React.FC = () => {
   const posts: Post[] = [
     {
       id: 1,
+      title: "Kiermasz świąteczny w Fuli",
+      content: `Serdecznie zapraszamy na Kiermasz świąteczny w Fuli! 
+
+W programie:
+• Kosmetyki naturalne w promocyjnych cenach
+• Degustacja wybornej włoskiej oliwy
+• Ręcznie robione mydła ziołowe, octy owocowe i świeczki sojowe
+• Świeżo tłoczone oleje
+• Darmowa ocena stanu zdrowia skóry i włosów oraz termografia
+• Vouchery na zabiegi
+
+Kiermasz odbędzie się w dniach 9-10 grudnia w godzinach 11:00-17:00. To doskonała okazja, aby zaopatrzyć się w naturalne kosmetyki i wyjątkowe prezenty świąteczne!`,
+      date: "9 grudnia 2025",
+      author: "Beata Andraszewska Chlebna",
+      readTime: "2 dni, 11:00-17:00",
+      excerpt: "Kiermasz świąteczny z naturalnymi kosmetykami, degustacją oliwy, darmową oceną skóry i termografią."
+    },
+    {
+      id: 2,
       title: "Warsztat pielęgnacji skóry zimą",
       content: `Zapraszamy na wyjątkowy warsztat poświęcony zimowej pielęgnacji skóry. Podczas tego wydarzenia dowiesz się, jak zadbać o swoją cerę w trudnych warunkach zimowych, kiedy mróz i wiatr szczególnie osuszają i podrażniają skórę.`,
       date: "15 grudnia 2025",
@@ -33,7 +52,7 @@ const Warsztaty: React.FC = () => {
       excerpt: "Poznaj sekrety zimowej pielęgnacji skóry i naucz się, jak chronić cerę przed mrozem."
     },
     {
-      id: 2,
+      id: 3,
       title: "Promocja świąteczna - pakiety zabiegowe",
       content: `Z okazji nadchodzących świąt przygotowaliśmy dla Was wyjątkowe pakiety zabiegowe w promocyjnych cenach. To idealny pomysł na prezent dla siebie lub bliskiej osoby!`,
       date: "10 grudnia 2025",
@@ -42,7 +61,7 @@ const Warsztaty: React.FC = () => {
       excerpt: "Specjalne pakiety zabiegowe w promocyjnych cenach świątecznych."
     },
     {
-      id: 3,
+      id: 4,
       title: "Wydarzenie: Dzień otwarty w gabinecie",
       content: `Serdecznie zapraszamy na dzień otwarty w naszym gabinecie! To doskonała okazja, aby poznać naszą ofertę, zobaczyć gabinet od środka i skorzystać z darmowych konsultacji.`,
       date: "5 listopada 2025",
