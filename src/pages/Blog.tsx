@@ -1,12 +1,17 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Calendar, User, Clock } from 'lucide-react';
+import { ArrowLeft, Calendar as CalendarIcon, User, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Calendar } from '@/components/ui/calendar';
 import Navigation from '@/components/Navigation';
 import facialTreatment from '@/assets/facial-treatment.jpg';
+import { format, isSameMonth, parseISO } from 'date-fns';
+import { pl } from 'date-fns/locale';
 
 const Blog: React.FC = () => {
+  const [selectedDate, setSelectedDate] = useState<Date | undefined>(undefined);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -269,11 +274,35 @@ Diagnostyka pH skóry to niezwykle istotny element w pracy kosmetologa, który p
     }
   ];
 
+  // Parse article dates and filter
+  const parseArticleDate = (dateString: string) => {
+    // Convert Polish date format to ISO (e.g., "7 października 2025" to Date)
+    const monthMap: { [key: string]: string } = {
+      'stycznia': '01', 'lutego': '02', 'marca': '03', 'kwietnia': '04',
+      'maja': '05', 'czerwca': '06', 'lipca': '07', 'sierpnia': '08',
+      'września': '09', 'października': '10', 'listopada': '11', 'grudnia': '12'
+    };
+    
+    const parts = dateString.split(' ');
+    const day = parts[0].padStart(2, '0');
+    const month = monthMap[parts[1]];
+    const year = parts[2];
+    
+    return parseISO(`${year}-${month}-${day}`);
+  };
+
+  const filteredArticles = selectedDate
+    ? articles.filter(article => {
+        const articleDate = parseArticleDate(article.date);
+        return isSameMonth(articleDate, selectedDate);
+      })
+    : articles;
+
   return (
     <div className="min-h-screen bg-background">
       <Navigation currentSection="blog" />
       
-      <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Back to Home */}
         <div className="mb-8">
           <Link to="/" className="inline-flex items-center text-muted-foreground hover:text-foreground transition-colors">
@@ -290,9 +319,26 @@ Diagnostyka pH skóry to niezwykle istotny element w pracy kosmetologa, który p
           </p>
         </div>
 
-        {/* Articles List */}
-        <div className="space-y-8">
-          {articles.map((article) => (
+        <div className="grid lg:grid-cols-[1fr_320px] gap-8">
+          {/* Articles List */}
+          <div className="space-y-8">
+            {filteredArticles.length === 0 ? (
+              <Card className="shadow-card">
+                <CardContent className="py-12 text-center">
+                  <p className="text-muted-foreground">
+                    Brak artykułów w wybranym miesiącu
+                  </p>
+                  <Button 
+                    variant="outline" 
+                    className="mt-4"
+                    onClick={() => setSelectedDate(undefined)}
+                  >
+                    Pokaż wszystkie artykuły
+                  </Button>
+                </CardContent>
+              </Card>
+            ) : (
+              filteredArticles.map((article) => (
             <Card key={article.id} className="shadow-card">
               <div className="relative overflow-hidden rounded-t-lg">
                 <img
@@ -306,7 +352,7 @@ Diagnostyka pH skóry to niezwykle istotny element w pracy kosmetologa, który p
               <CardHeader>
                 <div className="flex items-center space-x-4 text-sm text-muted-foreground mb-4">
                   <div className="flex items-center space-x-1">
-                    <Calendar className="h-4 w-4" />
+                    <CalendarIcon className="h-4 w-4" />
                     <span>{article.date}</span>
                   </div>
                   <div className="flex items-center space-x-1">
@@ -340,7 +386,37 @@ Diagnostyka pH skóry to niezwykle istotny element w pracy kosmetologa, który p
                 </div>
               </CardContent>
             </Card>
-          ))}
+              ))
+            )}
+          </div>
+
+          {/* Calendar Sidebar */}
+          <aside className="lg:sticky lg:top-8 h-fit">
+            <Card className="shadow-card">
+              <CardHeader>
+                <CardTitle className="text-lg">Filtruj po dacie</CardTitle>
+              </CardHeader>
+              <CardContent className="flex flex-col items-center">
+                <Calendar
+                  mode="single"
+                  selected={selectedDate}
+                  onSelect={setSelectedDate}
+                  locale={pl}
+                  className="rounded-md border pointer-events-auto"
+                />
+                {selectedDate && (
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="mt-4 w-full"
+                    onClick={() => setSelectedDate(undefined)}
+                  >
+                    Wyczyść filtr
+                  </Button>
+                )}
+              </CardContent>
+            </Card>
+          </aside>
         </div>
       </main>
     </div>
