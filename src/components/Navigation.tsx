@@ -21,7 +21,7 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection = 'home' }) => {
       subItems: ['Wszystkie', 'Kosmetologia', 'Kosmetologia Onkologiczna', 'Masaże', 'Mezoterapia Mikroigłowa Dermapen', 'Niwelowanie zmarszczek - Md Muscle', 'Peeling Kwasowy', 'Pielęgnacja włosów Tahe', 'Radiofrekwencja - RF Lifting', 'Terapia Wodorem Molekularnym', 'Tropokolagen', 'Trychologia Kosmetologiczna', 'Zabiegi Pielęgnacyjne - Twarz']
     },
     {
-      name: 'Wydarzenia i warsztaty',
+      name: 'Kalendarz',
       id: 'warsztaty',
       subItems: []
     },
