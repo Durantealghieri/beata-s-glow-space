@@ -7,11 +7,11 @@ import facialTreatment from '@/assets/facial-treatment.jpg';
 
 const BlogPreview: React.FC = () => {
   const featuredArticle = {
-    title: "Farbowanie włosów po chemioterapii – kiedy, czym i jak robić to bezpiecznie",
-    excerpt: "Wiele osób po zakończeniu leczenia onkologicznego zastanawia się, czy i kiedy mogą bezpiecznie wrócić do farbowania włosów. Poznaj zalecenia specjalistów dotyczące bezpiecznej koloryzacji po chemioterapii.",
+    title: "Mezoterapia mikroigłowa z elektroporacją – nowy wymiar regeneracji skóry",
+    excerpt: "Poznaj innowacyjną technikę łączącą mikronakłuwanie z elektroporacją. Dowiedz się, jak działa ten zabieg, jakie daje efekty i dla kogo jest przeznaczony.",
     date: "7 października 2025",
     author: "Beata Andraszewska Chlebna",
-    readTime: "10 min czytania"
+    readTime: "12 min czytania"
   };
 
   return (
