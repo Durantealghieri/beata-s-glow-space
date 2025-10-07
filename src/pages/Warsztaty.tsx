@@ -39,7 +39,7 @@ W programie:
 • Vouchery na zabiegi
 
 Kiermasz odbędzie się w dniach 9-10 grudnia w godzinach 11:00-17:00. To doskonała okazja, aby zaopatrzyć się w naturalne kosmetyki i wyjątkowe prezenty świąteczne!`,
-      date: "9 grudnia 2025",
+      date: "9-10 grudnia 2025",
       author: "Beata Andraszewska Chlebna",
       readTime: "2 dni, 11:00-17:00",
       excerpt: "Kiermasz świąteczny z naturalnymi kosmetykami, degustacją oliwy, darmową oceną skóry i termografią.",
