@@ -262,7 +262,7 @@ Wynik pomiaru pH skóry ma kluczowe znaczenie przy doborze odpowiednich zabiegó
 **Podsumowanie**
 
 Diagnostyka pH skóry to niezwykle istotny element w pracy kosmetologa, który pozwala na precyzyjne dopasowanie zabiegów i kosmetyków do indywidualnych potrzeb skóry. Regularne monitorowanie pH skóry może pomóc w wykryciu problemów skórnych na wczesnym etapie oraz pozwala na skuteczne utrzymanie zdrowej i pięknej skóry. Pamiętajmy, że równowaga pH jest fundamentem zdrowej skóry, a odpowiednia pielęgnacja pozwala zachować ją w optymalnej kondycji.`,
-      date: "20 grudnia 2024",
+      date: "28 sierpnia 2025",
       author: "Beata Andraszewska Chlebna",
       readTime: "7 min czytania",
       excerpt: "Poznaj znaczenie diagnostyki pH skóry w praktyce kosmetologicznej i dowiedz się, jak pomiar pH pomaga w doborze odpowiednich zabiegów i kosmetyków."
