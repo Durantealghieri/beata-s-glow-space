@@ -5,6 +5,7 @@ import Navigation from '@/components/Navigation';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import beataPortrait from '@/assets/beata-portrait.jpg';
 const About = () => {
   // Scroll to top when component mounts
   useEffect(() => {
@@ -41,15 +42,15 @@ const About = () => {
           </Link>
         </div>
 
-        {/* Header with Navigation Menu */}
+        {/* Header with Portrait */}
         <header className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-foreground mb-4">
-            O mnie
-          </h1>
-          <p className="text-xl text-muted-foreground mb-8">
-            Poznaj moją historię i filozofię pracy
-          </p>
-
+          <div className="mb-8">
+            <img 
+              src={beataPortrait} 
+              alt="Beata Andraszewska Chlebna - Kosmetolog" 
+              className="w-full max-w-2xl mx-auto rounded-lg shadow-lg"
+            />
+          </div>
         </header>
 
         {/* Moja historia Section */}
