@@ -393,7 +393,7 @@ const Zabiegi: React.FC = () => {
     }]
   }, {
     id: 'tropokolagen',
-    title: 'Tropokolagen',
+    title: 'Tropokolagen - Niwelowanie Zmarszczek',
     description: 'Profesjonalne zabiegi niwelujące zmarszczki',
     services: [{
       title: "Oczy",
