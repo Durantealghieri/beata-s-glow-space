@@ -45,7 +45,7 @@ const About = () => {
         {/* Header with Navigation Menu */}
         <header className="mb-12">
           <div className="flex flex-col md:flex-row items-center gap-8">
-            <div className="flex-1">
+            <div className="flex-1 text-center">
               <h1 className="text-4xl font-bold text-foreground mb-4">
                 O mnie
               </h1>
