@@ -42,20 +42,20 @@ const About = () => {
           </Link>
         </div>
 
-        {/* Header with Portrait - sticky effect */}
-        <div className="relative mb-12 overflow-hidden">
-          <div className="sticky top-0 z-0">
+        {/* Header with Portrait */}
+        <header className="text-center mb-12">
+          <div className="mb-8">
             <img 
               src={beataPortrait} 
               alt="Beata Andraszewska Chlebna - Kosmetolog" 
-              className="w-full max-w-xl mx-auto rounded-lg shadow-lg"
+              className="w-full max-w-2xl mx-auto rounded-lg shadow-lg"
             />
           </div>
-        </div>
+        </header>
 
         {/* Moja historia Section */}
-        <section id="historia" className="relative z-10 mb-16 scroll-mt-8">
-          <Card className="p-8 shadow-card bg-background">
+        <section id="historia" className="mb-16 scroll-mt-8">
+          <Card className="p-8 shadow-card">
             <h2 className="text-3xl font-bold text-foreground mb-6 text-center">
               Moja historia
             </h2>
