@@ -4,7 +4,6 @@ import { ArrowLeft, Calendar as CalendarIcon, User, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Navigation from '@/components/Navigation';
-import facialTreatment from '@/assets/facial-treatment.jpg';
 import { parseISO } from 'date-fns';
 
 const Blog: React.FC = () => {
@@ -344,15 +343,6 @@ Diagnostyka pH skóry to niezwykle istotny element w pracy kosmetologa, który p
             ) : (
               filteredArticles.map((article) => (
             <Card key={article.id} className="shadow-card">
-              <div className="relative overflow-hidden rounded-t-lg">
-                <img
-                  src={facialTreatment}
-                  alt="Zabieg pielęgnacyjny"
-                  className="w-full h-64 object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-              </div>
-              
               <CardHeader>
                 <div className="flex items-center space-x-4 text-sm text-muted-foreground mb-4">
                   <div className="flex items-center space-x-1">
