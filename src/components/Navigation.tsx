@@ -28,7 +28,7 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection = 'home' }) => {
     {
       name: 'Blog',
       id: 'blog',
-      subItems: ['Najnowsze artykuły', 'Porady pielęgnacyjne', 'Trendy w kosmetologii']
+      subItems: ['Najnowsze artykuły']
     },
     {
       name: 'O mnie',
